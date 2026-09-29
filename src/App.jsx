@@ -6,6 +6,7 @@ import KeyGenerator from './components/KeyGenerator';
 import BalanceChecker from './components/BalanceChecker';
 import Pricing from './components/Pricing';
 import CodeSnippets from './components/CodeSnippets';
+import LegalPolicies from './components/LegalPolicies';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
         <CodeSnippets />
       </main>
 
+      <LegalPolicies />
       <Footer />
     </div>
   );
