@@ -14,7 +14,7 @@ export default function BalanceChecker({ apiKey, setApiKey }) {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/v1/auth/me', {
+      const response = await fetch('https://translater-free-api.onrender.com/api/v1/auth/me', {
         headers: { 'x-api-key': apiKey }
       });
       const data = await response.json();

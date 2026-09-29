@@ -21,7 +21,7 @@ export default function Playground({ apiKey, setApiKey }) {
     const startTime = Date.now();
 
     try {
-      const response = await fetch('/api/v1/translate', {
+      const response = await fetch('https://translater-free-api.onrender.com/api/v1/translate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
