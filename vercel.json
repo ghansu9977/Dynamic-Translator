@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://translater-free-api.onrender.com/api/:path*"
+    }
+  ]
+}
