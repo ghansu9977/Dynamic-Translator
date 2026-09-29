@@ -48,18 +48,18 @@ export default function Pricing({ onScrollTo }) {
           </div>
           <div>
             <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">Pro Developer</div>
-            <div class="text-4xl font-extrabold text-white mb-4">₹10 <span class="text-slate-500 text-sm font-normal">/ life</span></div>
+            <div class="text-4xl font-extrabold text-white mb-4">₹2 <span class="text-slate-500 text-sm font-normal">/ life</span></div>
             <p class="text-xs text-slate-400 mb-6">Ideal for production apps with multi-language support.</p>
             
             <ul class="space-y-3 text-sm text-slate-300 mb-8">
-              <li class="flex items-center gap-2"><Check class="w-4 h-4 text-emerald-400" /> 100,000 Words Limit</li>
+              <li class="flex items-center gap-2"><Check class="w-4 h-4 text-emerald-400" /> 1,000 Words Limit</li>
               <li class="flex items-center gap-2"><Check class="w-4 h-4 text-emerald-400" /> Priority Support</li>
               <li class="flex items-center gap-2"><Check class="w-4 h-4 text-emerald-400" /> High Speed Translation</li>
             </ul>
           </div>
 
           <button 
-            onClick={() => handleUpgrade('pro', 10)}
+            onClick={() => handleUpgrade('pro', 2)}
             class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-center font-bold text-sm text-white shadow-lg shadow-indigo-600/40 transition"
           >
             Upgrade to Pro
