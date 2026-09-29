@@ -19,11 +19,11 @@ export default function App() {
   };
 
   return (
-    <div class="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+    <div class="min-h-screen bg-slate-950 text-slate-100 flex flex-col overflow-x-hidden w-full">
       <Navbar onScrollTo={scrollToSection} />
       <Hero onScrollTo={scrollToSection} />
 
-      <main class="max-w-7xl mx-auto px-6 py-16 space-y-24 flex-grow">
+      <main class="max-w-7xl mx-auto px-4 sm:px-6 py-16 space-y-24 flex-grow w-full">
         <Playground apiKey={apiKey} setApiKey={setApiKey} />
         <KeyGenerator onKeyGenerated={(newKey) => setApiKey(newKey)} />
         <BalanceChecker apiKey={apiKey} setApiKey={setApiKey} />

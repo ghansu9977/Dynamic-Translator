@@ -59,7 +59,7 @@ export default function BalanceChecker({ apiKey, setApiKey }) {
 
       {stats && (
         <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-left text-sm space-y-2">
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center flex-wrap gap-2 mb-2">
             <span class="text-slate-400">Plan: <strong class="text-indigo-400 uppercase">{stats.plan || 'FREE'}</strong></span>
             <span class="text-slate-400">Words Remaining: <strong class="text-emerald-400">{stats.wordsRemaining ?? (stats.wordQuota - stats.wordsUsed)} / {stats.wordQuota}</strong></span>
           </div>

@@ -11,7 +11,7 @@ export default function CodeSnippets() {
       </div>
 
       <div class="glass-card rounded-2xl p-6 md:p-8 border border-slate-800">
-        <div class="flex gap-4 border-b border-slate-800 pb-4 mb-6">
+        <div class="flex gap-4 border-b border-slate-800 pb-4 mb-6 overflow-x-auto whitespace-nowrap">
           <button 
             onClick={() => setActiveTab('flutter')}
             class={`text-sm font-bold pb-2 transition ${activeTab === 'flutter' ? 'text-indigo-400 border-b-2 border-indigo-500' : 'text-slate-400 hover:text-slate-200'}`}

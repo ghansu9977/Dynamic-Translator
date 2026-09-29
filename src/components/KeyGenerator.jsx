@@ -48,7 +48,7 @@ export default function KeyGenerator({ onKeyGenerated }) {
 
   return (
     <section id="register" class="scroll-mt-28">
-      <div class="glass-card rounded-3xl p-8 md:p-12 border border-indigo-500/20 relative overflow-hidden">
+      <div class="glass-card rounded-3xl p-5 sm:p-8 md:p-12 border border-indigo-500/20 relative overflow-hidden">
         <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
