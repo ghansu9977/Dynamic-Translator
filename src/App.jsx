@@ -31,7 +31,7 @@ export default function App() {
 
       <main class="max-w-7xl mx-auto px-4 sm:px-6 py-16 space-y-24 flex-grow w-full">
         <Playground apiKey={apiKey} setApiKey={setApiKey} />
-        <KeyGenerator onKeyGenerated={handleKeyGenerated} />
+        <KeyGenerator apiKey={apiKey} onKeyGenerated={handleKeyGenerated} />
         <BalanceChecker apiKey={apiKey} setApiKey={setApiKey} />
         <Pricing onScrollTo={scrollToSection} />
         {apiKey && <CodeSnippets apiKey={apiKey} />}

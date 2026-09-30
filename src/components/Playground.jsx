@@ -141,8 +141,7 @@ export default function Playground({ apiKey, setApiKey }) {
               </pre>
             </div>
 
-            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 text-xs text-slate-400 flex flex-wrap items-center justify-between gap-2">
-              <span>Engine Used: <strong class="text-indigo-400">{engine}</strong></span>
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 text-xs text-slate-400 flex flex-wrap items-center justify-end gap-2">
               <span>Response Time: <strong class="text-slate-200">{speed}</strong></span>
             </div>
           </div>

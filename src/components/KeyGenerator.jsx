@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Key, Check, Copy, Loader2 } from 'lucide-react';
 
-export default function KeyGenerator({ onKeyGenerated }) {
+export default function KeyGenerator({ apiKey, onKeyGenerated }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -72,6 +72,25 @@ export default function KeyGenerator({ onKeyGenerated }) {
             </ul>
           </div>
 
+          {apiKey ? (
+            <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 flex flex-col justify-center items-center text-center space-y-4 h-full min-h-[300px]">
+              <div class="w-16 h-16 bg-emerald-900/50 rounded-full flex items-center justify-center mb-2">
+                <Check class="w-8 h-8 text-emerald-400" />
+              </div>
+              <h3 class="text-xl font-bold text-white">You already have an active API Key!</h3>
+              <p class="text-slate-400 text-sm">Please use your existing key to test the translation API.</p>
+              
+              <div class="mt-4 p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 w-full">
+                <div class="text-xs font-bold text-emerald-400 text-left mb-2">Your API Key:</div>
+                <input 
+                  type="text" 
+                  readOnly 
+                  value={apiKey}
+                  class="bg-transparent font-mono text-sm text-indigo-300 w-full focus:outline-none"
+                />
+              </div>
+            </div>
+          ) : (
           <form onSubmit={handleRegister} class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 space-y-4">
             <div>
               <label class="block text-xs font-semibold text-slate-400 mb-1">Your Name</label>
@@ -130,6 +149,7 @@ export default function KeyGenerator({ onKeyGenerated }) {
               </div>
             )}
           </form>
+          )}
         </div>
       </div>
     </section>
