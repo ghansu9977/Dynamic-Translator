@@ -27,7 +27,12 @@ export default function CheckoutModal({ isOpen, onClose, plan, amount }) {
       const orderRes = await fetch('https://translater-free-api.onrender.com/api/v1/payment/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan }),
+        body: JSON.stringify({ 
+          plan, 
+          name: formData.name, 
+          email: formData.email, 
+          existingApiKey: formData.apiKey 
+        }),
       });
       const orderData = await orderRes.json();
       

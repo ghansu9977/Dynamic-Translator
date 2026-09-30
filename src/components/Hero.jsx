@@ -1,14 +1,29 @@
 import React from 'react';
 import { Play, Key, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Hero({ onScrollTo }) {
   return (
-    <header class="gradient-bg py-20 px-6 relative overflow-hidden">
-      <div class="max-w-5xl mx-auto text-center relative z-10">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-indigo-300 text-xs font-semibold mb-6 border border-indigo-500/30">
+    <header class="gradient-bg py-24 px-6 relative overflow-hidden">
+      {/* Background Orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/30 rounded-full blur-[120px] mix-blend-screen pointer-events-none animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-indigo-600/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" style={{ animation: "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}></div>
+
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        class="max-w-5xl mx-auto text-center relative z-10"
+      >
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2 }}
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-indigo-300 text-xs font-semibold mb-6 border border-indigo-500/30"
+        >
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           React 18 Commercial Portal • 100+ Languages Supported
-        </div>
+        </motion.div>
 
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
           Ultra-Fast Translation API for <br />
@@ -36,7 +51,7 @@ export default function Hero({ onScrollTo }) {
             <Key class="w-4 h-4 text-indigo-400" /> Claim Free API Key
           </button>
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 }
