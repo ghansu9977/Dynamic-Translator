@@ -21,12 +21,14 @@ export default function Playground({ apiKey, setApiKey }) {
     const startTime = Date.now();
 
     try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (apiKey) {
+        headers['x-api-key'] = apiKey;
+      }
+
       const response = await fetch('https://translater-free-api.onrender.com/api/v1/translate', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey || 'dt_live_demo12345'
-        },
+        headers,
         body: JSON.stringify({
           texts: textsArray,
           targetLanguage: targetLang
@@ -101,6 +103,7 @@ export default function Playground({ apiKey, setApiKey }) {
                 <label class="block text-xs font-semibold text-slate-400 mb-1">API Key:</label>
                 <input 
                   type="text"
+                  placeholder="Optional: Paste your key"
                   value={apiKey}
                   onChange={(e) => setApiKey(e.target.value)}
                   class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-slate-200 text-sm focus:outline-none focus:border-indigo-500 font-mono"

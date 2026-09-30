@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function CodeSnippets() {
+export default function CodeSnippets({ apiKey }) {
   const [activeTab, setActiveTab] = useState('flutter');
 
   return (
@@ -42,7 +42,7 @@ Future<Map<String, dynamic>> translateTexts(List<String> texts, String targetLan
     Uri.parse('https://translater-free-api.onrender.com/api/v1/translate'),
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': 'YOUR_API_KEY_HERE',
+      'x-api-key': '${apiKey}',
     },
     body: jsonEncode({
       'texts': texts,
@@ -61,7 +61,7 @@ Future<Map<String, dynamic>> translateTexts(List<String> texts, String targetLan
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'x-api-key': 'YOUR_API_KEY_HERE'
+    'x-api-key': '${apiKey}'
   },
   body: JSON.stringify({
     texts: ["Hello world", "Welcome to my app"],
@@ -78,7 +78,7 @@ console.log(data.translations);`}
           <pre class="bg-slate-950 p-4 rounded-xl text-emerald-400 font-mono text-xs overflow-x-auto">
 {`curl -X POST https://translater-free-api.onrender.com/api/v1/translate \\
   -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY_HERE" \\
+  -H "x-api-key: ${apiKey}" \\
   -d '{"texts": ["Hello world"], "targetLanguage": "hi"}'`}
           </pre>
         )}

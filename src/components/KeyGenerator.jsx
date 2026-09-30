@@ -62,11 +62,11 @@ export default function KeyGenerator({ onKeyGenerated }) {
             </h2>
 
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Start integrating immediately with <strong>5,000 free words/month</strong>. No credit card required. Instant activation.
+              Start integrating immediately with <strong>100 free words/month</strong>. No credit card required. Instant activation.
             </p>
 
             <ul class="space-y-3 text-sm text-slate-300">
-              <li class="flex items-center gap-2"><Check class="w-4 h-4 text-emerald-400" /> Free 5,000 words quota</li>
+              <li class="flex items-center gap-2"><Check class="w-4 h-4 text-emerald-400" /> Free 100 words quota</li>
               <li class="flex items-center gap-2"><Check class="w-4 h-4 text-emerald-400" /> Full access to 100+ languages</li>
               <li class="flex items-center gap-2"><Check class="w-4 h-4 text-emerald-400" /> Instant HTTP API Key</li>
             </ul>
@@ -108,7 +108,7 @@ export default function KeyGenerator({ onKeyGenerated }) {
               <div class="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 space-y-2">
                 <div class="text-xs font-bold text-emerald-400 flex justify-between items-center">
                   <span>🎉 Your API Key Created!</span>
-                  <span class="bg-emerald-900 text-emerald-200 text-[10px] px-2 py-0.5 rounded">5,000 Words</span>
+                  <span class="bg-emerald-900 text-emerald-200 text-[10px] px-2 py-0.5 rounded">100 Words</span>
                 </div>
 
                 <div class="flex items-center gap-2 bg-slate-950 p-2.5 rounded-lg border border-slate-800">

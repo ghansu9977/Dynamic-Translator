@@ -10,7 +10,12 @@ import LegalPolicies from './components/LegalPolicies';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [apiKey, setApiKey] = useState("dt_live_demo12345");
+  const [apiKey, setApiKey] = useState(() => localStorage.getItem("dt_user_api_key") || "");
+
+  const handleKeyGenerated = (newKey) => {
+    setApiKey(newKey);
+    localStorage.setItem("dt_user_api_key", newKey);
+  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -26,10 +31,10 @@ export default function App() {
 
       <main class="max-w-7xl mx-auto px-4 sm:px-6 py-16 space-y-24 flex-grow w-full">
         <Playground apiKey={apiKey} setApiKey={setApiKey} />
-        <KeyGenerator onKeyGenerated={(newKey) => setApiKey(newKey)} />
+        <KeyGenerator onKeyGenerated={handleKeyGenerated} />
         <BalanceChecker apiKey={apiKey} setApiKey={setApiKey} />
         <Pricing onScrollTo={scrollToSection} />
-        <CodeSnippets />
+        {apiKey && <CodeSnippets apiKey={apiKey} />}
       </main>
 
       <LegalPolicies />
