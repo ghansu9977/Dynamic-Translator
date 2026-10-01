@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dynamic-translator.vercel.app/sitemap.xml
+Sitemap: https://dynamic-translatx.vercel.app/sitemap.xml
