@@ -66,7 +66,7 @@ export default function Pricing({ onScrollTo }) {
                 <div class={`text-xs font-bold uppercase tracking-wider mb-2 ${p.tag === 'Best Value' ? 'text-indigo-400' : 'text-amber-400'}`}>
                   {p.name}
                 </div>
-                <div class="text-4xl font-extrabold text-white mb-4">₹{p.price} <span class="text-slate-500 text-sm font-normal">/ life</span></div>
+                <div class="text-4xl font-extrabold text-white mb-4">₹{p.price} <span class="text-slate-500 text-sm font-normal">/ 30 Days</span></div>
                 <p class="text-xs text-slate-400 mb-6">Word Quota: {p.wordQuota >= 999999999 ? 'Unlimited' : p.wordQuota.toLocaleString()}</p>
                 
                 <ul class="space-y-3 text-sm text-slate-300 mb-8">

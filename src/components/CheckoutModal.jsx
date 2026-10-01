@@ -104,7 +104,20 @@ export default function CheckoutModal({ isOpen, onClose, plan, amount }) {
 
         <div className="p-6">
           <h3 className="text-xl font-bold text-white mb-1">Upgrade to {plan.toUpperCase()}</h3>
-          <p className="text-slate-400 text-sm mb-6">Complete your payment of ₹{amount} to activate plan.</p>
+          <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-6 mt-3 text-sm">
+            <div className="flex justify-between text-slate-300 mb-2">
+              <span>Plan Price</span>
+              <span>₹{amount}</span>
+            </div>
+            <div className="flex justify-between text-slate-400 mb-3 text-xs">
+              <span>Platform Fee (2%)</span>
+              <span>₹{Math.ceil(amount * 0.02)}</span>
+            </div>
+            <div className="flex justify-between text-white font-bold border-t border-slate-800 pt-3">
+              <span>Total to Pay</span>
+              <span>₹{amount + Math.ceil(amount * 0.02)}</span>
+            </div>
+          </div>
 
           {successKey ? (
             <div className="bg-emerald-900/30 border border-emerald-500/50 p-4 rounded-xl text-center space-y-3">
@@ -137,7 +150,7 @@ export default function CheckoutModal({ isOpen, onClose, plan, amount }) {
 
               <button type="submit" disabled={loading} className="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-center font-bold text-sm text-white shadow-lg shadow-indigo-600/40 transition mt-4 flex items-center justify-center gap-2">
                 {loading ? <Loader className="w-4 h-4 animate-spin" /> : null}
-                {loading ? 'Processing...' : `Pay ₹${amount}`}
+                {loading ? 'Processing...' : `Pay ₹${amount + Math.ceil(amount * 0.02)}`}
               </button>
             </form>
           )}
