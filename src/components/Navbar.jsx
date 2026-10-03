@@ -29,7 +29,7 @@ export default function Navbar({ onScrollTo }) {
           <button onClick={() => onScrollTo('playground')} class="hover:text-indigo-400 transition">Playground</button>
           <button onClick={() => onScrollTo('register')} class="hover:text-indigo-400 transition">Get API Key</button>
           <button onClick={() => onScrollTo('pricing')} class="hover:text-indigo-400 transition">Pricing</button>
-          <button onClick={() => onScrollTo('docs')} class="hover:text-indigo-400 transition">Docs</button>
+          <a href="/blog" class="hover:text-indigo-400 transition">Docs & Blog</a>
         </div>
 
         <div class="flex items-center gap-3">
@@ -56,7 +56,7 @@ export default function Navbar({ onScrollTo }) {
           <button onClick={() => handleScroll('playground')} class="text-left font-medium text-slate-300 hover:text-indigo-400 p-2">Playground</button>
           <button onClick={() => handleScroll('register')} class="text-left font-medium text-slate-300 hover:text-indigo-400 p-2">Get API Key</button>
           <button onClick={() => handleScroll('pricing')} class="text-left font-medium text-slate-300 hover:text-indigo-400 p-2">Pricing</button>
-          <button onClick={() => handleScroll('docs')} class="text-left font-medium text-slate-300 hover:text-indigo-400 p-2">Docs</button>
+          <a href="/blog" class="text-left font-medium text-slate-300 hover:text-indigo-400 p-2">Docs & Blog</a>
           <button 
             onClick={() => handleScroll('register')} 
             class="w-full py-3 mt-2 rounded-xl bg-indigo-600 text-white font-bold text-sm flex items-center justify-center gap-2"

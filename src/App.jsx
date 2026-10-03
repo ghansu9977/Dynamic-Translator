@@ -9,6 +9,7 @@ import CodeSnippets from './components/CodeSnippets';
 import LegalPolicies from './components/LegalPolicies';
 import Footer from './components/Footer';
 import AdminDashboard from './pages/AdminDashboard';
+import Blog from './pages/Blog';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -23,6 +24,10 @@ export default function App() {
   // Simple routing for Admin Dashboard
   if (window.location.pathname === '/admin') {
     return <AdminDashboard />;
+  }
+  
+  if (window.location.pathname === '/blog') {
+    return <Blog />;
   }
 
   const handleKeyGenerated = (newKey) => {
