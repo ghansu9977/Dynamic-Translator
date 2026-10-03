@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
-import { Languages, Key, Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Languages, Key, Menu, X, LayoutDashboard } from 'lucide-react';
 
 export default function Navbar({ onScrollTo }) {
+  const [hasKey, setHasKey] = useState(false);
+  
+  useEffect(() => {
+    if (localStorage.getItem("dt_user_api_key")) {
+      setHasKey(true);
+    }
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleScroll = (id) => {
@@ -33,12 +40,21 @@ export default function Navbar({ onScrollTo }) {
         </div>
 
         <div class="flex items-center gap-3">
-          <button 
-            onClick={() => onScrollTo('register')} 
-            class="hidden md:flex px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/30 items-center gap-2"
-          >
-            <Key class="w-4 h-4" /> Get Free Key
-          </button>
+          {hasKey ? (
+            <a 
+              href="/dashboard" 
+              class="hidden md:flex px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/30 items-center gap-2"
+            >
+              <LayoutDashboard class="w-4 h-4" /> Go to Dashboard
+            </a>
+          ) : (
+            <button 
+              onClick={() => onScrollTo('register')} 
+              class="hidden md:flex px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/30 items-center gap-2"
+            >
+              <Key class="w-4 h-4" /> Get Free Key
+            </button>
+          )}
           
           {/* Mobile Menu Toggle */}
           <button 

@@ -10,6 +10,7 @@ import LegalPolicies from './components/LegalPolicies';
 import Footer from './components/Footer';
 import AdminDashboard from './pages/AdminDashboard';
 import Blog from './pages/Blog';
+import UserDashboard from './pages/UserDashboard';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -28,6 +29,10 @@ export default function App() {
   
   if (window.location.pathname === '/blog') {
     return <Blog />;
+  }
+
+  if (window.location.pathname === '/dashboard') {
+    return <UserDashboard />;
   }
 
   const handleKeyGenerated = (newKey) => {
