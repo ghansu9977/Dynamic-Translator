@@ -12,7 +12,9 @@ export default function AdminDashboard() {
   const [filterPlan, setFilterPlan] = useState('all');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [activeTab, setActiveTab] = useState('overview'); // 'overview' | 'plans'
+  const [activeTab, setActiveTab] = useState('overview'); // 'overview' | 'plans' | 'blogs'
+  const [blogs, setBlogs] = useState([]);
+  const [currentBlog, setCurrentBlog] = useState({ title: '', slug: '', excerpt: '', content: '', imageUrl: '' });
 
   // Form State
   const [isEditing, setIsEditing] = useState(false);
@@ -51,6 +53,16 @@ export default function AdminDashboard() {
       } else {
         throw new Error(plansData.error || 'Invalid Admin Key');
       }
+      
+      // Fetch Blogs
+      try {
+        const blogsRes = await fetch(`${BASE_URL}/api/v1/blogs`);
+        if (blogsRes.ok) {
+           const blogsData = await blogsRes.json();
+           setBlogs(blogsData.data || []);
+        }
+      } catch(e) { console.error('Failed to fetch blogs', e); }
+
     } catch (err) {
       setError(err.message);
       setIsAuthenticated(false);
@@ -127,6 +139,31 @@ export default function AdminDashboard() {
     }
   };
 
+  const handleSaveBlog = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      // Just a simple create blog flow (no auth needed for now since the backend route is open in this example, but normally would have auth)
+      const res = await fetch(`${BASE_URL}/api/v1/blogs`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(currentBlog)
+      });
+      
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to save blog');
+      
+      fetchPlans(); // re-fetch to get updated blogs
+      setCurrentBlog({ title: '', slug: '', excerpt: '', content: '', imageUrl: '' });
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleEdit = (plan) => {
     setCurrentPlan({
       ...plan,
@@ -184,6 +221,12 @@ export default function AdminDashboard() {
             className={`px-6 py-3 font-bold text-sm uppercase tracking-wider border-b-2 transition ${activeTab === 'plans' ? 'border-indigo-500 text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-300'}`}
           >
             Manage Plans
+          </button>
+          <button 
+            onClick={() => setActiveTab('blogs')}
+            className={`px-6 py-3 font-bold text-sm uppercase tracking-wider border-b-2 transition ${activeTab === 'blogs' ? 'border-indigo-500 text-indigo-400' : 'border-transparent text-slate-500 hover:text-slate-300'}`}
+          >
+            Manage Blogs
           </button>
         </div>
 
@@ -344,7 +387,7 @@ export default function AdminDashboard() {
                       <Check className="w-4 h-4" /> {isEditing ? 'Update Plan' : 'Save Plan'}
                     </button>
                     {isEditing && (
-                      <button type="button" onClick={() => { setIsEditing(false); setCurrentPlan({ planId: '', name: '', price: 0, wordQuota: 500, features: '', tag: '', isActive: true }) }} className="bg-slate-800 hover:bg-slate-700 text-white font-bold px-6 rounded-xl transition">
+                       <button type="button" onClick={() => { setIsEditing(false); setCurrentPlan({ planId: '', name: '', price: 0, wordQuota: 500, features: '', tag: '', isActive: true }) }} className="bg-slate-800 hover:bg-slate-700 text-white font-bold px-6 rounded-xl transition">
                         Cancel
                       </button>
                     )}
@@ -380,6 +423,67 @@ export default function AdminDashboard() {
                       <button onClick={() => handleDelete(plan._id)} className="p-3 bg-slate-950 border border-slate-800 hover:border-red-500 hover:text-red-400 text-slate-400 rounded-xl transition shadow-sm">
                         <Trash2 className="w-4 h-4" />
                       </button>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'blogs' && (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            {/* Blog Form */}
+            <div className="lg:col-span-1">
+              <div className="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
+                <h3 className="text-xl font-bold text-white mb-6">Create New Blog</h3>
+                <form onSubmit={handleSaveBlog} className="space-y-5">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Title</label>
+                    <input type="text" value={currentBlog.title} onChange={e => setCurrentBlog({...currentBlog, title: e.target.value})} required className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition" placeholder="Enter title" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Slug</label>
+                    <input type="text" value={currentBlog.slug} onChange={e => setCurrentBlog({...currentBlog, slug: e.target.value})} required className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition" placeholder="e.g. how-to-translate-app" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Image URL (Optional)</label>
+                    <input type="text" value={currentBlog.imageUrl} onChange={e => setCurrentBlog({...currentBlog, imageUrl: e.target.value})} className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition" placeholder="https://example.com/image.jpg" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Excerpt (Short Summary)</label>
+                    <textarea value={currentBlog.excerpt} onChange={e => setCurrentBlog({...currentBlog, excerpt: e.target.value})} rows="2" required className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition leading-relaxed" placeholder="Short description for SEO"></textarea>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Content (HTML allowed)</label>
+                    <textarea value={currentBlog.content} onChange={e => setCurrentBlog({...currentBlog, content: e.target.value})} rows="6" required className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition leading-relaxed" placeholder="Full blog content..."></textarea>
+                  </div>
+                  <button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl flex justify-center items-center gap-2 transition shadow-lg shadow-indigo-600/20">
+                    <Plus className="w-4 h-4" /> Publish Blog
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            {/* Blogs List */}
+            <div className="lg:col-span-2 space-y-4">
+              {blogs.length === 0 ? (
+                <div className="flex justify-center py-12">
+                  <p className="text-slate-400 font-semibold">No blogs found. Create one!</p>
+                </div>
+              ) : (
+                blogs.map(blog => (
+                  <div key={blog._id} className="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-lg hover:border-slate-700 transition flex gap-4">
+                    {blog.imageUrl && (
+                      <div className="w-24 h-24 flex-shrink-0">
+                        <img src={blog.imageUrl} alt={blog.title} className="w-full h-full object-cover rounded-xl border border-slate-800" />
+                      </div>
+                    )}
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">{blog.title}</h4>
+                      <p className="text-sm text-indigo-400 mb-2">{blog.slug}</p>
+                      <p className="text-slate-400 text-sm mb-2 line-clamp-2">{blog.excerpt}</p>
+                      <p className="text-xs text-slate-500">Published on {new Date(blog.createdAt).toLocaleDateString()}</p>
                     </div>
                   </div>
                 ))

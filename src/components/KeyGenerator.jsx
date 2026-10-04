@@ -4,24 +4,29 @@ import { Key, Check, Copy, Loader2 } from 'lucide-react';
 export default function KeyGenerator({ apiKey, onKeyGenerated }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   const [generatedKey, setGeneratedKey] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const handleRegister = async (e) => {
+  const handleAuth = async (e) => {
     e.preventDefault();
-    if (!name || !email) {
-      alert("Please enter both name and email.");
+    if (!email || !password || (!isLogin && !name)) {
+      alert("Please fill in all required fields.");
       return;
     }
 
     setLoading(true);
 
     try {
-      const response = await fetch('https://translater-free-api.onrender.com/api/v1/auth/register', {
+      const endpoint = isLogin ? '/login' : '/register';
+      const bodyData = isLogin ? { email, password } : { name, email, password, plan: 'free' };
+
+      const response = await fetch(`https://translater-free-api.onrender.com/api/v1/auth${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, plan: 'free' })
+        body: JSON.stringify(bodyData)
       });
 
       const data = await response.json();
@@ -30,20 +35,32 @@ export default function KeyGenerator({ apiKey, onKeyGenerated }) {
         const key = data.user.apiKey || data.user.existingApiKey;
         setGeneratedKey(key);
         onKeyGenerated(key);
+        // Redirect directly to the dashboard
+        window.location.href = '/dashboard';
       } else {
-        alert(data.error || "Registration failed.");
+        alert(data.error || "Authentication failed.");
       }
     } catch (err) {
       alert("Server error: " + err.message);
-    } finally {
-      setLoading(false);
     }
   };
 
-  const copyKey = () => {
-    navigator.clipboard.writeText(generatedKey);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleForgotPassword = async () => {
+    if (!email) {
+      alert("Please enter your email first to reset your password.");
+      return;
+    }
+    try {
+      const response = await fetch('https://translater-free-api.onrender.com/api/v1/auth/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await response.json();
+      alert(data.message || "Reset link sent.");
+    } catch (err) {
+      alert("Error sending request.");
+    }
   };
 
   return (
@@ -58,11 +75,11 @@ export default function KeyGenerator({ apiKey, onKeyGenerated }) {
             </span>
 
             <h2 class="text-3xl font-extrabold text-white mt-4 mb-4">
-              Get Your Free API Key in 5 Seconds
+              Sign In to Your Dashboard
             </h2>
 
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Start integrating immediately with <strong>100 free words/month</strong>. No credit card required. Instant activation.
+              Create an account or login to access your API keys, analytics, and <strong>100 free words/month</strong>.
             </p>
 
             <ul class="space-y-3 text-sm text-slate-300">
@@ -77,31 +94,31 @@ export default function KeyGenerator({ apiKey, onKeyGenerated }) {
               <div class="w-16 h-16 bg-emerald-900/50 rounded-full flex items-center justify-center mb-2">
                 <Check class="w-8 h-8 text-emerald-400" />
               </div>
-              <h3 class="text-xl font-bold text-white">You already have an active API Key!</h3>
-              <p class="text-slate-400 text-sm">Please use your existing key to test the translation API.</p>
+              <h3 class="text-xl font-bold text-white">You are logged in!</h3>
+              <p class="text-slate-400 text-sm">You already have an active session.</p>
               
-              <div class="mt-4 p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 w-full">
-                <div class="text-xs font-bold text-emerald-400 text-left mb-2">Your API Key:</div>
-                <input 
-                  type="text" 
-                  readOnly 
-                  value={apiKey}
-                  class="bg-transparent font-mono text-sm text-indigo-300 w-full focus:outline-none"
-                />
-              </div>
+              <button 
+                onClick={() => window.location.href = '/dashboard'}
+                class="w-full py-3.5 mt-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 font-bold text-white transition shadow-lg"
+              >
+                Go to Dashboard →
+              </button>
             </div>
           ) : (
-          <form onSubmit={handleRegister} class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 space-y-4">
-            <div>
-              <label class="block text-xs font-semibold text-slate-400 mb-1">Your Name</label>
-              <input 
-                type="text"
-                placeholder="e.g. Rahul Sharma"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-200 text-sm focus:outline-none focus:border-indigo-500"
-              />
-            </div>
+          <form onSubmit={handleAuth} class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 space-y-4">
+            
+            {!isLogin && (
+              <div>
+                <label class="block text-xs font-semibold text-slate-400 mb-1">Your Name</label>
+                <input 
+                  type="text"
+                  placeholder="e.g. Rahul Sharma"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-200 text-sm focus:outline-none focus:border-indigo-500"
+                />
+              </div>
+            )}
 
             <div>
               <label class="block text-xs font-semibold text-slate-400 mb-1">Email Address</label>
@@ -114,40 +131,43 @@ export default function KeyGenerator({ apiKey, onKeyGenerated }) {
               />
             </div>
 
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="block text-xs font-semibold text-slate-400">Password</label>
+                {isLogin && (
+                  <button type="button" onClick={handleForgotPassword} class="text-xs text-indigo-400 hover:text-indigo-300">
+                    Forgot Password?
+                  </button>
+                )}
+              </div>
+              <input 
+                type="password"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-200 text-sm focus:outline-none focus:border-indigo-500"
+              />
+            </div>
+
             <button 
               type="submit"
               disabled={loading}
-              class="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 font-bold text-white transition shadow-lg flex items-center justify-center gap-2 disabled:opacity-50"
+              class="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 font-bold text-white transition shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 mt-4"
             >
-              {loading ? <Loader2 class="w-4 h-4 animate-spin" /> : <Key class="w-4 h-4" />}
-              {loading ? "Generating Key..." : "Generate Free Key"}
+              {loading ? <Loader2 class="w-4 h-4 animate-spin" /> : null}
+              {loading ? "Authenticating..." : (isLogin ? "Sign In" : "Create Account")}
             </button>
-
-            {generatedKey && (
-              <div class="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 space-y-2">
-                <div class="text-xs font-bold text-emerald-400 flex justify-between items-center">
-                  <span>🎉 Your API Key Created!</span>
-                  <span class="bg-emerald-900 text-emerald-200 text-[10px] px-2 py-0.5 rounded">100 Words</span>
-                </div>
-
-                <div class="flex items-center gap-2 bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-                  <input 
-                    type="text" 
-                    readOnly 
-                    value={generatedKey}
-                    class="bg-transparent font-mono text-xs text-indigo-300 w-full focus:outline-none"
-                  />
-                  <button 
-                    type="button"
-                    onClick={copyKey}
-                    class="text-xs bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded font-semibold transition flex items-center gap-1"
-                  >
-                    {copied ? <Check class="w-3 h-3" /> : <Copy class="w-3 h-3" />}
-                    {copied ? "Copied" : "Copy"}
-                  </button>
-                </div>
-              </div>
-            )}
+            
+            <div class="text-center text-xs text-slate-400 pt-2">
+              {isLogin ? "Don't have an account? " : "Already have an account? "}
+              <button 
+                type="button" 
+                onClick={() => setIsLogin(!isLogin)}
+                class="text-indigo-400 hover:text-indigo-300 font-semibold transition"
+              >
+                {isLogin ? "Sign up here" : "Sign in here"}
+              </button>
+            </div>
           </form>
           )}
         </div>

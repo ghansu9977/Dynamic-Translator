@@ -7,7 +7,7 @@ export default function Footer() {
         <div>© 2026 Dynamic Translator API. All rights reserved.</div>
         <div class="flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span>API Server: https://translater-free-api.onrender.com (Operational)</span>
+          <span>All Systems Operational</span>
         </div>
       </div>
     </footer>

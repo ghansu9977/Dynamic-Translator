@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function Blog() {
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://translater-free-api.onrender.com/api/v1/blogs')
+      .then(res => res.json())
+      .then(data => {
+        if(data.success) {
+          setBlogs(data.data);
+        }
+      })
+      .catch(err => console.error('Error fetching blogs:', err))
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col w-full">
       <Navbar onScrollTo={(id) => {
@@ -18,37 +33,34 @@ export default function Blog() {
         </h1>
         <p className="text-slate-400 mb-12 text-lg">Learn how to localize your apps dynamically and improve your international reach.</p>
         
-        <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 mb-8 hover:border-indigo-500/50 transition-all duration-300 shadow-xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">How to Add Multi-Language Support to Your Flutter App</h2>
-          <p className="text-indigo-400 mb-6 text-sm font-semibold tracking-wide uppercase">October 3, 2026 • 5 min read</p>
-          <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-            In today's global market, translating your mobile application is no longer optional—it's a necessity. 
-            Flutter developers often struggle with managing localizations manually. The Dynamic Translator API 
-            solves this by providing real-time translations for JSON and YAML files directly from your CI/CD pipeline or app runtime.
-          </p>
-          <h3 className="text-xl font-semibold text-white mt-8 mb-4">Why choose an API over static files?</h3>
-          <ul className="list-disc list-inside text-slate-300 space-y-3 mb-8 text-lg">
-            <li>Instant updates without App Store or Play Store releases</li>
-            <li>Cost-effective compared to manual translation agencies</li>
-            <li>Supports over 100+ languages including Hindi, Marathi, Tagalog, and more</li>
-          </ul>
-          <a href="/#playground" className="text-white bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2 transition-colors">
-            Try the API Playground <span>→</span>
-          </a>
-        </article>
-
-        <article className="bg-slate-900 border border-slate-800 rounded-2xl p-8 mb-8 hover:border-indigo-500/50 transition-all duration-300 shadow-xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Best Alternatives to Google Translate API in 2026</h2>
-          <p className="text-indigo-400 mb-6 text-sm font-semibold tracking-wide uppercase">September 28, 2026 • 4 min read</p>
-          <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-            If you are building a commercial SaaS, relying on free translation wrappers is risky. You need a stable, scalable 
-            commercial translation API. Dynamic Translator offers a pay-as-you-go model that is cheaper than major cloud providers 
-            while offering developer-friendly tools like instant API keys and a dashboard.
-          </p>
-          <a href="/#pricing" className="text-white border border-slate-700 hover:border-indigo-500 hover:text-indigo-400 px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2 transition-all">
-            View Pricing <span>→</span>
-          </a>
-        </article>
+        
+        {loading ? (
+          <div className="text-center text-slate-400 py-10 animate-pulse">Loading amazing articles...</div>
+        ) : (
+          blogs.length > 0 ? (
+            blogs.map(blog => (
+              <article key={blog._id} className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden mb-8 hover:border-indigo-500/50 transition-all duration-300 shadow-xl">
+                {blog.imageUrl && (
+                  <div className="w-full h-64 md:h-80 overflow-hidden">
+                    <img src={blog.imageUrl} alt={blog.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  </div>
+                )}
+                <div className="p-8">
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{blog.title}</h2>
+                  <p className="text-indigo-400 mb-6 text-sm font-semibold tracking-wide uppercase">
+                    {new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • {blog.readTime || '5 min read'}
+                  </p>
+                  <div 
+                    className="text-slate-300 leading-relaxed mb-6 text-lg prose prose-invert max-w-none prose-a:text-indigo-400 hover:prose-a:text-indigo-300"
+                    dangerouslySetInnerHTML={{ __html: blog.content }} 
+                  />
+                </div>
+              </article>
+            ))
+          ) : (
+            <div className="text-center text-slate-400 py-10">More articles coming soon!</div>
+          )
+        )}
       </main>
       <Footer />
     </div>

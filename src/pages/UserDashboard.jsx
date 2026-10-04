@@ -16,9 +16,14 @@ export default function UserDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const [authName, setAuthName] = useState("");
+  const [authEmail, setAuthEmail] = useState("");
+  const [authPassword, setAuthPassword] = useState("");
+  const [isLogin, setIsLogin] = useState(true);
+  const [authLoading, setAuthLoading] = useState(false);
+
   useEffect(() => {
     if (!apiKey) {
-      setError("No API Key found. Please generate a key first.");
       setLoading(false);
       return;
     }
@@ -71,10 +76,158 @@ export default function UserDashboard() {
     setIsSidebarOpen(false); // Close sidebar on mobile after clicking
   };
 
+  const handleAuth = async (e) => {
+    e.preventDefault();
+    if (!authEmail || !authPassword || (!isLogin && !authName)) return;
+    
+    setAuthLoading(true);
+    try {
+      const endpoint = isLogin ? '/login' : '/register';
+      const bodyData = isLogin ? { email: authEmail, password: authPassword } : { name: authName, email: authEmail, password: authPassword, plan: 'free' };
+
+      const response = await fetch(`https://translater-free-api.onrender.com/api/v1/auth${endpoint}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(bodyData)
+      });
+      const data = await response.json();
+      if (data.success) {
+        const key = data.user.apiKey || data.user.existingApiKey;
+        if(key) {
+           localStorage.setItem("dt_user_api_key", key);
+           setApiKey(key);
+           window.location.reload(); // Reload to fetch fresh dashboard data
+        } else {
+           alert("Authentication successful but no key returned.");
+        }
+      } else {
+        alert(data.error || "Authentication failed");
+      }
+    } catch (err) {
+      alert("Network error. Please try again.");
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    if (!authEmail) {
+      alert("Please enter your email first to reset your password.");
+      return;
+    }
+    try {
+      const response = await fetch('https://translater-free-api.onrender.com/api/v1/auth/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: authEmail })
+      });
+      const data = await response.json();
+      alert(data.message || "Reset link sent.");
+    } catch (err) {
+      alert("Error sending request.");
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex h-screen bg-[#020617] items-center justify-center">
         <Loader2 className="w-10 h-10 text-indigo-500 animate-spin" />
+      </div>
+    );
+  }
+
+  if (!apiKey) {
+    return (
+      <div className="flex h-screen bg-[#020617] items-center justify-center relative overflow-hidden font-sans">
+        {/* Background Effects */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div className="z-10 w-full max-w-md p-8 sm:p-10 glass-card bg-slate-900/80 border border-slate-800 rounded-3xl shadow-2xl backdrop-blur-xl">
+          <div className="flex justify-center mb-6">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white shadow-[0_0_20px_rgba(99,102,241,0.4)]">
+              <Key className="w-6 h-6" />
+            </div>
+          </div>
+          
+          <h2 className="text-2xl font-bold text-white text-center mb-2">{isLogin ? "Welcome Back" : "Create Account"}</h2>
+          <p className="text-slate-400 text-center text-sm mb-8">{isLogin ? "Sign in to access your API dashboard and analytics." : "Register to get your API keys and analytics."}</p>
+          
+          <form onSubmit={handleAuth} className="space-y-5">
+            {!isLogin && (
+              <div>
+                <label className="block text-xs font-semibold text-slate-400 mb-1.5 uppercase tracking-wide">Full Name</label>
+                <input 
+                  type="text"
+                  required
+                  placeholder="John Doe"
+                  value={authName}
+                  onChange={(e) => setAuthName(e.target.value)}
+                  className="w-full bg-[#020617] border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors shadow-inner"
+                />
+              </div>
+            )}
+            
+            <div>
+              <label className="block text-xs font-semibold text-slate-400 mb-1.5 uppercase tracking-wide">Email Address</label>
+              <input 
+                type="email"
+                required
+                placeholder="john@example.com"
+                value={authEmail}
+                onChange={(e) => setAuthEmail(e.target.value)}
+                className="w-full bg-[#020617] border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors shadow-inner"
+              />
+            </div>
+
+            <div>
+              <div className="flex justify-between items-center mb-1.5">
+                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wide">Password</label>
+                {isLogin && (
+                  <button type="button" onClick={handleForgotPassword} className="text-xs text-indigo-400 hover:text-indigo-300">
+                    Forgot Password?
+                  </button>
+                )}
+              </div>
+              <input 
+                type="password"
+                required
+                placeholder="••••••••"
+                value={authPassword}
+                onChange={(e) => setAuthPassword(e.target.value)}
+                className="w-full bg-[#020617] border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors shadow-inner"
+              />
+            </div>
+            
+            <button 
+              type="submit"
+              disabled={authLoading}
+              className="w-full py-3.5 mt-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 font-bold text-white transition shadow-[0_0_15px_rgba(99,102,241,0.4)] flex items-center justify-center gap-2 disabled:opacity-70"
+            >
+              {authLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : (isLogin ? "Sign In" : "Sign Up")}
+            </button>
+          </form>
+
+          <div className="text-center text-xs text-slate-400 pt-6">
+            {isLogin ? "Don't have an account? " : "Already have an account? "}
+            <button 
+              type="button" 
+              onClick={() => setIsLogin(!isLogin)}
+              className="text-indigo-400 hover:text-indigo-300 font-semibold transition"
+            >
+              {isLogin ? "Sign up here" : "Sign in here"}
+            </button>
+          </div>
+
+          <p className="text-center text-xs text-slate-500 mt-6">
+            By signing in, you agree to our <a href="#" className="text-indigo-400 hover:underline">Terms of Service</a>.
+          </p>
+          <div className="mt-4 text-center">
+             <a href="/" className="text-sm text-slate-400 hover:text-white transition inline-flex items-center gap-1">
+               ← Back to Home
+             </a>
+          </div>
+        </div>
       </div>
     );
   }

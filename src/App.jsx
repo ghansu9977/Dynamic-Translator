@@ -3,11 +3,11 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Playground from './components/Playground';
 import KeyGenerator from './components/KeyGenerator';
-import BalanceChecker from './components/BalanceChecker';
 import Pricing from './components/Pricing';
 import CodeSnippets from './components/CodeSnippets';
 import LegalPolicies from './components/LegalPolicies';
 import Footer from './components/Footer';
+import SEOContent from './components/SEOContent';
 import AdminDashboard from './pages/AdminDashboard';
 import Blog from './pages/Blog';
 import UserDashboard from './pages/UserDashboard';
@@ -79,9 +79,6 @@ export default function App() {
           <KeyGenerator apiKey={apiKey} onKeyGenerated={handleKeyGenerated} />
         </motion.div>
         
-        <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={fadeInUp}>
-          <BalanceChecker apiKey={apiKey} setApiKey={setApiKey} />
-        </motion.div>
 
         <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={fadeInUp}>
           <Pricing onScrollTo={scrollToSection} />
@@ -94,6 +91,7 @@ export default function App() {
         )}
       </main>
 
+      <SEOContent />
       <LegalPolicies />
       <Footer />
     </div>

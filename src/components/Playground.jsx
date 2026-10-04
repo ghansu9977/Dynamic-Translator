@@ -21,10 +21,10 @@ export default function Playground({ apiKey, setApiKey }) {
     const startTime = Date.now();
 
     try {
-      const headers = { 'Content-Type': 'application/json' };
-      if (apiKey) {
-        headers['x-api-key'] = apiKey;
-      }
+      const headers = { 
+        'Content-Type': 'application/json',
+        'x-api-key': 'dt_live_demo_test_key_12345' // Default test key for the playground
+      };
 
       const response = await fetch('https://translater-free-api.onrender.com/api/v1/translate', {
         method: 'POST',
@@ -76,39 +76,26 @@ export default function Playground({ apiKey, setApiKey }) {
               class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition text-sm font-sans"
             />
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-semibold text-slate-400 mb-1">Target Language:</label>
-                <select 
-                  value={targetLang}
-                  onChange={(e) => setTargetLang(e.target.value)}
-                  class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-slate-200 text-sm focus:outline-none focus:border-indigo-500"
-                >
-                  <option value="hi">Hindi (हिन्दी)</option>
-                  <option value="es">Spanish (Español)</option>
-                  <option value="fr">French (Français)</option>
-                  <option value="de">German (Deutsch)</option>
-                  <option value="mr">Marathi (मराठी)</option>
-                  <option value="gu">Gujarati (ગુજરાતી)</option>
-                  <option value="ta">Tamil (தமிழ்)</option>
-                  <option value="te">Telugu (తెలుగు)</option>
-                  <option value="bn">Bengali (বাংলা)</option>
-                  <option value="ar">Arabic (العربية)</option>
-                  <option value="ja">Japanese (日本語)</option>
-                  <option value="ru">Russian (Русский)</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-xs font-semibold text-slate-400 mb-1">API Key:</label>
-                <input 
-                  type="text"
-                  placeholder="Optional: Paste your key"
-                  value={apiKey}
-                  onChange={(e) => setApiKey(e.target.value)}
-                  class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-slate-200 text-sm focus:outline-none focus:border-indigo-500 font-mono"
-                />
-              </div>
+            <div class="w-full">
+              <label class="block text-xs font-semibold text-slate-400 mb-1">Target Language:</label>
+              <select 
+                value={targetLang}
+                onChange={(e) => setTargetLang(e.target.value)}
+                class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-slate-200 text-sm focus:outline-none focus:border-indigo-500"
+              >
+                <option value="hi">Hindi (हिन्दी)</option>
+                <option value="es">Spanish (Español)</option>
+                <option value="fr">French (Français)</option>
+                <option value="de">German (Deutsch)</option>
+                <option value="mr">Marathi (मराठी)</option>
+                <option value="gu">Gujarati (ગુજરાતી)</option>
+                <option value="ta">Tamil (தமிழ்)</option>
+                <option value="te">Telugu (తెలుగు)</option>
+                <option value="bn">Bengali (বাংলা)</option>
+                <option value="ar">Arabic (العربية)</option>
+                <option value="ja">Japanese (日本語)</option>
+                <option value="ru">Russian (Русский)</option>
+              </select>
             </div>
 
             <button 
