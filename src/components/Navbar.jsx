@@ -20,8 +20,8 @@ export default function Navbar({ onScrollTo }) {
     <nav class="sticky top-0 z-50 glass-card border-b border-slate-800 px-6 py-4">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-            <Languages class="w-5 h-5" />
+          <div class="w-10 h-10 flex items-center justify-center rounded-xl overflow-hidden shadow-lg border border-slate-700">
+            <img src="/logo.jpg" alt="Logo" class="w-full h-full object-cover" />
           </div>
           <span class="text-base sm:text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 hidden sm:block">
             Dynamic Translator API
