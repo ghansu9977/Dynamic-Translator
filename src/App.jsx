@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import SEOContent from './components/SEOContent';
 import AdminDashboard from './pages/AdminDashboard';
 import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 import UserDashboard from './pages/UserDashboard';
 import { motion } from 'framer-motion';
 
@@ -27,8 +28,13 @@ export default function App() {
     return <AdminDashboard />;
   }
   
-  if (window.location.pathname === '/blog') {
+  if (window.location.pathname === '/blog' || window.location.pathname === '/blog/') {
     return <Blog />;
+  }
+
+  // Handle dynamic individual blog pages (e.g., /blog/my-first-post)
+  if (window.location.pathname.startsWith('/blog/')) {
+    return <BlogDetail />;
   }
 
   if (window.location.pathname === '/dashboard') {

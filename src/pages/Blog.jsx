@@ -38,25 +38,43 @@ export default function Blog() {
           <div className="text-center text-slate-400 py-10 animate-pulse">Loading amazing articles...</div>
         ) : (
           blogs.length > 0 ? (
-            blogs.map(blog => (
-              <article key={blog._id} className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden mb-8 hover:border-indigo-500/50 transition-all duration-300 shadow-xl">
-                {blog.imageUrl && (
-                  <div className="w-full h-64 md:h-80 overflow-hidden">
-                    <img src={blog.imageUrl} alt={blog.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {blogs.map(blog => (
+                <article key={blog._id} className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-all duration-300 shadow-xl flex flex-col">
+                  {blog.imageUrl && (
+                    <a href={`/blog/${blog.slug}`} className="block w-full h-48 overflow-hidden">
+                      <img src={blog.imageUrl} alt={blog.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    </a>
+                  )}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex justify-between items-center text-indigo-400 mb-3 text-xs font-semibold tracking-wide uppercase">
+                      <span>{new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                      <span className="bg-indigo-500/10 px-2 py-1 rounded">{blog.readTime || '5 min read'}</span>
+                    </div>
+                    
+                    <a href={`/blog/${blog.slug}`} className="block group">
+                      <h2 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors line-clamp-2">
+                        {blog.title}
+                      </h2>
+                    </a>
+                    
+                    <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
+                      {blog.excerpt || 'Read this amazing article on our blog to learn more about dynamic localization and APIs...'}
+                    </p>
+                    
+                    <div className="mt-auto pt-4 border-t border-slate-800/50">
+                      <a 
+                        href={`/blog/${blog.slug}`}
+                        className="inline-flex items-center text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors group"
+                      >
+                        Read Full Article 
+                        <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                      </a>
+                    </div>
                   </div>
-                )}
-                <div className="p-8">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{blog.title}</h2>
-                  <p className="text-indigo-400 mb-6 text-sm font-semibold tracking-wide uppercase">
-                    {new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • {blog.readTime || '5 min read'}
-                  </p>
-                  <div 
-                    className="text-slate-300 leading-relaxed mb-6 text-lg prose prose-invert max-w-none prose-a:text-indigo-400 hover:prose-a:text-indigo-300"
-                    dangerouslySetInnerHTML={{ __html: blog.content }} 
-                  />
-                </div>
-              </article>
-            ))
+                </article>
+              ))}
+            </div>
           ) : (
             <div className="text-center text-slate-400 py-10">More articles coming soon!</div>
           )
