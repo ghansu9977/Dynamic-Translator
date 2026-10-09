@@ -23,6 +23,15 @@ const fadeInUp = {
 export default function App() {
   const [apiKey, setApiKey] = useState(() => localStorage.getItem("dt_user_api_key") || "");
 
+  // Track pageview in Google Analytics on route load
+  React.useEffect(() => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('config', 'G-KHNBCZ0Q3Q', {
+        page_path: window.location.pathname + window.location.search
+      });
+    }
+  }, []);
+
   // Simple routing for Admin Dashboard
   if (window.location.pathname === '/admin') {
     return <AdminDashboard />;
