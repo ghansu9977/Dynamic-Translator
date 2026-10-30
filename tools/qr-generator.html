@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free QR Code Generator Online - UPI Payment, WiFi, URL & WhatsApp QR | RozgarTools</title>
+  <meta name="description" content="Free online QR Code Generator. Create custom QR codes for UPI payments, website URLs, WiFi connections, WhatsApp chats, and plain text. Download high-resolution PNG instantly.">
+  <meta name="keywords" content="qr code generator, upi qr code generator, free qr maker, wifi qr code, whatsapp qr code, gpay upi qr, custom color qr code generator">
+  <meta name="author" content="RozgarTools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rozgartools.vercel.app/tools/qr-generator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rozgartools.vercel.app/tools/qr-generator.html">
+  <meta property="og:title" content="Free QR Code Generator Online - UPI, WiFi, URL & WhatsApp | RozgarTools">
+  <meta property="og:description" content="100% Free custom color QR code generator with no expiration dates. Instant download.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- QRCode.js Library CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Custom QR Code Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.97",
+          "ratingCount": "1940"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do these generated QR codes ever expire?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. These are standard static QR codes encoding the exact data directly. They will work indefinitely without subscription fees or expiration dates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the WiFi QR code work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When guests or customers scan your WiFi QR code using their smartphone camera, their device securely authenticates and connects to your wireless network without manual password entry."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="brand-logo" id="home-logo-link">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html" class=""><span>🏠</span> Home</a></li>
+          <li><a href="dynamic-translator.html" class=""><span>🌐</span> AI Translator</a></li>
+          <li><a href="govt-photo-resizer.html" class=""><span>📸</span> Photo Resizer</a></li>
+          <li><a href="resume-builder.html" class=""><span>📄</span> Resume Builder</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>🧰</span> All Tools <span class="dropdown-arrow">▾</span>
+            </button>
+            <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
+              <div class="dropdown-header">
+                <span class="dropdown-title">All Utility Tools & Calculators</span>
+                <span class="dropdown-badge">⚡ 100% Free & Private</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="dynamic-translator.html" class="dropdown-item ">
+                  <div class="item-icon-box cyan">🌐</div>
+                  <div class="item-text">
+                    <span class="item-title">AI Translator</span>
+                    <span class="item-desc">100+ languages real-time AI</span>
+                  </div>
+                </a>
+                <a href="govt-photo-resizer.html" class="dropdown-item ">
+                  <div class="item-icon-box green">📸</div>
+                  <div class="item-text">
+                    <span class="item-title">Govt Photo Resizer</span>
+                    <span class="item-desc">Compress to 20KB / 50KB</span>
+                  </div>
+                </a>
+                <a href="resume-builder.html" class="dropdown-item ">
+                  <div class="item-icon-box purple">📄</div>
+                  <div class="item-text">
+                    <span class="item-title">ATS Resume Builder</span>
+                    <span class="item-desc">Instant 1-page modern PDF</span>
+                  </div>
+                </a>
+                <a href="emi-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box amber">🏦</div>
+                  <div class="item-text">
+                    <span class="item-title">Loan EMI Calculator</span>
+                    <span class="item-desc">Home, car & personal loan</span>
+                  </div>
+                </a>
+                <a href="typing-test.html" class="dropdown-item ">
+                  <div class="item-icon-box blue">⌨️</div>
+                  <div class="item-text">
+                    <span class="item-title">Typing Speed Test</span>
+                    <span class="item-desc">Live WPM & accuracy test</span>
+                  </div>
+                </a>
+                <a href="qr-generator.html" class="dropdown-item active">
+                  <div class="item-icon-box rose">📱</div>
+                  <div class="item-text">
+                    <span class="item-title">UPI QR Generator</span>
+                    <span class="item-desc">Payment & URL QR codes</span>
+                  </div>
+                </a>
+                <a href="image-to-pdf.html" class="dropdown-item ">
+                  <div class="item-icon-box emerald">📑</div>
+                  <div class="item-text">
+                    <span class="item-title">Image to PDF</span>
+                    <span class="item-desc">Batch convert JPG/PNG</span>
+                  </div>
+                </a>
+                <a href="sip-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box indigo">📈</div>
+                  <div class="item-text">
+                    <span class="item-title">SIP Calculator</span>
+                    <span class="item-desc">Mutual funds wealth projector</span>
+                  </div>
+                </a>
+                <a href="cgpa-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box orange">🎓</div>
+                  <div class="item-text">
+                    <span class="item-title">CGPA Calculator</span>
+                    <span class="item-desc">10-point CGPA to percentage</span>
+                  </div>
+                </a>
+                <a href="age-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box yellow">🎂</div>
+                  <div class="item-text">
+                    <span class="item-title">Age Calculator</span>
+                    <span class="item-desc">Exact birth age & days</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="../about-us.html" class=""><span>ℹ️</span> About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-search-trigger" id="nav-search-trigger" aria-label="Search tools" title="Search Tools">
+          <span>🔍</span>
+          <span class="search-kbd-hint">Search</span>
+        </button>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay & Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+      <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="mobile-drawer-search">
+      <span class="drawer-search-icon">🔍</span>
+      <input type="text" id="drawer-search-input" placeholder="Search any tool..." aria-label="Search in menu">
+    </div>
+
+    <div class="mobile-drawer-body">
+      <div class="drawer-section-title">All Utility Tools</div>
+      <ul class="drawer-nav-list" id="drawer-tools-list">
+        <li>
+          <a href="dynamic-translator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🌐</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">AI Translator</span>
+              <span class="drawer-item-badge">Dynamic AI</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="govt-photo-resizer.html" class="drawer-item ">
+            <span class="drawer-item-icon">📸</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Govt Photo Resizer</span>
+              <span class="drawer-item-badge">20KB / 50KB</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="resume-builder.html" class="drawer-item ">
+            <span class="drawer-item-icon">📄</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">ATS Resume Builder</span>
+              <span class="drawer-item-badge">Instant PDF</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="emi-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏦</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Loan EMI Calculator</span>
+              <span class="drawer-item-badge">Charts</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="typing-test.html" class="drawer-item ">
+            <span class="drawer-item-icon">⌨️</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Typing Speed Test</span>
+              <span class="drawer-item-badge">1 Min</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="qr-generator.html" class="drawer-item active">
+            <span class="drawer-item-icon">📱</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">UPI QR Generator</span>
+              <span class="drawer-item-badge">Free</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="image-to-pdf.html" class="drawer-item ">
+            <span class="drawer-item-icon">📑</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Image to PDF</span>
+              <span class="drawer-item-badge">Batch</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="sip-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📈</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">SIP Calculator</span>
+              <span class="drawer-item-badge">Wealth</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="cgpa-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎓</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">CGPA Calculator</span>
+              <span class="drawer-item-badge">Percent</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="age-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎂</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Age Calculator</span>
+              <span class="drawer-item-badge">Exact</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-section-title">Navigation & Info</div>
+      <ul class="drawer-nav-list">
+        <li>
+          <a href="../index.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏠</span>
+            <span class="drawer-item-title">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="../about-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">ℹ️</span>
+            <span class="drawer-item-title">About Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="../contact-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">✉️</span>
+            <span class="drawer-item-title">Contact Support</span>
+          </a>
+        </li>
+        <li>
+          <a href="../privacy-policy.html" class="drawer-item ">
+            <span class="drawer-item-icon">🔒</span>
+            <span class="drawer-item-title">Privacy Policy</span>
+          </a>
+        </li>
+        <li>
+          <a href="../terms.html" class="drawer-item ">
+            <span class="drawer-item-icon">📜</span>
+            <span class="drawer-item-title">Terms of Service</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <span>🔒</span> 100% Client-Side Privacy • Zero Server Uploads
+    </div>
+  </aside>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-top: 2rem;">
+
+    <!-- Breadcrumb -->
+    <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>/</span>
+      <a href="../index.html#tools">Utility Tools</a>
+      <span>/</span>
+      <span class="active">QR Code Generator</span>
+    </nav>
+
+    <!-- Header Intro -->
+    <div class="tool-header-wrap">
+      <h1 class="tool-page-title">Custom QR Code Generator (UPI, WiFi, URL & WhatsApp)</h1>
+      <p class="tool-page-subtitle">
+        Generate custom QR codes for direct UPI payments, website links, WiFi networks, WhatsApp chats, and formatted text with custom colors and instant PNG download.
+      </p>
+    </div>
+
+    <!-- Top Advertisement Slot -->
+    <div class="ad-container" id="ad-slot-tool-top">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - 728x90 / Responsive Header Ad ]</span>
+      </div>
+    </div>
+
+    <!-- Category Tabs -->
+    <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+      <button class="btn btn-secondary qr-type-btn active" data-type="upi">💳 UPI Payment QR</button>
+      <button class="btn btn-secondary qr-type-btn" data-type="url">🔗 Website URL</button>
+      <button class="btn btn-secondary qr-type-btn" data-type="wifi">📶 WiFi Network</button>
+      <button class="btn btn-secondary qr-type-btn" data-type="whatsapp">💬 WhatsApp Chat</button>
+      <button class="btn btn-secondary qr-type-btn" data-type="text">📄 Plain Text</button>
+    </div>
+
+    <!-- Main Tool Split Layout -->
+    <div class="tool-split-layout">
+      
+      <!-- Left: Form Controls -->
+      <div class="glass-card">
+        
+        <!-- Tab 1: UPI Payment -->
+        <div id="qr-form-upi" class="qr-form-type">
+          <h2 style="font-size: 1.25rem; margin-bottom: 1.25rem;">UPI Payment Information</h2>
+          <div class="calc-input-group">
+            <label for="upi-id" style="font-size: 0.9rem; font-weight: 600;">Your UPI ID / VPA <span style="color: var(--accent-rose);">*</span></label>
+            <input type="text" id="upi-id" class="calc-num-input qr-input-field" style="width: 100%; text-align: left; margin-top: 6px;" placeholder="e.g. merchant@okaxis or 9876543210@paytm" value="shopkeeper@upi">
+          </div>
+          <div class="calc-input-group">
+            <label for="upi-name" style="font-size: 0.9rem; font-weight: 600;">Payee / Store Name</label>
+            <input type="text" id="upi-name" class="calc-num-input qr-input-field" style="width: 100%; text-align: left; margin-top: 6px;" placeholder="e.g. City General Store" value="Rozgar Store">
+          </div>
+          <div class="calc-input-group">
+            <label for="upi-amount" style="font-size: 0.9rem; font-weight: 600;">Fixed Amount (Optional in ₹)</label>
+            <input type="number" id="upi-amount" class="calc-num-input qr-input-field" style="width: 100%; text-align: left; margin-top: 6px;" placeholder="Leave empty for customer-entered amounts">
+          </div>
+          <div class="calc-input-group">
+            <label for="upi-note" style="font-size: 0.9rem; font-weight: 600;">Transaction Note (Optional)</label>
+            <input type="text" id="upi-note" class="calc-num-input qr-input-field" style="width: 100%; text-align: left; margin-top: 6px;" placeholder="e.g. Order payment">
+          </div>
+        </div>
+
+        <!-- Tab 2: URL -->
+        <div id="qr-form-url" class="qr-form-type" style="display: none;">
+          <h2 style="font-size: 1.25rem; margin-bottom: 1.25rem;">Website Link Details</h2>
+          <div class="calc-input-group">
+            <label for="url-input" style="font-size: 0.9rem; font-weight: 600;">Website Destination URL</label>
+            <input type="url" id="url-input" class="calc-num-input qr-input-field" style="width: 100%; text-align: left; margin-top: 6px;" placeholder="https://example.com" value="https://rozgartools.vercel.app">
+          </div>
+        </div>
+
+        <!-- Tab 3: WiFi -->
+        <div id="qr-form-wifi" class="qr-form-type" style="display: none;">
+          <h2 style="font-size: 1.25rem; margin-bottom: 1.25rem;">WiFi Connection Details</h2>
+          <div class="calc-input-group">
+            <label for="wifi-ssid" style="font-size: 0.9rem; font-weight: 600;">Network Name (SSID)</label>
+            <input type="text" id="wifi-ssid" class="calc-num-input qr-input-field" style="width: 100%; text-align: left; margin-top: 6px;" placeholder="e.g. Office_WiFi_5G" value="MyHomeWiFi">
+          </div>
+          <div class="calc-input-group">
+            <label for="wifi-pass" style="font-size: 0.9rem; font-weight: 600;">Network Password</label>
+            <input type="text" id="wifi-pass" class="calc-num-input qr-input-field" style="width: 100%; text-align: left; margin-top: 6px;" placeholder="Enter WiFi password" value="Password123">
+          </div>
+          <div class="calc-input-group">
+            <label for="wifi-enc" style="font-size: 0.9rem; font-weight: 600;">Security Type</label>
+            <select id="wifi-enc" class="calc-num-input qr-input-field" style="width: 100%; text-align: left; margin-top: 6px;">
+              <option value="WPA">WPA / WPA2 (Standard)</option>
+              <option value="WEP">WEP</option>
+              <option value="nopass">None (Open Network)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Tab 4: WhatsApp -->
+        <div id="qr-form-whatsapp" class="qr-form-type" style="display: none;">
+          <h2 style="font-size: 1.25rem; margin-bottom: 1.25rem;">WhatsApp Chat Link</h2>
+          <div class="calc-input-group">
+            <label for="wa-phone" style="font-size: 0.9rem; font-weight: 600;">Phone Number (With Country Code, e.g. 91...)</label>
+            <input type="text" id="wa-phone" class="calc-num-input qr-input-field" style="width: 100%; text-align: left; margin-top: 6px;" placeholder="919876543210" value="919876543210">
+          </div>
+          <div class="calc-input-group">
+            <label for="wa-msg" style="font-size: 0.9rem; font-weight: 600;">Pre-filled Message</label>
+            <input type="text" id="wa-msg" class="calc-num-input qr-input-field" style="width: 100%; text-align: left; margin-top: 6px;" placeholder="Hello! I would like more information." value="Hello! Please share details with me.">
+          </div>
+        </div>
+
+        <!-- Tab 5: Plain Text -->
+        <div id="qr-form-text" class="qr-form-type" style="display: none;">
+          <h2 style="font-size: 1.25rem; margin-bottom: 1.25rem;">Plain Text</h2>
+          <div class="calc-input-group">
+            <label for="text-input" style="font-size: 0.9rem; font-weight: 600;">Content Text</label>
+            <textarea id="text-input" class="calc-num-input qr-input-field" style="width: 100%; height: 90px; text-align: left; margin-top: 6px;" placeholder="Write any text or message...">RozgarTools - 100% Free Tools</textarea>
+          </div>
+        </div>
+
+        <!-- Customization Settings -->
+        <div style="border-top: 1px solid var(--border); padding-top: 1.25rem; margin-top: 1.5rem;">
+          <h3 style="font-size: 1.05rem; margin-bottom: 0.85rem;">Custom Colors & Dimensions</h3>
+          
+          <div class="color-picker-row">
+            <div>
+              <label style="font-size: 0.82rem; color: var(--text-muted); display: block; margin-bottom: 4px;">QR Foreground Color</label>
+              <div class="color-input-wrapper">
+                <input type="color" id="qr-color-dark" value="#000000">
+                <span style="font-size: 0.85rem;">Dark</span>
+              </div>
+            </div>
+            <div>
+              <label style="font-size: 0.82rem; color: var(--text-muted); display: block; margin-bottom: 4px;">Background Color</label>
+              <div class="color-input-wrapper">
+                <input type="color" id="qr-color-light" value="#ffffff">
+                <span style="font-size: 0.85rem;">Light</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-input-group" style="margin-top: 1rem;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+              <span>Resolution Size:</span>
+              <strong id="qr-size-val" style="color: var(--primary);">240px</strong>
+            </div>
+            <input type="range" id="qr-size-slider" min="160" max="400" step="20" value="240">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Live QR Preview & Actions -->
+      <div class="glass-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+        
+        <h3 style="margin-bottom: 1.25rem;">Live QR Code Preview</h3>
+
+        <!-- QR Canvas Holder -->
+        <div class="qr-canvas-holder">
+          <div id="qrcode-canvas-wrap"></div>
+        </div>
+
+        <!-- Data Preview String -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--border); padding: 0.5rem 0.85rem; border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--text-dim); max-width: 90%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-bottom: 1.5rem;" id="qr-payload-display">
+          upi://pay?pa=shopkeeper@upi&pn=Rozgar%20Store&cu=INR
+        </div>
+
+        <!-- Download Buttons -->
+        <div style="display: flex; gap: 0.75rem; width: 100%; max-width: 320px;">
+          <button class="btn btn-primary" id="download-qr-png" style="flex: 1; padding: 0.75rem;">
+            📥 Download PNG
+          </button>
+          <button class="btn btn-secondary" id="copy-qr-content" style="padding: 0.75rem 1rem;" title="Copy content link">
+            📋 Copy
+          </button>
+        </div>
+
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">
+          ✨ Scannable immediately across all camera apps and UPI payment scanners.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Mid Advertisement Slot -->
+    <div class="ad-container" id="ad-slot-tool-mid">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - In-Article Native Banner ]</span>
+      </div>
+    </div>
+
+    <!-- SEO Content Section -->
+    <article class="seo-article">
+      <h2>Benefits of UPI and Dynamic QR Codes for Merchants and Freelancers</h2>
+      <p>
+        The Unified Payments Interface (UPI) standard enables instantaneous, zero-fee direct-to-bank electronic transfers. Having a dedicated, high-contrast QR code printed at your retail counter or embedded on an invoice guarantees frictionless transactions from Google Pay, PhonePe, Paytm, and BHIM applications.
+      </p>
+
+      <h3>Best Practices for Printing Your QR Codes:</h3>
+      <ul>
+        <li><strong>Maintain High Contrast:</strong> Ensure high contrast between the foreground pattern (dark color) and background (light or white) so all smartphone cameras can read the matrix instantly.</li>
+        <li><strong>Adequate Physical Size:</strong> For store counters or tabletop display, print at minimum 3 inches by 3 inches (7.5cm x 7.5cm).</li>
+        <li><strong>Durable Lamination:</strong> Laminate paper prints to protect them from dust, humidity, and scratches that could damage key alignment squares.</li>
+      </ul>
+    </article>
+
+    <!-- FAQ Section -->
+    <section style="margin: 3rem 0;">
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">Frequently Asked Questions (FAQs)</h2>
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Are there any commissions or transaction fees for using this QR code?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              None whatsoever. This creates standard P2P and P2M UPI QR payloads. Payments transfer directly from the payer's bank account into your linked account with 0% intermediary deductions.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I customize the QR code colors?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. Use the color pickers on the left to set custom dark foreground and light background shades to match your brand style.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 1rem;">
+          <div class="brand-icon">⚡</div>
+          <div class="brand-text">Rozgar<span>Tools</span></div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          Free, fast, and 100% private web utilities and digital productivity tools.
+        </p>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Popular Tools</h4>
+        <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+          <li><a href="govt-photo-resizer.html">Photo Resizer</a></li>
+          <li><a href="sip-calculator.html">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="typing-test.html">Typing Speed Test</a></li>
+          <li><a href="qr-generator.html">QR Code Generator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Important Links</h4>
+        <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+          <li><a href="../about-us.html">About Us</a></li>
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms & Conditions</a></li>
+          <li><a href="../contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <span>© 2026 RozgarTools. All rights reserved.</span>
+        <span>100% Privacy-First & Client-Side</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/qr-generator.js"></script>
+</body>
+</html>

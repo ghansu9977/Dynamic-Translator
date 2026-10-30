@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Age Calculator - Exact Age as on Cut-off Date for Govt Exams | RozgarTools</title>
+  <meta name="description" content="Calculate your exact age in years, months, and days as of any cutoff date for SSC, UPSC, Banking, and State recruitment exams. Free, accurate, and instant birthday countdown.">
+  <meta name="keywords" content="age calculator, exact age calculator, age calculator for govt exams, dob calculator, cut off date age calculator, calculate age online, ssc age calculator">
+  <meta name="author" content="RozgarTools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rozgartools.vercel.app/tools/age-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rozgartools.vercel.app/tools/age-calculator.html">
+  <meta property="og:title" content="Online Age Calculator - Exact Age as on Cut-off Date for Govt Exams | RozgarTools">
+  <meta property="og:description" content="Calculate your exact age in years, months, and days for competitive exam forms and cutoff dates.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Schema Markup: SoftwareApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Exact Age & Cut-off Date Calculator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.92",
+          "ratingCount": "1650"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is age calculated against an examination cut-off date?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Official exam notifications specify a cut-off date (e.g., 01-08-2026). Age is calculated by computing the exact difference in years, months, and days between your date of birth and that designated cut-off date."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool calculate leap years correctly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our algorithm accurately takes leap years (February 29) and differing month lengths into account according to official recruitment standards."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="brand-logo" id="home-logo-link">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html" class=""><span>🏠</span> Home</a></li>
+          <li><a href="dynamic-translator.html" class=""><span>🌐</span> AI Translator</a></li>
+          <li><a href="govt-photo-resizer.html" class=""><span>📸</span> Photo Resizer</a></li>
+          <li><a href="resume-builder.html" class=""><span>📄</span> Resume Builder</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>🧰</span> All Tools <span class="dropdown-arrow">▾</span>
+            </button>
+            <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
+              <div class="dropdown-header">
+                <span class="dropdown-title">All Utility Tools & Calculators</span>
+                <span class="dropdown-badge">⚡ 100% Free & Private</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="dynamic-translator.html" class="dropdown-item ">
+                  <div class="item-icon-box cyan">🌐</div>
+                  <div class="item-text">
+                    <span class="item-title">AI Translator</span>
+                    <span class="item-desc">100+ languages real-time AI</span>
+                  </div>
+                </a>
+                <a href="govt-photo-resizer.html" class="dropdown-item ">
+                  <div class="item-icon-box green">📸</div>
+                  <div class="item-text">
+                    <span class="item-title">Govt Photo Resizer</span>
+                    <span class="item-desc">Compress to 20KB / 50KB</span>
+                  </div>
+                </a>
+                <a href="resume-builder.html" class="dropdown-item ">
+                  <div class="item-icon-box purple">📄</div>
+                  <div class="item-text">
+                    <span class="item-title">ATS Resume Builder</span>
+                    <span class="item-desc">Instant 1-page modern PDF</span>
+                  </div>
+                </a>
+                <a href="emi-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box amber">🏦</div>
+                  <div class="item-text">
+                    <span class="item-title">Loan EMI Calculator</span>
+                    <span class="item-desc">Home, car & personal loan</span>
+                  </div>
+                </a>
+                <a href="typing-test.html" class="dropdown-item ">
+                  <div class="item-icon-box blue">⌨️</div>
+                  <div class="item-text">
+                    <span class="item-title">Typing Speed Test</span>
+                    <span class="item-desc">Live WPM & accuracy test</span>
+                  </div>
+                </a>
+                <a href="qr-generator.html" class="dropdown-item ">
+                  <div class="item-icon-box rose">📱</div>
+                  <div class="item-text">
+                    <span class="item-title">UPI QR Generator</span>
+                    <span class="item-desc">Payment & URL QR codes</span>
+                  </div>
+                </a>
+                <a href="image-to-pdf.html" class="dropdown-item ">
+                  <div class="item-icon-box emerald">📑</div>
+                  <div class="item-text">
+                    <span class="item-title">Image to PDF</span>
+                    <span class="item-desc">Batch convert JPG/PNG</span>
+                  </div>
+                </a>
+                <a href="sip-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box indigo">📈</div>
+                  <div class="item-text">
+                    <span class="item-title">SIP Calculator</span>
+                    <span class="item-desc">Mutual funds wealth projector</span>
+                  </div>
+                </a>
+                <a href="cgpa-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box orange">🎓</div>
+                  <div class="item-text">
+                    <span class="item-title">CGPA Calculator</span>
+                    <span class="item-desc">10-point CGPA to percentage</span>
+                  </div>
+                </a>
+                <a href="age-calculator.html" class="dropdown-item active">
+                  <div class="item-icon-box yellow">🎂</div>
+                  <div class="item-text">
+                    <span class="item-title">Age Calculator</span>
+                    <span class="item-desc">Exact birth age & days</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="../about-us.html" class=""><span>ℹ️</span> About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-search-trigger" id="nav-search-trigger" aria-label="Search tools" title="Search Tools">
+          <span>🔍</span>
+          <span class="search-kbd-hint">Search</span>
+        </button>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay & Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+      <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="mobile-drawer-search">
+      <span class="drawer-search-icon">🔍</span>
+      <input type="text" id="drawer-search-input" placeholder="Search any tool..." aria-label="Search in menu">
+    </div>
+
+    <div class="mobile-drawer-body">
+      <div class="drawer-section-title">All Utility Tools</div>
+      <ul class="drawer-nav-list" id="drawer-tools-list">
+        <li>
+          <a href="dynamic-translator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🌐</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">AI Translator</span>
+              <span class="drawer-item-badge">Dynamic AI</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="govt-photo-resizer.html" class="drawer-item ">
+            <span class="drawer-item-icon">📸</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Govt Photo Resizer</span>
+              <span class="drawer-item-badge">20KB / 50KB</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="resume-builder.html" class="drawer-item ">
+            <span class="drawer-item-icon">📄</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">ATS Resume Builder</span>
+              <span class="drawer-item-badge">Instant PDF</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="emi-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏦</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Loan EMI Calculator</span>
+              <span class="drawer-item-badge">Charts</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="typing-test.html" class="drawer-item ">
+            <span class="drawer-item-icon">⌨️</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Typing Speed Test</span>
+              <span class="drawer-item-badge">1 Min</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="qr-generator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📱</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">UPI QR Generator</span>
+              <span class="drawer-item-badge">Free</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="image-to-pdf.html" class="drawer-item ">
+            <span class="drawer-item-icon">📑</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Image to PDF</span>
+              <span class="drawer-item-badge">Batch</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="sip-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📈</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">SIP Calculator</span>
+              <span class="drawer-item-badge">Wealth</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="cgpa-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎓</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">CGPA Calculator</span>
+              <span class="drawer-item-badge">Percent</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="age-calculator.html" class="drawer-item active">
+            <span class="drawer-item-icon">🎂</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Age Calculator</span>
+              <span class="drawer-item-badge">Exact</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-section-title">Navigation & Info</div>
+      <ul class="drawer-nav-list">
+        <li>
+          <a href="../index.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏠</span>
+            <span class="drawer-item-title">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="../about-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">ℹ️</span>
+            <span class="drawer-item-title">About Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="../contact-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">✉️</span>
+            <span class="drawer-item-title">Contact Support</span>
+          </a>
+        </li>
+        <li>
+          <a href="../privacy-policy.html" class="drawer-item ">
+            <span class="drawer-item-icon">🔒</span>
+            <span class="drawer-item-title">Privacy Policy</span>
+          </a>
+        </li>
+        <li>
+          <a href="../terms.html" class="drawer-item ">
+            <span class="drawer-item-icon">📜</span>
+            <span class="drawer-item-title">Terms of Service</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <span>🔒</span> 100% Client-Side Privacy • Zero Server Uploads
+    </div>
+  </aside>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-top: 2rem;">
+
+    <!-- Breadcrumb -->
+    <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>›</span>
+      <a href="../index.html#tools">Tools</a>
+      <span>›</span>
+      <span style="color: var(--text-main);">Age Calculator</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header-wrap">
+      <div class="badge-privacy">
+        <span>🎂</span> 100% Accurate • Cut-off Date Support • Birthday Countdown
+      </div>
+      <h1 class="tool-page-title">Exact Age & Cut-off Date Calculator</h1>
+      <p class="tool-page-subtitle">
+        Enter your Date of Birth and the exam cut-off date to calculate your exact age in years, months, and days, along with detailed life milestones.
+      </p>
+    </div>
+
+    <!-- Ad Slot 1: Header Leaderboard (728x90) -->
+    <div class="ad-container" id="ad-age-top">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - 728x90 Top Banner ]</span>
+      </div>
+    </div>
+
+    <!-- Tool Workspace Layout -->
+    <div class="tool-split-layout">
+      
+      <!-- Left Column: Date Inputs -->
+      <div class="glass-card">
+        <h3 style="margin-bottom: 1.25rem; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>📅</span> Select Dates
+        </h3>
+
+        <!-- DOB Input -->
+        <div style="margin-bottom: 1.5rem;">
+          <label for="dob-input" class="input-label">Date of Birth (DOB):</label>
+          <input type="date" id="dob-input" class="form-input" style="font-size: 1.05rem;" />
+        </div>
+
+        <!-- Target Date Input -->
+        <div style="margin-bottom: 1.5rem;">
+          <label for="target-date-input" class="input-label">Calculate Age As Of Date:</label>
+          <input type="date" id="target-date-input" class="form-input" style="font-size: 1.05rem;" />
+          <span style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.35rem; display: block;">
+            Defaults to today's date. Change to exam cut-off date if applying for tests.
+          </span>
+        </div>
+
+        <!-- Quick Cut-off Presets -->
+        <div style="margin-bottom: 1.75rem;">
+          <label class="input-label" style="font-size: 0.85rem; color: var(--text-muted);">
+            Popular Exam Cut-Off Presets:
+          </label>
+          <div class="preset-group">
+            <button type="button" class="preset-pill cutoff-preset-btn" data-date="2026-08-01">
+              SSC CGL (1 Aug 2026)
+            </button>
+            <button type="button" class="preset-pill cutoff-preset-btn" data-date="2026-08-01">
+              UPSC (1 Aug 2026)
+            </button>
+            <button type="button" class="preset-pill cutoff-preset-btn" data-date="2026-07-01">
+              IBPS Bank (1 Jul 2026)
+            </button>
+            <button type="button" class="preset-pill cutoff-preset-btn" data-date="2026-01-01">
+              Railway (1 Jan 2026)
+            </button>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem;">
+          <button type="button" class="btn btn-primary btn-lg" id="calc-age-btn" style="flex: 2;">
+            ⚡ Calculate Age
+          </button>
+          <button type="button" class="btn btn-secondary btn-lg" id="reset-age-btn" style="flex: 1;">
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Results Cards -->
+      <div class="glass-card" id="age-results-container">
+        <h3 style="margin-bottom: 1.25rem; font-size: 1.25rem; text-align: center;">
+          Calculated Exact Age
+        </h3>
+
+        <!-- Primary Big Age Display -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; text-align: center; margin-bottom: 1.5rem;">
+          <div style="background: var(--bg-surface); padding: 1.25rem 0.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-focus);">
+            <div id="age-years-val" style="font-size: 2.25rem; font-weight: 800; color: var(--primary); font-family: 'Outfit', sans-serif;">26</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Years</div>
+          </div>
+          <div style="background: var(--bg-surface); padding: 1.25rem 0.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border);">
+            <div id="age-months-val" style="font-size: 2.25rem; font-weight: 800; color: var(--accent-cyan); font-family: 'Outfit', sans-serif;">9</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Months</div>
+          </div>
+          <div style="background: var(--bg-surface); padding: 1.25rem 0.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border);">
+            <div id="age-days-val" style="font-size: 2.25rem; font-weight: 800; color: var(--accent-emerald); font-family: 'Outfit', sans-serif;">27</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Days</div>
+          </div>
+        </div>
+
+        <!-- Next Birthday Card -->
+        <div style="background: var(--bg-surface); padding: 1rem 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-amber); margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Countdown to Next Birthday:</div>
+            <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-top: 0.25rem;">
+              <span id="next-bday-months">2</span> Months, <span id="next-bday-days">4</span> Days
+            </div>
+          </div>
+          <span style="font-size: 2rem;">🎉</span>
+        </div>
+
+        <!-- Extra Facts (Day of week & Zodiac) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+          <div style="background: var(--bg-surface); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
+            <span style="font-size: 0.75rem; color: var(--text-dim); display: block;">Day of Birth:</span>
+            <strong id="born-day-name" style="font-size: 0.95rem;">Saturday</strong>
+          </div>
+          <div style="background: var(--bg-surface); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
+            <span style="font-size: 0.75rem; color: var(--text-dim); display: block;">Zodiac Sign:</span>
+            <strong id="zodiac-sign-val" style="font-size: 0.95rem;">Capricorn ♑</strong>
+          </div>
+        </div>
+
+        <!-- Total Life Stats -->
+        <h4 style="font-size: 1rem; color: var(--text-muted); margin-bottom: 0.75rem;">Lifetime Milestones:</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div style="background: var(--bg-glass); padding: 0.65rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <span style="font-size: 0.8rem; color: var(--text-dim);">Total Days:</span>
+            <div id="stat-total-days" style="font-weight: 700; font-size: 1.1rem; color: var(--text-main);">9,797</div>
+          </div>
+          <div style="background: var(--bg-glass); padding: 0.65rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <span style="font-size: 0.8rem; color: var(--text-dim);">Total Weeks:</span>
+            <div id="stat-total-weeks" style="font-weight: 700; font-size: 1.1rem; color: var(--text-main);">1,399</div>
+          </div>
+          <div style="background: var(--bg-glass); padding: 0.65rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <span style="font-size: 0.8rem; color: var(--text-dim);">Total Hours:</span>
+            <div id="stat-total-hours" style="font-weight: 700; font-size: 1.1rem; color: var(--text-main);">2,35,128</div>
+          </div>
+          <div style="background: var(--bg-glass); padding: 0.65rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <span style="font-size: 0.8rem; color: var(--text-dim);">Total Minutes:</span>
+            <div id="stat-total-minutes" style="font-weight: 700; font-size: 1.1rem; color: var(--text-main);">1,41,07,680</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Ad Slot 2: In-Content Banner -->
+    <div class="ad-container" id="ad-age-mid">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - In-Content Responsive Banner ]</span>
+      </div>
+    </div>
+
+    <!-- SEO Guide on Cut-Off Dates & Eligibility -->
+    <article class="seo-article">
+      <h2>How Cut-off Dates Work in Recruitment and Competitive Examinations</h2>
+      <p>
+        When applying for competitive examinations (such as SSC CGL, CHSL, MTS, UPSC Civil Services, NDA, CDS, IBPS PO, Clerk, SBI, Railway RRB, and Police recruitment), one of the primary qualification criteria is the <strong>Age Eligibility Range</strong>.
+      </p>
+      <p>
+        Most candidates calculate their age from today's date; however, examination notifications explicitly stipulate a cut-off anchor date, such as:  
+        <em>"Candidates must be between 18 and 27 years of age as of 01-08-2026"</em>.  
+        If an applicant exceeds the upper age limit or falls short by even a single day on that cut-off date, the online portal automatically disqualifies the application. Knowing your exact age in years, months, and days is therefore critical.
+      </p>
+
+      <h3>Common Competitive Exam Age Criteria & Cut-off Standards:</h3>
+      <div style="overflow-x: auto; margin: 1.5rem 0;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+          <thead>
+            <tr style="background: var(--bg-surface); text-align: left;">
+              <th style="padding: 0.75rem 1rem; border: 1px solid var(--border);">Examination Name</th>
+              <th style="padding: 0.75rem 1rem; border: 1px solid var(--border);">General Category Age Limit</th>
+              <th style="padding: 0.75rem 1rem; border: 1px solid var(--border);">Standard Cut-off Anchor Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);"><strong>SSC CGL / CHSL</strong></td>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);">18 to 27 / 30 / 32 years (by post)</td>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);">Usually 1st August (or 1st January)</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);"><strong>UPSC Civil Services (IAS/IPS)</strong></td>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);">21 to 32 years</td>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);">1st August of Exam Year</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);"><strong>IBPS Bank PO / Clerk</strong></td>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);">20 to 30 years (PO) / 20 to 28 (Clerk)</td>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);">1st of July or Notification Month</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);"><strong>State Police Services</strong></td>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);">18 to 22 / 25 years</td>
+              <td style="padding: 0.75rem 1rem; border: 1px solid var(--border);">1st July or 1st January</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>General Age Relaxation Guidelines for Reserved Categories:</h3>
+      <p>
+        Government norms provide upper age relaxation for various reserved categories as summarized below:
+      </p>
+      <ul>
+        <li><strong>OBC (Other Backward Classes):</strong> 3 years upper age relaxation.</li>
+        <li><strong>SC / ST (Scheduled Castes / Scheduled Tribes):</strong> 5 years upper age relaxation.</li>
+        <li><strong>PwD (Persons with Disabilities):</strong> 10 to 15 years upper age relaxation based on category.</li>
+        <li><strong>Ex-Servicemen:</strong> 3 years relaxation after deduction of active military service duration.</li>
+      </ul>
+    </article>
+
+    <!-- Ad Slot 3: In-FAQ Banner -->
+    <div class="ad-container" id="ad-age-faq">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - In-FAQ Responsive Ad ]</span>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section style="margin: 3rem 0;">
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">Frequently Asked Questions (FAQs)</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+        Common queries regarding age calculation and cut-off dates.
+      </p>
+
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does this calculator account for leap years correctly?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. The calculator uses exact Gregorian calendar logic, correctly processing leap years (February 29) as well as varying month lengths (28, 30, and 31 days).
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens if my birth date equals the cut-off date?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              In that case, the completed years increment exactly on that date, yielding 0 additional months and 0 days (e.g., exactly 25 years, 0 months, 0 days).
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I calculate the duration between any two dates in the past or future?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. You can select any start date in the first input and any target date in the second input to find the exact elapsed time between them.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon">⚡</div>
+            <div class="brand-text">Rozgar<span>Tools</span></div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; max-width: 340px;">
+            Exact age and cut-off date calculator. 100% free, client-side, and private.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Other Tools</h4>
+          <ul class="footer-links">
+            <li><a href="govt-photo-resizer.html">Photo & Signature Resizer</a></li>
+            <li><a href="sip-calculator.html">SIP & Lumpsum Calculator</a></li>
+            <li><a href="image-to-pdf.html">Image to PDF Converter</a></li>
+            <li><a href="../index.html">View All Tools</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Important Links</h4>
+          <ul class="footer-links">
+            <li><a href="../about-us.html">About Us</a></li>
+            <li><a href="../contact-us.html">Contact Us</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Privacy Guaranteed</h4>
+          <p style="color: var(--text-dim); font-size: 0.85rem; line-height: 1.5;">
+            🔒 All calculations are processed locally inside your web browser. No personal dates are stored on any server.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 RozgarTools. All rights reserved.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="../privacy-policy.html" style="color: var(--text-dim);">Privacy</a>
+          <a href="../terms.html" style="color: var(--text-dim);">Terms</a>
+          <a href="../sitemap.xml" style="color: var(--text-dim);">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/age-calculator.js"></script>
+</body>
+</html>

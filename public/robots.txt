@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /dashboard
 
 Sitemap: https://dynamic-translatx.vercel.app/sitemap.xml

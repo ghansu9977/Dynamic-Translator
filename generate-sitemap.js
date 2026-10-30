@@ -7,12 +7,10 @@ const SITE_URL = 'https://dynamic-translatx.vercel.app';
 async function generateSitemap() {
   console.log('Generating sitemap...');
   
-  // Static pages
+  // Static public pages only
   const staticPages = [
     '',
-    '/blog',
-    '/dashboard',
-    '/admin'
+    '/blog'
   ];
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>

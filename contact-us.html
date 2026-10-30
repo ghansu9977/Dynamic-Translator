@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | RozgarTools</title>
+  <meta name="description" content="Contact the RozgarTools team. Send inquiries regarding technical support, new tool feature requests, or partnership opportunities.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rozgartools.vercel.app/contact-us.html">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-logo" id="home-logo-link">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class=""><span>🏠</span> Home</a></li>
+          <li><a href="tools/dynamic-translator.html" class=""><span>🌐</span> AI Translator</a></li>
+          <li><a href="tools/govt-photo-resizer.html" class=""><span>📸</span> Photo Resizer</a></li>
+          <li><a href="tools/resume-builder.html" class=""><span>📄</span> Resume Builder</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>🧰</span> All Tools <span class="dropdown-arrow">▾</span>
+            </button>
+            <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
+              <div class="dropdown-header">
+                <span class="dropdown-title">All Utility Tools & Calculators</span>
+                <span class="dropdown-badge">⚡ 100% Free & Private</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="tools/dynamic-translator.html" class="dropdown-item ">
+                  <div class="item-icon-box cyan">🌐</div>
+                  <div class="item-text">
+                    <span class="item-title">AI Translator</span>
+                    <span class="item-desc">100+ languages real-time AI</span>
+                  </div>
+                </a>
+                <a href="tools/govt-photo-resizer.html" class="dropdown-item ">
+                  <div class="item-icon-box green">📸</div>
+                  <div class="item-text">
+                    <span class="item-title">Govt Photo Resizer</span>
+                    <span class="item-desc">Compress to 20KB / 50KB</span>
+                  </div>
+                </a>
+                <a href="tools/resume-builder.html" class="dropdown-item ">
+                  <div class="item-icon-box purple">📄</div>
+                  <div class="item-text">
+                    <span class="item-title">ATS Resume Builder</span>
+                    <span class="item-desc">Instant 1-page modern PDF</span>
+                  </div>
+                </a>
+                <a href="tools/emi-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box amber">🏦</div>
+                  <div class="item-text">
+                    <span class="item-title">Loan EMI Calculator</span>
+                    <span class="item-desc">Home, car & personal loan</span>
+                  </div>
+                </a>
+                <a href="tools/typing-test.html" class="dropdown-item ">
+                  <div class="item-icon-box blue">⌨️</div>
+                  <div class="item-text">
+                    <span class="item-title">Typing Speed Test</span>
+                    <span class="item-desc">Live WPM & accuracy test</span>
+                  </div>
+                </a>
+                <a href="tools/qr-generator.html" class="dropdown-item ">
+                  <div class="item-icon-box rose">📱</div>
+                  <div class="item-text">
+                    <span class="item-title">UPI QR Generator</span>
+                    <span class="item-desc">Payment & URL QR codes</span>
+                  </div>
+                </a>
+                <a href="tools/image-to-pdf.html" class="dropdown-item ">
+                  <div class="item-icon-box emerald">📑</div>
+                  <div class="item-text">
+                    <span class="item-title">Image to PDF</span>
+                    <span class="item-desc">Batch convert JPG/PNG</span>
+                  </div>
+                </a>
+                <a href="tools/sip-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box indigo">📈</div>
+                  <div class="item-text">
+                    <span class="item-title">SIP Calculator</span>
+                    <span class="item-desc">Mutual funds wealth projector</span>
+                  </div>
+                </a>
+                <a href="tools/cgpa-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box orange">🎓</div>
+                  <div class="item-text">
+                    <span class="item-title">CGPA Calculator</span>
+                    <span class="item-desc">10-point CGPA to percentage</span>
+                  </div>
+                </a>
+                <a href="tools/age-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box yellow">🎂</div>
+                  <div class="item-text">
+                    <span class="item-title">Age Calculator</span>
+                    <span class="item-desc">Exact birth age & days</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="about-us.html" class=""><span>ℹ️</span> About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-search-trigger" id="nav-search-trigger" aria-label="Search tools" title="Search Tools">
+          <span>🔍</span>
+          <span class="search-kbd-hint">Search</span>
+        </button>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay & Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+      <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="mobile-drawer-search">
+      <span class="drawer-search-icon">🔍</span>
+      <input type="text" id="drawer-search-input" placeholder="Search any tool..." aria-label="Search in menu">
+    </div>
+
+    <div class="mobile-drawer-body">
+      <div class="drawer-section-title">All Utility Tools</div>
+      <ul class="drawer-nav-list" id="drawer-tools-list">
+        <li>
+          <a href="tools/dynamic-translator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🌐</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">AI Translator</span>
+              <span class="drawer-item-badge">Dynamic AI</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="tools/govt-photo-resizer.html" class="drawer-item ">
+            <span class="drawer-item-icon">📸</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Govt Photo Resizer</span>
+              <span class="drawer-item-badge">20KB / 50KB</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="tools/resume-builder.html" class="drawer-item ">
+            <span class="drawer-item-icon">📄</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">ATS Resume Builder</span>
+              <span class="drawer-item-badge">Instant PDF</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="tools/emi-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏦</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Loan EMI Calculator</span>
+              <span class="drawer-item-badge">Charts</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="tools/typing-test.html" class="drawer-item ">
+            <span class="drawer-item-icon">⌨️</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Typing Speed Test</span>
+              <span class="drawer-item-badge">1 Min</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="tools/qr-generator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📱</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">UPI QR Generator</span>
+              <span class="drawer-item-badge">Free</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="tools/image-to-pdf.html" class="drawer-item ">
+            <span class="drawer-item-icon">📑</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Image to PDF</span>
+              <span class="drawer-item-badge">Batch</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="tools/sip-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📈</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">SIP Calculator</span>
+              <span class="drawer-item-badge">Wealth</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="tools/cgpa-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎓</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">CGPA Calculator</span>
+              <span class="drawer-item-badge">Percent</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="tools/age-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎂</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Age Calculator</span>
+              <span class="drawer-item-badge">Exact</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-section-title">Navigation & Info</div>
+      <ul class="drawer-nav-list">
+        <li>
+          <a href="index.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏠</span>
+            <span class="drawer-item-title">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="about-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">ℹ️</span>
+            <span class="drawer-item-title">About Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="contact-us.html" class="drawer-item active">
+            <span class="drawer-item-icon">✉️</span>
+            <span class="drawer-item-title">Contact Support</span>
+          </a>
+        </li>
+        <li>
+          <a href="privacy-policy.html" class="drawer-item ">
+            <span class="drawer-item-icon">🔒</span>
+            <span class="drawer-item-title">Privacy Policy</span>
+          </a>
+        </li>
+        <li>
+          <a href="terms.html" class="drawer-item ">
+            <span class="drawer-item-icon">📜</span>
+            <span class="drawer-item-title">Terms of Service</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <span>🔒</span> 100% Client-Side Privacy • Zero Server Uploads
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    
+    <div class="glass-card" style="max-width: 800px; margin: 0 auto; padding: 2.5rem;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem; text-align: center;">Contact Us</h1>
+      <p style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2.5rem; text-align: center;">
+        Have a question, feedback, or a new tool suggestion? Send us a message and our team will get back to you promptly.
+      </p>
+
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+        
+        <form id="contact-form" onsubmit="handleContactSubmit(event)">
+          <div style="margin-bottom: 1.25rem;">
+            <label for="contact-name" class="input-label">Full Name:</label>
+            <input type="text" id="contact-name" class="form-input" placeholder="e.g. John Doe" required />
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <label for="contact-email" class="input-label">Email Address:</label>
+            <input type="email" id="contact-email" class="form-input" placeholder="e.g. john@example.com" required />
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <label for="contact-category" class="input-label">Subject Category:</label>
+            <select id="contact-category" class="form-input">
+              <option value="photo-resizer">Photo Resizer Support</option>
+              <option value="emi-calc">Loan EMI Calculator Support</option>
+              <option value="typing-test">Typing Speed Test Feedback</option>
+              <option value="resume-builder">Resume Builder Inquiries</option>
+              <option value="qr-generator">QR Code Generator Inquiries</option>
+              <option value="new-tool">Feature / New Tool Suggestion</option>
+              <option value="ads">Advertising & Collaboration</option>
+              <option value="other">General Inquiries</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label for="contact-message" class="input-label">Your Message:</label>
+            <textarea id="contact-message" class="form-input" rows="5" placeholder="Please write your questions or suggestions in detail here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            ✉️ Send Message
+          </button>
+        </form>
+
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+          <div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.35rem;">📧 Direct Email:</h4>
+            <p style="color: var(--primary); font-size: 0.95rem;">contact@rozgartools.com</p>
+          </div>
+          <div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.35rem;">⏱️ Response Window:</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Within 24 to 48 hours</p>
+          </div>
+          <div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.35rem;">🌐 Support Coverage:</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Global Online Support</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 RozgarTools. All rights reserved.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="index.html" style="color: var(--text-dim);">Home</a>
+          <a href="about-us.html" style="color: var(--text-dim);">About Us</a>
+          <a href="privacy-policy.html" style="color: var(--text-dim);">Privacy Policy</a>
+          <a href="terms.html" style="color: var(--text-dim);">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      if (window.showToast) {
+        window.showToast(`Thank you, ${name}! Your message has been received.`);
+      }
+      document.getElementById('contact-form').reset();
+    }
+  </script>
+</body>
+</html>

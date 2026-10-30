@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://rozgartools.vercel.app/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Tool 0: Dynamic AI Language Translator -->
+  <url>
+    <loc>https://rozgartools.vercel.app/tools/dynamic-translator.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Tool 1: Govt Photo Resizer -->
+  <url>
+    <loc>https://rozgartools.vercel.app/tools/govt-photo-resizer.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tool 2: SIP & Lumpsum Calculator -->
+  <url>
+    <loc>https://rozgartools.vercel.app/tools/sip-calculator.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tool 3: Exact Age Calculator -->
+  <url>
+    <loc>https://rozgartools.vercel.app/tools/age-calculator.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tool 4: Image to PDF Converter -->
+  <url>
+    <loc>https://rozgartools.vercel.app/tools/image-to-pdf.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Tool 5: EMI Calculator -->
+  <url>
+    <loc>https://rozgartools.vercel.app/tools/emi-calculator.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tool 6: Typing Speed Test -->
+  <url>
+    <loc>https://rozgartools.vercel.app/tools/typing-test.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tool 7: QR Code Generator -->
+  <url>
+    <loc>https://rozgartools.vercel.app/tools/qr-generator.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tool 8: Resume Builder -->
+  <url>
+    <loc>https://rozgartools.vercel.app/tools/resume-builder.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tool 9: CGPA to Percentage Calculator -->
+  <url>
+    <loc>https://rozgartools.vercel.app/tools/cgpa-calculator.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://rozgartools.vercel.app/about-us.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://rozgartools.vercel.app/privacy-policy.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Contact Us -->
+  <url>
+    <loc>https://rozgartools.vercel.app/contact-us.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://rozgartools.vercel.app/terms.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>

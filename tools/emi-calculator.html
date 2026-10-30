@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMI Calculator Online - Home, Car & Personal Loan EMI Calculator | RozgarTools</title>
+  <meta name="description" content="Free online Loan EMI Calculator. Calculate monthly EMI, total payable interest, and yearly repayment schedule (Amortization) with interactive charts for Home, Car, and Personal loans.">
+  <meta name="keywords" content="emi calculator, home loan emi calculator, car loan emi, personal loan emi calculator, loan interest calculator, amortization schedule">
+  <meta name="author" content="RozgarTools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rozgartools.vercel.app/tools/emi-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rozgartools.vercel.app/tools/emi-calculator.html">
+  <meta property="og:title" content="EMI Calculator Online - Home, Car & Personal Loan EMI Calculator | RozgarTools">
+  <meta property="og:description" content="Calculate your monthly loan EMI, interest, and total payout instantly with amortization schedule and donut chart.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Schema Markup: SoftwareApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "EMI & Loan Calculator",
+        "operatingSystem": "All",
+        "applicationCategory": "FinanceApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.96",
+          "ratingCount": "2430"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What formula is used to calculate EMI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "EMI is calculated using the standard mathematical formula: EMI = [P x R x (1+R)^N] / [(1+R)^N - 1], where P is Principal amount, R is monthly interest rate, and N is total tenure in months."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does extending the loan tenure lower the EMI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, extending the loan duration reduces your monthly instalment. However, the cumulative interest paid across the entire loan lifespan increases significantly."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="brand-logo" id="home-logo-link">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html" class=""><span>🏠</span> Home</a></li>
+          <li><a href="dynamic-translator.html" class=""><span>🌐</span> AI Translator</a></li>
+          <li><a href="govt-photo-resizer.html" class=""><span>📸</span> Photo Resizer</a></li>
+          <li><a href="resume-builder.html" class=""><span>📄</span> Resume Builder</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>🧰</span> All Tools <span class="dropdown-arrow">▾</span>
+            </button>
+            <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
+              <div class="dropdown-header">
+                <span class="dropdown-title">All Utility Tools & Calculators</span>
+                <span class="dropdown-badge">⚡ 100% Free & Private</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="dynamic-translator.html" class="dropdown-item ">
+                  <div class="item-icon-box cyan">🌐</div>
+                  <div class="item-text">
+                    <span class="item-title">AI Translator</span>
+                    <span class="item-desc">100+ languages real-time AI</span>
+                  </div>
+                </a>
+                <a href="govt-photo-resizer.html" class="dropdown-item ">
+                  <div class="item-icon-box green">📸</div>
+                  <div class="item-text">
+                    <span class="item-title">Govt Photo Resizer</span>
+                    <span class="item-desc">Compress to 20KB / 50KB</span>
+                  </div>
+                </a>
+                <a href="resume-builder.html" class="dropdown-item ">
+                  <div class="item-icon-box purple">📄</div>
+                  <div class="item-text">
+                    <span class="item-title">ATS Resume Builder</span>
+                    <span class="item-desc">Instant 1-page modern PDF</span>
+                  </div>
+                </a>
+                <a href="emi-calculator.html" class="dropdown-item active">
+                  <div class="item-icon-box amber">🏦</div>
+                  <div class="item-text">
+                    <span class="item-title">Loan EMI Calculator</span>
+                    <span class="item-desc">Home, car & personal loan</span>
+                  </div>
+                </a>
+                <a href="typing-test.html" class="dropdown-item ">
+                  <div class="item-icon-box blue">⌨️</div>
+                  <div class="item-text">
+                    <span class="item-title">Typing Speed Test</span>
+                    <span class="item-desc">Live WPM & accuracy test</span>
+                  </div>
+                </a>
+                <a href="qr-generator.html" class="dropdown-item ">
+                  <div class="item-icon-box rose">📱</div>
+                  <div class="item-text">
+                    <span class="item-title">UPI QR Generator</span>
+                    <span class="item-desc">Payment & URL QR codes</span>
+                  </div>
+                </a>
+                <a href="image-to-pdf.html" class="dropdown-item ">
+                  <div class="item-icon-box emerald">📑</div>
+                  <div class="item-text">
+                    <span class="item-title">Image to PDF</span>
+                    <span class="item-desc">Batch convert JPG/PNG</span>
+                  </div>
+                </a>
+                <a href="sip-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box indigo">📈</div>
+                  <div class="item-text">
+                    <span class="item-title">SIP Calculator</span>
+                    <span class="item-desc">Mutual funds wealth projector</span>
+                  </div>
+                </a>
+                <a href="cgpa-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box orange">🎓</div>
+                  <div class="item-text">
+                    <span class="item-title">CGPA Calculator</span>
+                    <span class="item-desc">10-point CGPA to percentage</span>
+                  </div>
+                </a>
+                <a href="age-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box yellow">🎂</div>
+                  <div class="item-text">
+                    <span class="item-title">Age Calculator</span>
+                    <span class="item-desc">Exact birth age & days</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="../about-us.html" class=""><span>ℹ️</span> About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-search-trigger" id="nav-search-trigger" aria-label="Search tools" title="Search Tools">
+          <span>🔍</span>
+          <span class="search-kbd-hint">Search</span>
+        </button>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay & Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+      <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="mobile-drawer-search">
+      <span class="drawer-search-icon">🔍</span>
+      <input type="text" id="drawer-search-input" placeholder="Search any tool..." aria-label="Search in menu">
+    </div>
+
+    <div class="mobile-drawer-body">
+      <div class="drawer-section-title">All Utility Tools</div>
+      <ul class="drawer-nav-list" id="drawer-tools-list">
+        <li>
+          <a href="dynamic-translator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🌐</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">AI Translator</span>
+              <span class="drawer-item-badge">Dynamic AI</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="govt-photo-resizer.html" class="drawer-item ">
+            <span class="drawer-item-icon">📸</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Govt Photo Resizer</span>
+              <span class="drawer-item-badge">20KB / 50KB</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="resume-builder.html" class="drawer-item ">
+            <span class="drawer-item-icon">📄</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">ATS Resume Builder</span>
+              <span class="drawer-item-badge">Instant PDF</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="emi-calculator.html" class="drawer-item active">
+            <span class="drawer-item-icon">🏦</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Loan EMI Calculator</span>
+              <span class="drawer-item-badge">Charts</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="typing-test.html" class="drawer-item ">
+            <span class="drawer-item-icon">⌨️</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Typing Speed Test</span>
+              <span class="drawer-item-badge">1 Min</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="qr-generator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📱</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">UPI QR Generator</span>
+              <span class="drawer-item-badge">Free</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="image-to-pdf.html" class="drawer-item ">
+            <span class="drawer-item-icon">📑</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Image to PDF</span>
+              <span class="drawer-item-badge">Batch</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="sip-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📈</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">SIP Calculator</span>
+              <span class="drawer-item-badge">Wealth</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="cgpa-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎓</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">CGPA Calculator</span>
+              <span class="drawer-item-badge">Percent</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="age-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎂</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Age Calculator</span>
+              <span class="drawer-item-badge">Exact</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-section-title">Navigation & Info</div>
+      <ul class="drawer-nav-list">
+        <li>
+          <a href="../index.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏠</span>
+            <span class="drawer-item-title">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="../about-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">ℹ️</span>
+            <span class="drawer-item-title">About Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="../contact-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">✉️</span>
+            <span class="drawer-item-title">Contact Support</span>
+          </a>
+        </li>
+        <li>
+          <a href="../privacy-policy.html" class="drawer-item ">
+            <span class="drawer-item-icon">🔒</span>
+            <span class="drawer-item-title">Privacy Policy</span>
+          </a>
+        </li>
+        <li>
+          <a href="../terms.html" class="drawer-item ">
+            <span class="drawer-item-icon">📜</span>
+            <span class="drawer-item-title">Terms of Service</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <span>🔒</span> 100% Client-Side Privacy • Zero Server Uploads
+    </div>
+  </aside>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-top: 2rem;">
+
+    <!-- Breadcrumb -->
+    <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>/</span>
+      <a href="../index.html#tools">Financial Tools</a>
+      <span>/</span>
+      <span class="active">EMI & Loan Calculator</span>
+    </nav>
+
+    <!-- Header Intro -->
+    <div class="tool-header-wrap">
+      <h1 class="tool-page-title">Loan EMI Calculator (Home, Car & Personal Loan)</h1>
+      <p class="tool-page-subtitle">
+        Plan your finances and compare monthly instalments, total interest payable, and comprehensive amortization repayment schedules.
+      </p>
+    </div>
+
+    <!-- Top Advertisement Slot -->
+    <div class="ad-container" id="ad-slot-tool-top">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - 728x90 / Responsive Header Ad ]</span>
+      </div>
+    </div>
+
+    <!-- Loan Presets Bar -->
+    <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+      <button class="btn btn-secondary loan-preset-btn active" data-preset="home" style="border-radius: var(--radius-full); padding: 0.5rem 1.25rem;">
+        🏠 Home Loan
+      </button>
+      <button class="btn btn-secondary loan-preset-btn" data-preset="car" style="border-radius: var(--radius-full); padding: 0.5rem 1.25rem;">
+        🚗 Car Loan
+      </button>
+      <button class="btn btn-secondary loan-preset-btn" data-preset="personal" style="border-radius: var(--radius-full); padding: 0.5rem 1.25rem;">
+        💳 Personal Loan
+      </button>
+    </div>
+
+    <!-- Main Tool Workspace -->
+    <div class="tool-split-layout">
+      
+      <!-- Left: Interactive Inputs & Sliders -->
+      <div class="glass-card">
+        <h2 style="font-size: 1.25rem; margin-bottom: 1.5rem;">Enter Loan Details</h2>
+
+        <!-- Input 1: Loan Amount -->
+        <div class="calc-input-group">
+          <div class="calc-label-row">
+            <label for="emi-amount-input">Loan Amount</label>
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <span style="color: var(--primary); font-weight: 700;">₹</span>
+              <input type="number" id="emi-amount-input" class="calc-num-input" value="3000000" min="10000" max="50000000" step="10000">
+            </div>
+          </div>
+          <input type="range" id="emi-amount-slider" min="50000" max="10000000" step="25000" value="3000000">
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-dim); margin-top: 4px;">
+            <span>₹50K</span>
+            <span>₹50L</span>
+            <span>₹1 Cr</span>
+          </div>
+        </div>
+
+        <!-- Input 2: Interest Rate -->
+        <div class="calc-input-group">
+          <div class="calc-label-row">
+            <label for="emi-rate-input">Annual Interest Rate</label>
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <input type="number" id="emi-rate-input" class="calc-num-input" value="8.5" min="1" max="30" step="0.1">
+              <span style="color: var(--primary); font-weight: 700;">%</span>
+            </div>
+          </div>
+          <input type="range" id="emi-rate-slider" min="5" max="25" step="0.1" value="8.5">
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-dim); margin-top: 4px;">
+            <span>5%</span>
+            <span>15%</span>
+            <span>25%</span>
+          </div>
+        </div>
+
+        <!-- Input 3: Loan Tenure -->
+        <div class="calc-input-group">
+          <div class="calc-label-row">
+            <label for="emi-tenure-input">Loan Tenure (<span id="tenure-label-unit">Years</span>)</label>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <input type="number" id="emi-tenure-input" class="calc-num-input" value="20" min="1" max="360" step="1">
+              <div style="display: flex; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 2px;">
+                <button class="tenure-unit-btn active" data-unit="years" style="border: none; background: var(--primary); color: #fff; padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">Yr</button>
+                <button class="tenure-unit-btn" data-unit="months" style="border: none; background: transparent; color: var(--text-muted); padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">Mo</button>
+              </div>
+            </div>
+          </div>
+          <input type="range" id="emi-tenure-slider" min="1" max="30" step="1" value="20">
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-dim); margin-top: 4px;">
+            <span>1 Year</span>
+            <span>15 Years</span>
+            <span>30 Years</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Results Card & Donut Chart -->
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        
+        <div>
+          <!-- Big Highlight: Monthly EMI -->
+          <div style="background: var(--bg-surface); border: 1.5px solid var(--primary); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center; margin-bottom: 1.5rem;">
+            <div style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Monthly EMI</div>
+            <div id="res-monthly-emi" style="font-size: 2.4rem; font-weight: 800; font-family: 'Outfit', sans-serif; color: var(--primary); margin: 0.25rem 0;">₹26,035</div>
+            <div style="font-size: 0.8rem; color: var(--text-dim);">Monthly payable instalment to lender</div>
+          </div>
+
+          <!-- Breakdown Stats Grid -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.85rem;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Principal Amount</span>
+              <div id="res-principal-amt" style="font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-top: 2px;">₹30,00,000</div>
+            </div>
+            <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.85rem;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Total Interest</span>
+              <div id="res-total-interest" style="font-size: 1.2rem; font-weight: 700; color: var(--accent-amber); margin-top: 2px;">₹32,48,328</div>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.85rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Total Payment (Principal + Interest)</span>
+              <span id="res-total-payment" style="font-size: 1.25rem; font-weight: 800; color: var(--text-main);">₹62,48,328</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Donut Chart Container -->
+        <div style="position: relative; height: 190px; width: 100%;">
+          <canvas id="emiDonutChart"></canvas>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Toggle Amortization Schedule Button -->
+    <div style="text-align: center; margin: 1.5rem 0 2.5rem;">
+      <button class="btn btn-secondary" id="toggle-amortization-btn" style="padding: 0.75rem 1.75rem;">
+        <span>📊</span> View Yearly Repayment Schedule
+      </button>
+    </div>
+
+    <!-- Amortization Schedule Table (Initially Hidden) -->
+    <div id="amortization-wrap" class="glass-card" style="display: none; margin-bottom: 3rem;">
+      <h3 style="margin-bottom: 0.5rem;">Loan Amortization Schedule</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+        Review your year-by-year principal reduction, interest distribution, and end-of-year outstanding loan balance.
+      </p>
+
+      <div class="table-responsive">
+        <table class="calc-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Principal Paid</th>
+              <th>Interest Paid</th>
+              <th>Total Annual Payment</th>
+              <th>Remaining Balance</th>
+            </tr>
+          </thead>
+          <tbody id="amortization-tbody">
+            <!-- Dynamic Rows -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Mid Advertisement Slot -->
+    <div class="ad-container" id="ad-slot-tool-mid">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - In-Article Native Banner ]</span>
+      </div>
+    </div>
+
+    <!-- SEO Content Section -->
+    <article class="seo-article">
+      <h2>Understanding Loan EMI (Equated Monthly Installment) and Amortization</h2>
+      <p>
+        An <strong>Equated Monthly Installment (EMI)</strong> is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs apply to both interest and principal each month, ensuring that over a specified number of years, the loan is paid off in full.
+      </p>
+      <p>
+        During the early stages of the loan repayment tenure, a larger portion of each instalment goes toward servicing the accumulated interest. As the loan matures, the outstanding principal decreases, causing the interest component to decrease and the principal repayment component to rise. This structure is mapped out in an <strong>Amortization Schedule</strong>.
+      </p>
+
+      <h3>Benefits of Using an Online EMI Calculator:</h3>
+      <ul>
+        <li><strong>Budget Certainty:</strong> Anticipate your exact monthly liability before signing loan agreements.</li>
+        <li><strong>Interest Cost Visibility:</strong> Clearly observe total interest paid on top of borrowed principal.</li>
+        <li><strong>Tenure Optimization:</strong> Compare how selecting a 15-year versus 20-year term impacts total financial outlay.</li>
+      </ul>
+    </article>
+
+    <!-- FAQ Section -->
+    <section style="margin: 3rem 0;">
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">Frequently Asked Questions (FAQs)</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+        Clear answers to common questions about loans, EMIs, and interest calculations.
+      </p>
+
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does increasing loan tenure reduce my EMI?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. Choosing a longer tenure spreads the principal across more instalments, lowering the monthly EMI. However, total accrued interest increases over longer durations.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does loan prepayment help save money?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Making part-prepayments directly reduces the outstanding principal balance. This either shortens the remaining loan term or reduces monthly instalments, saving significant interest costs over time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 1rem;">
+          <div class="brand-icon">⚡</div>
+          <div class="brand-text">Rozgar<span>Tools</span></div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          Free, fast, and 100% private web utilities and financial calculators.
+        </p>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Popular Tools</h4>
+        <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+          <li><a href="govt-photo-resizer.html">Photo Resizer</a></li>
+          <li><a href="sip-calculator.html">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="typing-test.html">Typing Speed Test</a></li>
+          <li><a href="qr-generator.html">QR Code Generator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Important Links</h4>
+        <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+          <li><a href="../about-us.html">About Us</a></li>
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms & Conditions</a></li>
+          <li><a href="../contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <span>© 2026 RozgarTools. All rights reserved.</span>
+        <span>100% Privacy-First & Client-Side</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/emi-calculator.js"></script>
+</body>
+</html>

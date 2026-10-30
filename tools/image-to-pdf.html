@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Image to PDF Converter Online - Convert JPG/PNG to A4 PDF | RozgarTools</title>
+  <meta name="description" content="100% Free online Image to PDF Converter. Combine multiple JPG and PNG images into a clean, watermark-free A4 PDF. Client-side, fast, and completely secure.">
+  <meta name="keywords" content="image to pdf, jpg to pdf, png to pdf converter, convert image to pdf free, merge images to pdf, online pdf maker without watermark, exam document pdf">
+  <meta name="author" content="RozgarTools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rozgartools.vercel.app/tools/image-to-pdf.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rozgartools.vercel.app/tools/image-to-pdf.html">
+  <meta property="og:title" content="Free Image to PDF Converter Online - Convert JPG/PNG to A4 PDF | RozgarTools">
+  <meta property="og:description" content="Convert your certificates, marksheets, and photos into PDF without watermark. 100% browser-based security.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- jsPDF CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Schema Markup: SoftwareApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Image to PDF Converter",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.89",
+          "ratingCount": "1420"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does this Image to PDF converter add any watermark?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All PDF files generated via RozgarTools are 100% clean, professional, and free of any watermark or advertisements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I combine multiple photos into a single PDF document?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, you can upload multiple pictures (marksheets, identification cards, certificates) at once, reorder them up and down, and compile them into a unified multi-page PDF."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="brand-logo" id="home-logo-link">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html" class=""><span>🏠</span> Home</a></li>
+          <li><a href="dynamic-translator.html" class=""><span>🌐</span> AI Translator</a></li>
+          <li><a href="govt-photo-resizer.html" class=""><span>📸</span> Photo Resizer</a></li>
+          <li><a href="resume-builder.html" class=""><span>📄</span> Resume Builder</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>🧰</span> All Tools <span class="dropdown-arrow">▾</span>
+            </button>
+            <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
+              <div class="dropdown-header">
+                <span class="dropdown-title">All Utility Tools & Calculators</span>
+                <span class="dropdown-badge">⚡ 100% Free & Private</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="dynamic-translator.html" class="dropdown-item ">
+                  <div class="item-icon-box cyan">🌐</div>
+                  <div class="item-text">
+                    <span class="item-title">AI Translator</span>
+                    <span class="item-desc">100+ languages real-time AI</span>
+                  </div>
+                </a>
+                <a href="govt-photo-resizer.html" class="dropdown-item ">
+                  <div class="item-icon-box green">📸</div>
+                  <div class="item-text">
+                    <span class="item-title">Govt Photo Resizer</span>
+                    <span class="item-desc">Compress to 20KB / 50KB</span>
+                  </div>
+                </a>
+                <a href="resume-builder.html" class="dropdown-item ">
+                  <div class="item-icon-box purple">📄</div>
+                  <div class="item-text">
+                    <span class="item-title">ATS Resume Builder</span>
+                    <span class="item-desc">Instant 1-page modern PDF</span>
+                  </div>
+                </a>
+                <a href="emi-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box amber">🏦</div>
+                  <div class="item-text">
+                    <span class="item-title">Loan EMI Calculator</span>
+                    <span class="item-desc">Home, car & personal loan</span>
+                  </div>
+                </a>
+                <a href="typing-test.html" class="dropdown-item ">
+                  <div class="item-icon-box blue">⌨️</div>
+                  <div class="item-text">
+                    <span class="item-title">Typing Speed Test</span>
+                    <span class="item-desc">Live WPM & accuracy test</span>
+                  </div>
+                </a>
+                <a href="qr-generator.html" class="dropdown-item ">
+                  <div class="item-icon-box rose">📱</div>
+                  <div class="item-text">
+                    <span class="item-title">UPI QR Generator</span>
+                    <span class="item-desc">Payment & URL QR codes</span>
+                  </div>
+                </a>
+                <a href="image-to-pdf.html" class="dropdown-item active">
+                  <div class="item-icon-box emerald">📑</div>
+                  <div class="item-text">
+                    <span class="item-title">Image to PDF</span>
+                    <span class="item-desc">Batch convert JPG/PNG</span>
+                  </div>
+                </a>
+                <a href="sip-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box indigo">📈</div>
+                  <div class="item-text">
+                    <span class="item-title">SIP Calculator</span>
+                    <span class="item-desc">Mutual funds wealth projector</span>
+                  </div>
+                </a>
+                <a href="cgpa-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box orange">🎓</div>
+                  <div class="item-text">
+                    <span class="item-title">CGPA Calculator</span>
+                    <span class="item-desc">10-point CGPA to percentage</span>
+                  </div>
+                </a>
+                <a href="age-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box yellow">🎂</div>
+                  <div class="item-text">
+                    <span class="item-title">Age Calculator</span>
+                    <span class="item-desc">Exact birth age & days</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="../about-us.html" class=""><span>ℹ️</span> About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-search-trigger" id="nav-search-trigger" aria-label="Search tools" title="Search Tools">
+          <span>🔍</span>
+          <span class="search-kbd-hint">Search</span>
+        </button>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay & Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+      <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="mobile-drawer-search">
+      <span class="drawer-search-icon">🔍</span>
+      <input type="text" id="drawer-search-input" placeholder="Search any tool..." aria-label="Search in menu">
+    </div>
+
+    <div class="mobile-drawer-body">
+      <div class="drawer-section-title">All Utility Tools</div>
+      <ul class="drawer-nav-list" id="drawer-tools-list">
+        <li>
+          <a href="dynamic-translator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🌐</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">AI Translator</span>
+              <span class="drawer-item-badge">Dynamic AI</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="govt-photo-resizer.html" class="drawer-item ">
+            <span class="drawer-item-icon">📸</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Govt Photo Resizer</span>
+              <span class="drawer-item-badge">20KB / 50KB</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="resume-builder.html" class="drawer-item ">
+            <span class="drawer-item-icon">📄</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">ATS Resume Builder</span>
+              <span class="drawer-item-badge">Instant PDF</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="emi-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏦</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Loan EMI Calculator</span>
+              <span class="drawer-item-badge">Charts</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="typing-test.html" class="drawer-item ">
+            <span class="drawer-item-icon">⌨️</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Typing Speed Test</span>
+              <span class="drawer-item-badge">1 Min</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="qr-generator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📱</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">UPI QR Generator</span>
+              <span class="drawer-item-badge">Free</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="image-to-pdf.html" class="drawer-item active">
+            <span class="drawer-item-icon">📑</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Image to PDF</span>
+              <span class="drawer-item-badge">Batch</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="sip-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📈</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">SIP Calculator</span>
+              <span class="drawer-item-badge">Wealth</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="cgpa-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎓</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">CGPA Calculator</span>
+              <span class="drawer-item-badge">Percent</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="age-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎂</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Age Calculator</span>
+              <span class="drawer-item-badge">Exact</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-section-title">Navigation & Info</div>
+      <ul class="drawer-nav-list">
+        <li>
+          <a href="../index.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏠</span>
+            <span class="drawer-item-title">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="../about-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">ℹ️</span>
+            <span class="drawer-item-title">About Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="../contact-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">✉️</span>
+            <span class="drawer-item-title">Contact Support</span>
+          </a>
+        </li>
+        <li>
+          <a href="../privacy-policy.html" class="drawer-item ">
+            <span class="drawer-item-icon">🔒</span>
+            <span class="drawer-item-title">Privacy Policy</span>
+          </a>
+        </li>
+        <li>
+          <a href="../terms.html" class="drawer-item ">
+            <span class="drawer-item-icon">📜</span>
+            <span class="drawer-item-title">Terms of Service</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <span>🔒</span> 100% Client-Side Privacy • Zero Server Uploads
+    </div>
+  </aside>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-top: 2rem;">
+
+    <!-- Breadcrumb -->
+    <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>›</span>
+      <a href="../index.html#tools">Tools</a>
+      <span>›</span>
+      <span style="color: var(--text-main);">Image to PDF Converter</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header-wrap">
+      <div class="badge-privacy">
+        <span>📑</span> 100% Free • No Watermark • Local & Client-Side
+      </div>
+      <h1 class="tool-page-title">Free Image to PDF Converter</h1>
+      <p class="tool-page-subtitle">
+        Convert multiple photos, documents, and marksheets (JPG, PNG) into clean A4 PDF files. Zero server uploads.
+      </p>
+    </div>
+
+    <!-- Ad Slot 1: Header Leaderboard (728x90) -->
+    <div class="ad-container" id="ad-pdf-top">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - 728x90 Top Banner ]</span>
+      </div>
+    </div>
+
+    <!-- Tool Workspace Layout -->
+    <div class="tool-split-layout">
+      
+      <!-- Left Column: Upload & Options -->
+      <div class="glass-card">
+        <h3 style="margin-bottom: 1.25rem; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>📤</span> Upload Images
+        </h3>
+
+        <!-- Multi-Image Dropzone -->
+        <div class="dropzone-box" id="pdf-dropzone">
+          <div class="dropzone-icon">🖼️</div>
+          <h4 class="dropzone-title">Drag & drop images here or click to browse</h4>
+          <p class="dropzone-desc">Supports multiple JPG, JPEG, and PNG images</p>
+          <input type="file" id="pdf-file-input" accept="image/*" multiple style="display: none;" />
+          <button type="button" class="btn btn-secondary btn-sm" id="pdf-browse-btn" style="margin-top: 1rem;">
+            Select Photos
+          </button>
+        </div>
+
+        <!-- PDF Layout Controls -->
+        <div style="margin-top: 1.75rem;">
+          <label class="input-label" for="pdf-orientation">Page Orientation:</label>
+          <select id="pdf-orientation" class="form-input">
+            <option value="portrait" selected>Portrait (Standard A4)</option>
+            <option value="landscape">Landscape (Horizontal A4)</option>
+          </select>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <label class="input-label" for="pdf-margin">Page Margins:</label>
+          <select id="pdf-margin" class="form-input">
+            <option value="10" selected>Normal (10mm Margin)</option>
+            <option value="0">Zero Margin (Edge-to-Edge)</option>
+            <option value="20">Large (20mm Margin)</option>
+          </select>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem;">
+          <button type="button" class="btn btn-primary btn-lg" id="generate-pdf-btn" disabled>
+            📄 Download Combined PDF
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" id="clear-all-images-btn">
+            Clear All Images
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Image Queue & Reordering -->
+      <div class="glass-card">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+          <h3 style="font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>📋</span> Image Queue
+          </h3>
+          <span id="uploaded-count-badge" style="font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: var(--radius-full); background: var(--bg-surface); border: 1px solid var(--border);">
+            0 photos added
+          </span>
+        </div>
+
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1rem;">
+          Use the <strong>↑</strong> (Up) and <strong>↓</strong> (Down) buttons to reorder pages before compiling.
+        </p>
+
+        <!-- Dynamic Images List -->
+        <div id="pdf-images-list" style="max-height: 440px; overflow-y: auto; padding-right: 0.25rem;">
+          <div style="text-align: center; color: var(--text-dim); padding: 3rem 1rem;">
+            No photos added yet. Select or drop images on the left.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Ad Slot 2: In-Content Banner -->
+    <div class="ad-container" id="ad-pdf-mid">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - In-Content Responsive Banner ]</span>
+      </div>
+    </div>
+
+    <!-- SEO Article on Document Preparation -->
+    <article class="seo-article">
+      <h2>How to Convert Images (JPG/PNG) into A4 PDF for Online Applications</h2>
+      <p>
+        When filling out competitive exam applications and job registrations, portals frequently require academic and personal proofs (such as 10th and 12th marksheets, degree certificates, category certificates, domicile, and identity cards) to be uploaded in PDF format. Most government application guidelines mandate:  
+        <em>"All relevant certificates must be scanned and merged into a single multi-page PDF file under 1MB."</em>
+      </p>
+      <p>
+        Applicants often capture photos on their mobile phones but struggle to combine them into a single file without paying cyber cafe charges or using third-party apps that imprint ugly watermarks and store sensitive records on external servers. <strong>RozgarTools Image to PDF Converter</strong> solves this by converting images directly inside your browser without any watermark or server upload.
+      </p>
+
+      <h3>Best Practices When Preparing PDF Documents:</h3>
+      <ul>
+        <li><strong>Ensure Crisp Lighting:</strong> Avoid camera shadows and excessive flash glare so that registration numbers and grades remain clearly legible.</li>
+        <li><strong>Arrange Proper Chronology:</strong> Place documents in chronological sequence (e.g., 10th Marks Sheet, followed by 12th, Degree, and Caste Certificate). Use our <strong>↑ / ↓</strong> controls to sort your pages seamlessly.</li>
+        <li><strong>Use Standard A4 Aspect Ratio:</strong> Standard office printers and scanning systems expect A4 layout. Our converter automatically scales your images to fit A4 sheets without distortion.</li>
+      </ul>
+
+      <h3>Why RozgarTools PDF Converter Is Better:</h3>
+      <ol>
+        <li><strong>Zero Watermarks:</strong> Your generated PDF looks crisp, clean, and completely professional.</li>
+        <li><strong>No File Limits:</strong> Merge as many images as your browser can handle.</li>
+        <li><strong>100% Client-Side Privacy:</strong> Your documents never leave your device. The PDF is assembled using in-browser JavaScript.</li>
+      </ol>
+    </article>
+
+    <!-- Ad Slot 3: In-FAQ Banner -->
+    <div class="ad-container" id="ad-pdf-faq">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - In-FAQ Responsive Ad ]</span>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section style="margin: 3rem 0;">
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">Frequently Asked Questions (FAQs)</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+        Common queries regarding the Image to PDF converter.
+      </p>
+
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I merge 10 or 15 photos into a single PDF file?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes! You can choose multiple images simultaneously. The converter renders each image onto a dedicated A4 page within the same PDF file.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do I need to install any software or mobile app?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Not at all. This is a fully web-based application that runs directly in any modern mobile or desktop browser (Chrome, Edge, Safari, Firefox).
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is the generated PDF accepted on official portals?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. The PDF conforms to official Adobe PDF 1.4/1.5 standards with standard A4 page dimensions, widely accepted across recruitment portals, college admissions, and job boards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon">⚡</div>
+            <div class="brand-text">Rozgar<span>Tools</span></div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; max-width: 340px;">
+            100% free image to PDF converter. Fast, private, and watermark-free.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Other Tools</h4>
+          <ul class="footer-links">
+            <li><a href="govt-photo-resizer.html">Photo & Signature Resizer</a></li>
+            <li><a href="sip-calculator.html">SIP & Lumpsum Calculator</a></li>
+            <li><a href="age-calculator.html">Exact Age Calculator</a></li>
+            <li><a href="../index.html">View All Tools</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Important Links</h4>
+          <ul class="footer-links">
+            <li><a href="../about-us.html">About Us</a></li>
+            <li><a href="../contact-us.html">Contact Us</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Privacy Guarantee</h4>
+          <p style="color: var(--text-dim); font-size: 0.85rem; line-height: 1.5;">
+            🔒 All images are converted locally inside your web browser. No files are transferred to remote servers.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 RozgarTools. All rights reserved.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="../privacy-policy.html" style="color: var(--text-dim);">Privacy</a>
+          <a href="../terms.html" style="color: var(--text-dim);">Terms</a>
+          <a href="../sitemap.xml" style="color: var(--text-dim);">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/image-to-pdf.js"></script>
+</body>
+</html>

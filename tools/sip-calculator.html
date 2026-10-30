@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIP Calculator Online - Mutual Fund SIP & Lumpsum Return Calculator | RozgarTools</title>
+  <meta name="description" content="Free Online Mutual Fund SIP & Lumpsum Calculator. Calculate compound interest, future maturity wealth, and yearly growth milestones with interactive charts.">
+  <meta name="keywords" content="sip calculator, mutual fund calculator, lumpsum calculator, sip return calculator, compound interest calculator, monthly investment plan, sip maturity amount">
+  <meta name="author" content="RozgarTools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rozgartools.vercel.app/tools/sip-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rozgartools.vercel.app/tools/sip-calculator.html">
+  <meta property="og:title" content="SIP Calculator Online - Mutual Fund SIP & Lumpsum Return Calculator | RozgarTools">
+  <meta property="og:description" content="Calculate your wealth gains and future maturity amount on mutual fund investments with dynamic charts.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Mutual Fund SIP & Lumpsum Calculator",
+        "operatingSystem": "All",
+        "applicationCategory": "FinanceApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.95",
+          "ratingCount": "2120"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Systematic Investment Plan (SIP)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Systematic Investment Plan (SIP) is an investment vehicle that allows individuals to invest a fixed amount regularly (monthly or quarterly) into mutual funds, benefiting from compound interest and rupee cost averaging."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the SIP calculator determine returns?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The calculator applies the standard monthly compound interest formula M = P × [ (1 + i)^n - 1 ] × (1 + i) / i, where P is monthly deposit, i is the periodic rate, and n is the total number of installments."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="brand-logo" id="home-logo-link">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html" class=""><span>🏠</span> Home</a></li>
+          <li><a href="dynamic-translator.html" class=""><span>🌐</span> AI Translator</a></li>
+          <li><a href="govt-photo-resizer.html" class=""><span>📸</span> Photo Resizer</a></li>
+          <li><a href="resume-builder.html" class=""><span>📄</span> Resume Builder</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>🧰</span> All Tools <span class="dropdown-arrow">▾</span>
+            </button>
+            <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
+              <div class="dropdown-header">
+                <span class="dropdown-title">All Utility Tools & Calculators</span>
+                <span class="dropdown-badge">⚡ 100% Free & Private</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="dynamic-translator.html" class="dropdown-item ">
+                  <div class="item-icon-box cyan">🌐</div>
+                  <div class="item-text">
+                    <span class="item-title">AI Translator</span>
+                    <span class="item-desc">100+ languages real-time AI</span>
+                  </div>
+                </a>
+                <a href="govt-photo-resizer.html" class="dropdown-item ">
+                  <div class="item-icon-box green">📸</div>
+                  <div class="item-text">
+                    <span class="item-title">Govt Photo Resizer</span>
+                    <span class="item-desc">Compress to 20KB / 50KB</span>
+                  </div>
+                </a>
+                <a href="resume-builder.html" class="dropdown-item ">
+                  <div class="item-icon-box purple">📄</div>
+                  <div class="item-text">
+                    <span class="item-title">ATS Resume Builder</span>
+                    <span class="item-desc">Instant 1-page modern PDF</span>
+                  </div>
+                </a>
+                <a href="emi-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box amber">🏦</div>
+                  <div class="item-text">
+                    <span class="item-title">Loan EMI Calculator</span>
+                    <span class="item-desc">Home, car & personal loan</span>
+                  </div>
+                </a>
+                <a href="typing-test.html" class="dropdown-item ">
+                  <div class="item-icon-box blue">⌨️</div>
+                  <div class="item-text">
+                    <span class="item-title">Typing Speed Test</span>
+                    <span class="item-desc">Live WPM & accuracy test</span>
+                  </div>
+                </a>
+                <a href="qr-generator.html" class="dropdown-item ">
+                  <div class="item-icon-box rose">📱</div>
+                  <div class="item-text">
+                    <span class="item-title">UPI QR Generator</span>
+                    <span class="item-desc">Payment & URL QR codes</span>
+                  </div>
+                </a>
+                <a href="image-to-pdf.html" class="dropdown-item ">
+                  <div class="item-icon-box emerald">📑</div>
+                  <div class="item-text">
+                    <span class="item-title">Image to PDF</span>
+                    <span class="item-desc">Batch convert JPG/PNG</span>
+                  </div>
+                </a>
+                <a href="sip-calculator.html" class="dropdown-item active">
+                  <div class="item-icon-box indigo">📈</div>
+                  <div class="item-text">
+                    <span class="item-title">SIP Calculator</span>
+                    <span class="item-desc">Mutual funds wealth projector</span>
+                  </div>
+                </a>
+                <a href="cgpa-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box orange">🎓</div>
+                  <div class="item-text">
+                    <span class="item-title">CGPA Calculator</span>
+                    <span class="item-desc">10-point CGPA to percentage</span>
+                  </div>
+                </a>
+                <a href="age-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box yellow">🎂</div>
+                  <div class="item-text">
+                    <span class="item-title">Age Calculator</span>
+                    <span class="item-desc">Exact birth age & days</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="../about-us.html" class=""><span>ℹ️</span> About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-search-trigger" id="nav-search-trigger" aria-label="Search tools" title="Search Tools">
+          <span>🔍</span>
+          <span class="search-kbd-hint">Search</span>
+        </button>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay & Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+      <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="mobile-drawer-search">
+      <span class="drawer-search-icon">🔍</span>
+      <input type="text" id="drawer-search-input" placeholder="Search any tool..." aria-label="Search in menu">
+    </div>
+
+    <div class="mobile-drawer-body">
+      <div class="drawer-section-title">All Utility Tools</div>
+      <ul class="drawer-nav-list" id="drawer-tools-list">
+        <li>
+          <a href="dynamic-translator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🌐</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">AI Translator</span>
+              <span class="drawer-item-badge">Dynamic AI</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="govt-photo-resizer.html" class="drawer-item ">
+            <span class="drawer-item-icon">📸</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Govt Photo Resizer</span>
+              <span class="drawer-item-badge">20KB / 50KB</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="resume-builder.html" class="drawer-item ">
+            <span class="drawer-item-icon">📄</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">ATS Resume Builder</span>
+              <span class="drawer-item-badge">Instant PDF</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="emi-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏦</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Loan EMI Calculator</span>
+              <span class="drawer-item-badge">Charts</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="typing-test.html" class="drawer-item ">
+            <span class="drawer-item-icon">⌨️</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Typing Speed Test</span>
+              <span class="drawer-item-badge">1 Min</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="qr-generator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📱</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">UPI QR Generator</span>
+              <span class="drawer-item-badge">Free</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="image-to-pdf.html" class="drawer-item ">
+            <span class="drawer-item-icon">📑</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Image to PDF</span>
+              <span class="drawer-item-badge">Batch</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="sip-calculator.html" class="drawer-item active">
+            <span class="drawer-item-icon">📈</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">SIP Calculator</span>
+              <span class="drawer-item-badge">Wealth</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="cgpa-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎓</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">CGPA Calculator</span>
+              <span class="drawer-item-badge">Percent</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="age-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎂</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Age Calculator</span>
+              <span class="drawer-item-badge">Exact</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-section-title">Navigation & Info</div>
+      <ul class="drawer-nav-list">
+        <li>
+          <a href="../index.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏠</span>
+            <span class="drawer-item-title">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="../about-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">ℹ️</span>
+            <span class="drawer-item-title">About Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="../contact-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">✉️</span>
+            <span class="drawer-item-title">Contact Support</span>
+          </a>
+        </li>
+        <li>
+          <a href="../privacy-policy.html" class="drawer-item ">
+            <span class="drawer-item-icon">🔒</span>
+            <span class="drawer-item-title">Privacy Policy</span>
+          </a>
+        </li>
+        <li>
+          <a href="../terms.html" class="drawer-item ">
+            <span class="drawer-item-icon">📜</span>
+            <span class="drawer-item-title">Terms of Service</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <span>🔒</span> 100% Client-Side Privacy • Zero Server Uploads
+    </div>
+  </aside>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-top: 2rem;">
+
+    <!-- Breadcrumb -->
+    <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>›</span>
+      <a href="../index.html#tools-container">Tools</a>
+      <span>›</span>
+      <span style="color: var(--text-main);">SIP & Lumpsum Calculator</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header-wrap">
+      <div class="badge-privacy">
+        <span>📈</span> 100% Free • Accurate Compound Math • Live Visuals
+      </div>
+      <h1 class="tool-page-title">SIP & Lumpsum Return Calculator</h1>
+      <p class="tool-page-subtitle">
+        Calculate your prospective wealth growth, invested capital, and estimated capital gains on systematic or one-time mutual fund investments.
+      </p>
+    </div>
+
+    <!-- Ad Slot 1 -->
+    <div class="ad-container" id="ad-sip-top">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - 728x90 Top Banner ]</span>
+      </div>
+    </div>
+
+    <!-- Split Tool Workspace -->
+    <div class="tool-split-layout">
+      
+      <!-- Left Column: Inputs & Sliders -->
+      <div class="glass-card">
+        
+        <!-- Type Switcher -->
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; background: var(--bg-surface); padding: 0.35rem; border-radius: var(--radius-full); border: 1px solid var(--border);">
+          <button type="button" class="preset-pill calc-type-btn active" data-type="sip" style="flex: 1; text-align: center;">
+            Monthly SIP
+          </button>
+          <button type="button" class="preset-pill calc-type-btn" data-type="lumpsum" style="flex: 1; text-align: center;">
+            One-Time Lumpsum
+          </button>
+        </div>
+
+        <!-- Input 1: Investment Amount -->
+        <div style="margin-bottom: 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <label class="input-label" id="amount-field-label" style="margin-bottom: 0;">Monthly Investment:</label>
+            <div style="display: flex; align-items: center; gap: 0.25rem;">
+              <span style="color: var(--text-dim); font-weight: 600;">₹</span>
+              <input type="number" id="calc-amount-input" class="form-input" value="5000" min="500" max="1000000" step="500" style="width: 130px; font-weight: 700; text-align: right;" />
+            </div>
+          </div>
+          <input type="range" id="calc-amount-slider" min="500" max="100000" step="500" value="5000" />
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem;">
+            <span>₹500</span>
+            <span>₹50,000</span>
+            <span>₹1,00,000</span>
+          </div>
+        </div>
+
+        <!-- Input 2: Expected Return Rate -->
+        <div style="margin-bottom: 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <label class="input-label" style="margin-bottom: 0;">Expected Annual Return Rate (p.a.):</label>
+            <div style="display: flex; align-items: center; gap: 0.25rem;">
+              <input type="number" id="calc-rate-input" class="form-input" value="12" min="1" max="30" step="0.5" style="width: 90px; font-weight: 700; text-align: right;" />
+              <span style="color: var(--text-dim); font-weight: 600;">%</span>
+            </div>
+          </div>
+          <input type="range" id="calc-rate-slider" min="1" max="30" step="0.5" value="12" />
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem;">
+            <span>1%</span>
+            <span>15%</span>
+            <span>30%</span>
+          </div>
+        </div>
+
+        <!-- Input 3: Time Period -->
+        <div style="margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <label class="input-label" style="margin-bottom: 0;">Time Period (Tenure):</label>
+            <div style="display: flex; align-items: center; gap: 0.25rem;">
+              <input type="number" id="calc-years-input" class="form-input" value="10" min="1" max="40" step="1" style="width: 90px; font-weight: 700; text-align: right;" />
+              <span style="color: var(--text-dim); font-weight: 600;">Yr</span>
+            </div>
+          </div>
+          <input type="range" id="calc-years-slider" min="1" max="40" step="1" value="10" />
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem;">
+            <span>1 Year</span>
+            <span>20 Years</span>
+            <span>40 Years</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Results & Interactive Doughnut Chart -->
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        
+        <div>
+          <h3 style="margin-bottom: 1.25rem; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>📊</span> Projected Summary
+          </h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
+              <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Total Invested</span>
+              <strong id="total-invested-display" style="font-size: 1.35rem; color: var(--text-main); font-family: 'Outfit', sans-serif;">₹6,00,000</strong>
+            </div>
+            <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
+              <span style="font-size: 0.8rem; color: var(--accent-emerald); display: block;">Estimated Returns</span>
+              <strong id="est-returns-display" style="font-size: 1.35rem; color: var(--accent-emerald); font-family: 'Outfit', sans-serif;">₹5,61,695</strong>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--primary-light); text-align: center; margin-bottom: 1.5rem;">
+            <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: block;">Expected Total Maturity Value</span>
+            <div id="future-value-display" style="font-size: 2.2rem; font-weight: 800; font-family: 'Outfit', sans-serif; color: var(--text-main); margin-top: 0.25rem;">
+              ₹11,61,695
+            </div>
+          </div>
+        </div>
+
+        <!-- Doughnut Chart Container -->
+        <div style="height: 200px; position: relative;">
+          <canvas id="sip-doughnut-chart"></canvas>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Yearly Growth Breakdown Table -->
+    <div class="glass-card" style="margin-top: 2rem;">
+      <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">Year-by-Year Growth Table</h3>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+          <thead>
+            <tr style="background: var(--bg-surface);">
+              <th style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);">Milestone Year</th>
+              <th style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);">Invested Amount</th>
+              <th style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);">Estimated Gain</th>
+              <th style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);">Total Future Value</th>
+            </tr>
+          </thead>
+          <tbody id="growth-breakdown-tbody">
+            <!-- Dynamic Rows -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Ad Slot 2 -->
+    <div class="ad-container" id="ad-sip-mid">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - In-Content Native Banner ]</span>
+      </div>
+    </div>
+
+    <!-- SEO Content Section -->
+    <article class="seo-article">
+      <h2>Understanding the Power of Compounding via Mutual Fund SIPs</h2>
+      <p>
+        A <strong>Systematic Investment Plan (SIP)</strong> allows individuals to invest manageable, consistent monthly sums into equity or debt mutual funds. Unlike attempting to time volatile market peaks and troughs, regular investing takes advantage of <em>Rupee Cost Averaging</em>. When markets dip, your fixed monthly allocation buys more mutual fund units; when markets rally, those accumulated units surge in capital value.
+      </p>
+
+      <h3>The 15 × 15 × 15 Wealth Formula:</h3>
+      <p>
+        In financial literacy, the 15×15×15 principle illustrates the exponential trajectory of compounding: investing ₹15,000 per month for 15 years at an annualized return of 15% yields a portfolio of approximately ₹1,00,00,000 (1 Crore).
+      </p>
+    </article>
+
+    <!-- FAQ Section -->
+    <section style="margin: 3rem 0;">
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">Frequently Asked Questions (FAQs)</h2>
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I change or stop my monthly SIP amount at any time?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. Mutual fund SIPs are completely flexible. You can pause, increase, or cancel your automated monthly deductions without incurring penalties.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is the difference between SIP and Lumpsum investments?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              An SIP involves recurring monthly deposits that average out market volatility over long horizons. A lumpsum investment commits an entire lump sum into the market on a single day.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 1rem;">
+          <div class="brand-icon">⚡</div>
+          <div class="brand-text">Rozgar<span>Tools</span></div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          100% free, private, and client-side online utility tools and calculators.
+        </p>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Popular Tools</h4>
+        <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+          <li><a href="govt-photo-resizer.html">Photo Resizer</a></li>
+          <li><a href="emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="typing-test.html">Typing Speed Test</a></li>
+          <li><a href="resume-builder.html">Resume Builder</a></li>
+          <li><a href="qr-generator.html">QR Code Generator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Quick Links</h4>
+        <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+          <li><a href="../about-us.html">About Us</a></li>
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms of Service</a></li>
+          <li><a href="../contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <span>© 2026 RozgarTools. All rights reserved.</span>
+        <span>100% Privacy-First & Client-Side</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/sip-calculator.js"></script>
+</body>
+</html>

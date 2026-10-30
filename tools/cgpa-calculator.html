@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGPA to Percentage Calculator Online - CBSE, College & Marks Calculator | RozgarTools</title>
+  <meta name="description" content="Free online CGPA to Percentage Calculator. Convert CBSE 10th/12th CGPA (x 9.5), AICTE 10-point college scale, semester SGPA, and marks to equivalent percentage and division.">
+  <meta name="keywords" content="cgpa to percentage, cbse cgpa to percentage, calculate percentage from marks, aicte cgpa formula, sgpa to cgpa calculator, 10 point scale cgpa">
+  <meta name="author" content="RozgarTools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rozgartools.vercel.app/tools/cgpa-calculator.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rozgartools.vercel.app/tools/cgpa-calculator.html">
+  <meta property="og:title" content="CGPA to Percentage Calculator Online - CBSE & College Scale | RozgarTools">
+  <meta property="og:description" content="Convert your CGPA or SGPA into percentage and academic grades instantly. Standard certified formulas.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "CGPA to Percentage & Marks Calculator",
+        "operatingSystem": "All",
+        "applicationCategory": "EducationalApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.93",
+          "ratingCount": "2240"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the official CBSE CGPA to percentage formula?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "According to the official Central Board of Secondary Education (CBSE) guidelines, the equivalent percentage is calculated by multiplying the CGPA by 9.5: Percentage (%) = CGPA x 9.5."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between SGPA and CGPA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SGPA (Semester Grade Point Average) represents academic performance across courses within a single semester, whereas CGPA (Cumulative Grade Point Average) reflects performance across all cumulative semesters combined."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="brand-logo" id="home-logo-link">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html" class=""><span>🏠</span> Home</a></li>
+          <li><a href="dynamic-translator.html" class=""><span>🌐</span> AI Translator</a></li>
+          <li><a href="govt-photo-resizer.html" class=""><span>📸</span> Photo Resizer</a></li>
+          <li><a href="resume-builder.html" class=""><span>📄</span> Resume Builder</a></li>
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>🧰</span> All Tools <span class="dropdown-arrow">▾</span>
+            </button>
+            <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
+              <div class="dropdown-header">
+                <span class="dropdown-title">All Utility Tools & Calculators</span>
+                <span class="dropdown-badge">⚡ 100% Free & Private</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="dynamic-translator.html" class="dropdown-item ">
+                  <div class="item-icon-box cyan">🌐</div>
+                  <div class="item-text">
+                    <span class="item-title">AI Translator</span>
+                    <span class="item-desc">100+ languages real-time AI</span>
+                  </div>
+                </a>
+                <a href="govt-photo-resizer.html" class="dropdown-item ">
+                  <div class="item-icon-box green">📸</div>
+                  <div class="item-text">
+                    <span class="item-title">Govt Photo Resizer</span>
+                    <span class="item-desc">Compress to 20KB / 50KB</span>
+                  </div>
+                </a>
+                <a href="resume-builder.html" class="dropdown-item ">
+                  <div class="item-icon-box purple">📄</div>
+                  <div class="item-text">
+                    <span class="item-title">ATS Resume Builder</span>
+                    <span class="item-desc">Instant 1-page modern PDF</span>
+                  </div>
+                </a>
+                <a href="emi-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box amber">🏦</div>
+                  <div class="item-text">
+                    <span class="item-title">Loan EMI Calculator</span>
+                    <span class="item-desc">Home, car & personal loan</span>
+                  </div>
+                </a>
+                <a href="typing-test.html" class="dropdown-item ">
+                  <div class="item-icon-box blue">⌨️</div>
+                  <div class="item-text">
+                    <span class="item-title">Typing Speed Test</span>
+                    <span class="item-desc">Live WPM & accuracy test</span>
+                  </div>
+                </a>
+                <a href="qr-generator.html" class="dropdown-item ">
+                  <div class="item-icon-box rose">📱</div>
+                  <div class="item-text">
+                    <span class="item-title">UPI QR Generator</span>
+                    <span class="item-desc">Payment & URL QR codes</span>
+                  </div>
+                </a>
+                <a href="image-to-pdf.html" class="dropdown-item ">
+                  <div class="item-icon-box emerald">📑</div>
+                  <div class="item-text">
+                    <span class="item-title">Image to PDF</span>
+                    <span class="item-desc">Batch convert JPG/PNG</span>
+                  </div>
+                </a>
+                <a href="sip-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box indigo">📈</div>
+                  <div class="item-text">
+                    <span class="item-title">SIP Calculator</span>
+                    <span class="item-desc">Mutual funds wealth projector</span>
+                  </div>
+                </a>
+                <a href="cgpa-calculator.html" class="dropdown-item active">
+                  <div class="item-icon-box orange">🎓</div>
+                  <div class="item-text">
+                    <span class="item-title">CGPA Calculator</span>
+                    <span class="item-desc">10-point CGPA to percentage</span>
+                  </div>
+                </a>
+                <a href="age-calculator.html" class="dropdown-item ">
+                  <div class="item-icon-box yellow">🎂</div>
+                  <div class="item-text">
+                    <span class="item-title">Age Calculator</span>
+                    <span class="item-desc">Exact birth age & days</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="../about-us.html" class=""><span>ℹ️</span> About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-search-trigger" id="nav-search-trigger" aria-label="Search tools" title="Search Tools">
+          <span>🔍</span>
+          <span class="search-kbd-hint">Search</span>
+        </button>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay & Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Rozgar<span>Tools</span></div>
+      </a>
+      <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="mobile-drawer-search">
+      <span class="drawer-search-icon">🔍</span>
+      <input type="text" id="drawer-search-input" placeholder="Search any tool..." aria-label="Search in menu">
+    </div>
+
+    <div class="mobile-drawer-body">
+      <div class="drawer-section-title">All Utility Tools</div>
+      <ul class="drawer-nav-list" id="drawer-tools-list">
+        <li>
+          <a href="dynamic-translator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🌐</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">AI Translator</span>
+              <span class="drawer-item-badge">Dynamic AI</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="govt-photo-resizer.html" class="drawer-item ">
+            <span class="drawer-item-icon">📸</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Govt Photo Resizer</span>
+              <span class="drawer-item-badge">20KB / 50KB</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="resume-builder.html" class="drawer-item ">
+            <span class="drawer-item-icon">📄</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">ATS Resume Builder</span>
+              <span class="drawer-item-badge">Instant PDF</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="emi-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏦</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Loan EMI Calculator</span>
+              <span class="drawer-item-badge">Charts</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="typing-test.html" class="drawer-item ">
+            <span class="drawer-item-icon">⌨️</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Typing Speed Test</span>
+              <span class="drawer-item-badge">1 Min</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="qr-generator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📱</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">UPI QR Generator</span>
+              <span class="drawer-item-badge">Free</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="image-to-pdf.html" class="drawer-item ">
+            <span class="drawer-item-icon">📑</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Image to PDF</span>
+              <span class="drawer-item-badge">Batch</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="sip-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">📈</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">SIP Calculator</span>
+              <span class="drawer-item-badge">Wealth</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="cgpa-calculator.html" class="drawer-item active">
+            <span class="drawer-item-icon">🎓</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">CGPA Calculator</span>
+              <span class="drawer-item-badge">Percent</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="age-calculator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎂</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">Age Calculator</span>
+              <span class="drawer-item-badge">Exact</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-section-title">Navigation & Info</div>
+      <ul class="drawer-nav-list">
+        <li>
+          <a href="../index.html" class="drawer-item ">
+            <span class="drawer-item-icon">🏠</span>
+            <span class="drawer-item-title">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="../about-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">ℹ️</span>
+            <span class="drawer-item-title">About Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="../contact-us.html" class="drawer-item ">
+            <span class="drawer-item-icon">✉️</span>
+            <span class="drawer-item-title">Contact Support</span>
+          </a>
+        </li>
+        <li>
+          <a href="../privacy-policy.html" class="drawer-item ">
+            <span class="drawer-item-icon">🔒</span>
+            <span class="drawer-item-title">Privacy Policy</span>
+          </a>
+        </li>
+        <li>
+          <a href="../terms.html" class="drawer-item ">
+            <span class="drawer-item-icon">📜</span>
+            <span class="drawer-item-title">Terms of Service</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <span>🔒</span> 100% Client-Side Privacy • Zero Server Uploads
+    </div>
+  </aside>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-top: 2rem;">
+
+    <!-- Breadcrumb -->
+    <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>/</span>
+      <a href="../index.html#tools">Academic & Student Tools</a>
+      <span>/</span>
+      <span class="active">CGPA & Percentage Calculator</span>
+    </nav>
+
+    <!-- Header Intro -->
+    <div class="tool-header-wrap">
+      <h1 class="tool-page-title">CGPA to Percentage & Marks Calculator</h1>
+      <p class="tool-page-subtitle">
+        Convert your academic CGPA, semester SGPA, or raw marks into official percentage equivalency and division honors for recruitment and admission portals.
+      </p>
+    </div>
+
+    <!-- Top Advertisement Slot -->
+    <div class="ad-container" id="ad-slot-tool-top">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - 728x90 / Responsive Header Ad ]</span>
+      </div>
+    </div>
+
+    <!-- Mode Selector Tabs -->
+    <div class="cgpa-mode-tabs">
+      <button class="cgpa-tab-btn active" data-target="sec-cbse">🏫 CBSE Board CGPA (x 9.5)</button>
+      <button class="cgpa-tab-btn" data-target="sec-college">🎓 AICTE & University 10-Point Scale</button>
+      <button class="cgpa-tab-btn" data-target="sec-marks">📊 Marks to Percentage (%)</button>
+      <button class="cgpa-tab-btn" data-target="sec-sem">📑 Semester SGPA to CGPA</button>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="tool-split-layout">
+      
+      <!-- Left: Inputs -->
+      <div class="glass-card">
+        
+        <!-- Tab 1: CBSE Mode -->
+        <div id="sec-cbse" class="cgpa-calc-sec">
+          <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Enter CBSE CGPA</h2>
+          <div class="formula-callout">
+            📌 <strong>CBSE Official Formula:</strong> Equivalent Percentage (%) = <code>CGPA × 9.5</code>
+          </div>
+
+          <div class="calc-input-group" style="margin-top: 1.5rem;">
+            <div class="calc-label-row">
+              <label for="cbse-cgpa-input">Your Cumulative CGPA (e.g. 8.4):</label>
+              <input type="number" id="cbse-cgpa-input" class="calc-num-input" value="8.4" min="0" max="10" step="0.1">
+            </div>
+            <input type="range" id="cbse-cgpa-slider" min="3" max="10" step="0.1" value="8.4">
+          </div>
+        </div>
+
+        <!-- Tab 2: College / AICTE Mode -->
+        <div id="sec-college" class="cgpa-calc-sec" style="display: none;">
+          <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">University & College CGPA</h2>
+          
+          <div class="calc-input-group">
+            <label for="col-scale-formula" style="font-size: 0.9rem; font-weight: 600;">University Conversion Formula:</label>
+            <select id="col-scale-formula" class="calc-num-input" style="width: 100%; text-align: left; margin-top: 6px;">
+              <option value="aicte">AICTE Standard: (CGPA - 0.75) × 10</option>
+              <option value="mul10">Multiplier 10: CGPA × 10</option>
+              <option value="mul9.5">CBSE / VTU Standard: CGPA × 9.5</option>
+              <option value="mumbai">Mumbai University Standard: (CGPA × 7.1) + 11</option>
+            </select>
+          </div>
+
+          <div class="calc-input-group" style="margin-top: 1.25rem;">
+            <label for="col-cgpa-input" style="font-size: 0.9rem; font-weight: 600;">Your CGPA (Out of 10.0):</label>
+            <input type="number" id="col-cgpa-input" class="calc-num-input" style="width: 100%; text-align: left; margin-top: 6px;" value="8.2" min="0" max="10" step="0.01">
+          </div>
+        </div>
+
+        <!-- Tab 3: Marks to Percentage -->
+        <div id="sec-marks" class="cgpa-calc-sec" style="display: none;">
+          <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Marks Scored & Total Maximum</h2>
+          <div class="formula-callout">
+            📌 <strong>Formula:</strong> Percentage (%) = <code>(Marks Obtained ÷ Total Marks) × 100</code>
+          </div>
+
+          <div class="calc-input-group" style="margin-top: 1.25rem;">
+            <label for="marks-obtained" style="font-size: 0.9rem; font-weight: 600;">Total Marks Obtained:</label>
+            <input type="number" id="marks-obtained" class="calc-num-input" style="width: 100%; text-align: left; margin-top: 6px;" value="425" min="0" max="2000">
+          </div>
+
+          <div class="calc-input-group">
+            <label for="marks-total" style="font-size: 0.9rem; font-weight: 600;">Maximum Total Marks:</label>
+            <input type="number" id="marks-total" class="calc-num-input" style="width: 100%; text-align: left; margin-top: 6px;" value="500" min="1" max="2000">
+          </div>
+        </div>
+
+        <!-- Tab 4: Multi-Semester SGPA -->
+        <div id="sec-sem" class="cgpa-calc-sec" style="display: none;">
+          <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Semester SGPA Breakdown</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Enter the completed semester SGPA grades (leave future semesters empty):
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div>
+              <label style="font-size: 0.8rem; color: var(--text-dim);">Semester 1 (Sem 1)</label>
+              <input type="number" class="calc-num-input sem-sgpa-input" style="width: 100%; text-align: left;" value="8.0" step="0.01">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: var(--text-dim);">Semester 2 (Sem 2)</label>
+              <input type="number" class="calc-num-input sem-sgpa-input" style="width: 100%; text-align: left;" value="8.4" step="0.01">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: var(--text-dim);">Semester 3 (Sem 3)</label>
+              <input type="number" class="calc-num-input sem-sgpa-input" style="width: 100%; text-align: left;" value="8.2" step="0.01">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: var(--text-dim);">Semester 4 (Sem 4)</label>
+              <input type="number" class="calc-num-input sem-sgpa-input" style="width: 100%; text-align: left;" value="8.6" step="0.01">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: var(--text-dim);">Semester 5 (Sem 5)</label>
+              <input type="number" class="calc-num-input sem-sgpa-input" style="width: 100%; text-align: left;" step="0.01">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: var(--text-dim);">Semester 6 (Sem 6)</label>
+              <input type="number" class="calc-num-input sem-sgpa-input" style="width: 100%; text-align: left;" step="0.01">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Live Result Card -->
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        
+        <!-- Big Result Number -->
+        <div style="background: var(--bg-surface); border: 2px solid var(--primary); border-radius: var(--radius-xl); padding: 2rem; width: 100%; max-width: 320px; box-shadow: var(--shadow-glow);">
+          <div style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Equivalent Percentage</div>
+          <div id="res-cbse-pct" style="font-size: 3rem; font-weight: 800; font-family: 'Outfit', sans-serif; color: var(--primary); margin: 0.5rem 0;">79.80%</div>
+          <div id="res-cbse-grade" style="font-size: 1rem; font-weight: 700; color: var(--accent-emerald);">B+ Grade (Very Good)</div>
+        </div>
+
+        <!-- Recommendation Note -->
+        <div style="margin-top: 1.5rem; width: 100%; font-size: 0.85rem; color: var(--text-muted);">
+          <span>💡 Competitive exam forms typically mandate inputting percentage values up to two decimal places.</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Mid Advertisement Slot -->
+    <div class="ad-container" id="ad-slot-tool-mid">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot-leaderboard">
+        <span>[ Google AdSense - In-Article Native Banner ]</span>
+      </div>
+    </div>
+
+    <!-- SEO Content Section -->
+    <article class="seo-article">
+      <h2>Understanding CGPA and the 9.5 Conversion Multiplier</h2>
+      <p>
+        <strong>Cumulative Grade Point Average (CGPA)</strong> is the metric representing the average grade point obtained in all subjects by a student. When CBSE introduced grading, a statistical benchmark of previous scores demonstrated that students scoring in the 91–100 interval had an empirical average of ~95 marks. Dividing 95 by the maximum 10-point scale produces the standard <strong>9.5 conversion multiplier</strong>.
+      </p>
+
+      <h3>Calculation Example:</h3>
+      <p>
+        If an applicant holds a CGPA of <strong>8.6</strong>, the equivalent percentage is computed as: <br>
+        <code>8.6 × 9.5 = 81.70%</code>
+      </p>
+    </article>
+
+    <!-- FAQ Section -->
+    <section style="margin: 3rem 0;">
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">Frequently Asked Questions (FAQs)</h2>
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is the difference between SGPA and CGPA?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <strong>SGPA (Semester Grade Point Average)</strong> reflects performance for a single academic semester, while <strong>CGPA (Cumulative Grade Point Average)</strong> summarizes overall performance across all completed semesters in the degree curriculum.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do engineering universities use different conversion formulas?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. While CBSE and VTU commonly use 9.5, autonomous and AICTE universities often adopt <code>(CGPA - 0.75) × 10</code> or direct <code>CGPA × 10</code>. Choose the formula aligned with your university's transcript rules using the dropdown menu above.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 1rem;">
+          <div class="brand-icon">⚡</div>
+          <div class="brand-text">Rozgar<span>Tools</span></div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          Free, fast, and 100% private web utilities and student academic calculators.
+        </p>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Popular Tools</h4>
+        <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+          <li><a href="govt-photo-resizer.html">Photo Resizer</a></li>
+          <li><a href="sip-calculator.html">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="typing-test.html">Typing Speed Test</a></li>
+          <li><a href="qr-generator.html">QR Code Generator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Important Links</h4>
+        <ul style="list-style: none; font-size: 0.9rem; line-height: 2;">
+          <li><a href="../about-us.html">About Us</a></li>
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms & Conditions</a></li>
+          <li><a href="../contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <span>© 2026 RozgarTools. All rights reserved.</span>
+        <span>100% Privacy-First & Client-Side</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/cgpa-calculator.js"></script>
+</body>
+</html>

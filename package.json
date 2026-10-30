@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "node generate-sitemap.js && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "npx serve .",
+    "start": "npx serve .",
+    "build": "node build-static.js",
+    "preview": "npx serve dist"
   },
   "dependencies": {
     "framer-motion": "^13.4.6",
