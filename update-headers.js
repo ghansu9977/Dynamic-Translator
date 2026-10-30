@@ -1,22 +1,35 @@
 import fs from 'fs';
 import path from 'path';
 
-// Template generator for Desktop Nav + Mobile Drawer with new Logo
+// Complete List of 18 Tools (including all new iLovePDF Suite tools)
+const allTools = [
+  // PDF Suite
+  { file: 'merge-pdf.html', title: 'Merge PDF', desc: 'Combine multiple PDFs into one', icon: '📑', color: 'purple', badge: 'Popular', category: 'pdf' },
+  { file: 'split-pdf.html', title: 'Split PDF', desc: 'Extract pages & split ranges', icon: '✂️', color: 'rose', badge: 'Fast', category: 'pdf' },
+  { file: 'pdf-to-jpg.html', title: 'PDF to JPG', desc: 'Extract pages as high-res images', icon: '🖼️', color: 'cyan', badge: 'High-Res', category: 'pdf' },
+  { file: 'rotate-pdf.html', title: 'Rotate PDF', desc: 'Rotate pages 90°, 180°, 270°', icon: '🔄', color: 'blue', badge: 'Save Perm', category: 'pdf' },
+  { file: 'pdf-watermark.html', title: 'Watermark PDF', desc: 'Add text stamp & copyright', icon: '🌊', color: 'indigo', badge: 'Custom', category: 'pdf' },
+  { file: 'protect-pdf.html', title: 'Protect PDF', desc: 'Encrypt with password security', icon: '🔒', color: 'amber', badge: '128-Bit', category: 'pdf' },
+  { file: 'unlock-pdf.html', title: 'Unlock PDF', desc: 'Remove password restriction', icon: '🔓', color: 'emerald', badge: 'Instant', category: 'pdf' },
+  { file: 'pdf-page-numbers.html', title: 'Page Numbers', desc: 'Stamp header/footer page numbers', icon: '🔢', color: 'yellow', badge: 'Clean', category: 'pdf' },
+  { file: 'image-to-pdf.html', title: 'Image to PDF', desc: 'Batch convert JPG/PNG to PDF', icon: '📑', color: 'emerald', badge: 'Batch', category: 'pdf' },
+
+  // AI & Career
+  { file: 'dynamic-translator.html', title: 'AI Translator', desc: '100+ languages real-time AI', icon: '🌐', color: 'cyan', badge: 'Dynamic AI', category: 'ai' },
+  { file: 'govt-photo-resizer.html', title: 'Govt Photo Resizer', desc: 'Compress to 20KB / 50KB', icon: '📸', color: 'green', badge: 'SSC/Govt', category: 'photo' },
+  { file: 'resume-builder.html', title: 'ATS Resume Builder', desc: 'Instant 1-page modern PDF', icon: '📄', color: 'purple', badge: 'Free PDF', category: 'career' },
+  { file: 'typing-test.html', title: 'Typing Speed Test', desc: 'Live WPM & accuracy test', icon: '⌨️', color: 'blue', badge: '1 Min', category: 'career' },
+
+  // Calculators & Utilities
+  { file: 'emi-calculator.html', title: 'Loan EMI Calculator', desc: 'Home, car & personal loan', icon: '🏦', color: 'amber', badge: 'Charts', category: 'calc' },
+  { file: 'sip-calculator.html', title: 'SIP Calculator', desc: 'Mutual funds wealth projector', icon: '📈', color: 'indigo', badge: 'Wealth', category: 'calc' },
+  { file: 'cgpa-calculator.html', title: 'CGPA Calculator', desc: '10-point CGPA to percentage', icon: '🎓', color: 'orange', badge: 'Percent', category: 'calc' },
+  { file: 'age-calculator.html', title: 'Age Calculator', desc: 'Exact birth age & days', icon: '🎂', color: 'yellow', badge: 'Exact', category: 'calc' },
+  { file: 'qr-generator.html', title: 'UPI QR Generator', desc: 'Payment & URL QR codes', icon: '📱', color: 'rose', badge: 'Free', category: 'util' }
+];
+
 function getHeaderHtml(prefix, activePage) {
   const logoSrc = prefix ? `${prefix}assets/logo.png` : 'assets/logo.png';
-  const tools = [
-    { file: 'dynamic-translator.html', title: 'AI Translator', desc: '100+ languages real-time AI', icon: '🌐', color: 'cyan', badge: 'Dynamic AI' },
-    { file: 'govt-photo-resizer.html', title: 'Govt Photo Resizer', desc: 'Compress to 20KB / 50KB', icon: '📸', color: 'green', badge: '20KB / 50KB' },
-    { file: 'resume-builder.html', title: 'ATS Resume Builder', desc: 'Instant 1-page modern PDF', icon: '📄', color: 'purple', badge: 'Instant PDF' },
-    { file: 'emi-calculator.html', title: 'Loan EMI Calculator', desc: 'Home, car & personal loan', icon: '🏦', color: 'amber', badge: 'Charts' },
-    { file: 'typing-test.html', title: 'Typing Speed Test', desc: 'Live WPM & accuracy test', icon: '⌨️', color: 'blue', badge: '1 Min' },
-    { file: 'qr-generator.html', title: 'UPI QR Generator', desc: 'Payment & URL QR codes', icon: '📱', color: 'rose', badge: 'Free' },
-    { file: 'image-to-pdf.html', title: 'Image to PDF', desc: 'Batch convert JPG/PNG', icon: '📑', color: 'emerald', badge: 'Batch' },
-    { file: 'sip-calculator.html', title: 'SIP Calculator', desc: 'Mutual funds wealth projector', icon: '📈', color: 'indigo', badge: 'Wealth' },
-    { file: 'cgpa-calculator.html', title: 'CGPA Calculator', desc: '10-point CGPA to percentage', icon: '🎓', color: 'orange', badge: 'Percent' },
-    { file: 'age-calculator.html', title: 'Age Calculator', desc: 'Exact birth age & days', icon: '🎂', color: 'yellow', badge: 'Exact' }
-  ];
-
   const homeHref = prefix ? `${prefix}index.html` : 'index.html';
   const aboutHref = prefix ? `${prefix}about-us.html` : 'about-us.html';
   const contactHref = prefix ? `${prefix}contact-us.html` : 'contact-us.html';
@@ -25,7 +38,7 @@ function getHeaderHtml(prefix, activePage) {
 
   const toolHref = (file) => (prefix ? file : `tools/${file}`);
 
-  const dropdownItems = tools.map(t => `
+  const dropdownItems = allTools.map(t => `
                 <a href="${toolHref(t.file)}" class="dropdown-item ${activePage === t.file ? 'active' : ''}">
                   <div class="item-icon-box ${t.color}">${t.icon}</div>
                   <div class="item-text">
@@ -34,7 +47,18 @@ function getHeaderHtml(prefix, activePage) {
                   </div>
                 </a>`).join('');
 
-  const drawerToolItems = tools.map(t => `
+  const pdfDrawerItems = allTools.filter(t => t.category === 'pdf').map(t => `
+        <li>
+          <a href="${toolHref(t.file)}" class="drawer-item ${activePage === t.file ? 'active' : ''}">
+            <span class="drawer-item-icon">${t.icon}</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">${t.title}</span>
+              <span class="drawer-item-badge">${t.badge}</span>
+            </div>
+          </a>
+        </li>`).join('');
+
+  const otherDrawerItems = allTools.filter(t => t.category !== 'pdf').map(t => `
         <li>
           <a href="${toolHref(t.file)}" class="drawer-item ${activePage === t.file ? 'active' : ''}">
             <span class="drawer-item-icon">${t.icon}</span>
@@ -57,16 +81,17 @@ function getHeaderHtml(prefix, activePage) {
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="${homeHref}" class="${activePage === 'home' ? 'active' : ''}"><span>🏠</span> Home</a></li>
+          <li><a href="${toolHref('merge-pdf.html')}" class="${activePage === 'merge-pdf.html' ? 'active' : ''}"><span>📑</span> Merge PDF</a></li>
           <li><a href="${toolHref('dynamic-translator.html')}" class="${activePage === 'dynamic-translator.html' ? 'active' : ''}"><span>🌐</span> AI Translator</a></li>
           <li><a href="${toolHref('govt-photo-resizer.html')}" class="${activePage === 'govt-photo-resizer.html' ? 'active' : ''}"><span>📸</span> Photo Resizer</a></li>
           <li><a href="${toolHref('resume-builder.html')}" class="${activePage === 'resume-builder.html' ? 'active' : ''}"><span>📄</span> Resume Builder</a></li>
           <li class="nav-dropdown">
             <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
-              <span>🧰</span> All Tools <span class="dropdown-arrow">▾</span>
+              <span>🧰</span> All Tools (18) <span class="dropdown-arrow">▾</span>
             </button>
             <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
               <div class="dropdown-header">
-                <span class="dropdown-title">All Utility Tools & Calculators</span>
+                <span class="dropdown-title">Explore All 18 Online Tools (iLovePDF Suite + Utilities)</span>
                 <span class="dropdown-badge">⚡ 100% Free & Private</span>
               </div>
               <div class="dropdown-grid">${dropdownItems}
@@ -103,15 +128,19 @@ function getHeaderHtml(prefix, activePage) {
 
     <div class="mobile-drawer-search">
       <span class="drawer-search-icon">🔍</span>
-      <input type="text" id="drawer-search-input" placeholder="Search any tool..." aria-label="Search in menu">
+      <input type="text" id="drawer-search-input" placeholder="Search 18 tools..." aria-label="Search in menu">
     </div>
 
     <div class="mobile-drawer-body">
-      <div class="drawer-section-title">All Utility Tools</div>
-      <ul class="drawer-nav-list" id="drawer-tools-list">${drawerToolItems}
+      <div class="drawer-section-title">📑 PDF Tools Suite</div>
+      <ul class="drawer-nav-list" id="drawer-tools-list">${pdfDrawerItems}
       </ul>
 
-      <div class="drawer-section-title">Navigation & Info</div>
+      <div class="drawer-section-title" style="margin-top: 1rem;">🤖 AI, Career & Calculators</div>
+      <ul class="drawer-nav-list">${otherDrawerItems}
+      </ul>
+
+      <div class="drawer-section-title" style="margin-top: 1rem;">Navigation & Info</div>
       <ul class="drawer-nav-list">
         <li>
           <a href="${homeHref}" class="drawer-item ${activePage === 'home' ? 'active' : ''}">
@@ -207,12 +236,4 @@ for (const item of rootFiles) {
   }
 }
 
-// Copy logo as favicon.ico and favicon.png
-fs.copyFileSync('assets/logo.png', 'favicon.ico');
-fs.copyFileSync('assets/logo.png', 'favicon.png');
-if (fs.existsSync('public')) {
-  fs.copyFileSync('assets/logo.png', 'public/favicon.ico');
-  fs.copyFileSync('assets/logo.png', 'public/favicon.png');
-}
-
-console.log('All files updated with new user logo!');
+console.log('All 23 files updated with 18 tools in header and drawer!');

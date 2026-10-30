@@ -274,7 +274,10 @@ img {
   top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%) translateY(8px);
-  width: 580px;
+  width: 720px;
+  max-width: 95vw;
+  max-height: 82vh;
+  overflow-y: auto;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
@@ -1386,9 +1389,171 @@ input[type="range"]::-webkit-slider-thumb:hover {
   color: var(--text-muted);
 }
 
-.preview-stat strong {
+/* ==========================================================================
+   PDF TOOLS SUITE (Merge, Split, Rotate, Watermark, Protect, Numbers, Pages)
+   ========================================================================== */
+.pdf-files-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.pdf-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.15rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.pdf-item-card:hover {
+  border-color: var(--border-focus);
+  background: var(--bg-glass);
+}
+
+.pdf-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  overflow: hidden;
+}
+
+.pdf-order-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.pdf-file-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.pdf-item-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pdf-item-name {
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--text-main);
-  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+
+.pdf-item-meta {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.pdf-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.pdf-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: all var(--transition-fast);
+}
+
+.pdf-action-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.pdf-action-btn.remove-btn:hover {
+  border-color: var(--accent-rose);
+  color: var(--accent-rose);
+  background: rgba(244, 63, 94, 0.15);
+}
+
+.pdf-action-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* PDF Pages Grid (PDF to JPG / Preview) */
+.pdf-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.pdf-page-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all var(--transition-fast);
+}
+
+.pdf-page-card:hover {
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.pdf-page-img-box {
+  width: 100%;
+  height: 240px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+}
+
+.pdf-page-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.pdf-page-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pdf-page-num {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
 }
 
 /* Toast Notifications */
@@ -2330,4 +2495,173 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .related-tool-card .rt-desc {
   font-size: 0.76rem;
   color: var(--text-muted);
+}
+
+
+/* ==========================================================================
+   Rozgar Smart Intent & Quick Exam Navigation System
+   ========================================================================== */
+.rozgar-quick-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 1.25rem 0 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.rozgar-quick-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.rozgar-pills-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-amber);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rozgar-exam-tag {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.rozgar-exam-tag:hover {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.rozgar-exam-tag.active {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-cyan) 100%);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* Rozgar Smart Intent Match Banner */
+.rozgar-intent-banner {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-left: 5px solid var(--primary);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 1.75rem;
+  margin: 1.5rem 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.intent-banner-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.intent-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.intent-banner-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.intent-banner-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+}
+
+.intent-banner-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.intent-spec-pill {
+  font-size: 0.8rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-md);
+  color: var(--accent-emerald);
+  font-weight: 600;
+}
+
+.intent-banner-action {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-cyan) 100%);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.intent-banner-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--primary-glow);
+}
+
+/* Tool Card Matched Highlight */
+.tool-card.intent-matched {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.45) !important;
+  transform: translateY(-4px) scale(1.02);
+  position: relative;
+}
+
+.tool-card.intent-matched::before {
+  content: "🎯 Best Match for your Search";
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-cyan) 100%);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 2;
 }

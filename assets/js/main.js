@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initToolSearchAndFilters();
   initBackToTop();
   initFaqAccordion();
+  initRozgarIntentEngine();
 });
 
 /* ==========================================================================
@@ -357,3 +358,262 @@ function showToast(message, type = 'success') {
   }, 2800);
 }
 window.showToast = showToast;
+
+
+/* ==========================================================================
+   Rozgar Smart Intent & Search Query Engine
+   Automatically captures user search intent from URL parameters (?q=, ?search=, ?exam=, ?job=, ?rozgar=)
+   or live input, and dynamically adapts content, specs, and highlights the right tool.
+   ========================================================================== */
+function initRozgarIntentEngine() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const rawQuery = urlParams.get('q') || urlParams.get('search') || urlParams.get('exam') || urlParams.get('job') || urlParams.get('rozgar') || '';
+  
+  const searchInput = document.getElementById('tool-search-input');
+  const banner = document.getElementById('rozgar-intent-banner');
+  const bannerTitle = document.getElementById('intent-banner-title');
+  const bannerDesc = document.getElementById('intent-banner-desc');
+  const bannerSpecs = document.getElementById('intent-banner-specs');
+  const bannerBtn = document.getElementById('intent-banner-action-btn');
+  const examTags = document.querySelectorAll('.rozgar-exam-tag');
+
+  const examDb = {
+    ssc: {
+      name: 'SSC (CGL, CHSL, MTS, GD, Steno)',
+      toolHref: 'tools/govt-photo-resizer.html',
+      specs: 'Photo: 20KB–50KB (3.5×4.5 cm JPEG) • Signature: 10KB–20KB • Age: 18–27/32 yrs • Typing: 35 WPM',
+      desc: 'Official Staff Selection Commission application standards. Photos must have clear white background.',
+      cardHref: 'govt-photo-resizer.html'
+    },
+    upsc: {
+      name: 'UPSC Civil Services (IAS, IPS, NDA, CDS)',
+      toolHref: 'tools/govt-photo-resizer.html',
+      specs: 'Photo: 20KB–300KB (350×350 px min) • Signature: 20KB–300KB • Age: 21–32 yrs',
+      desc: 'Union Public Service Commission photo & signature specifications. High-clarity face required.',
+      cardHref: 'govt-photo-resizer.html'
+    },
+    railway: {
+      name: 'Railway Recruitment Board (RRB NTPC, Group D, ALP)',
+      toolHref: 'tools/govt-photo-resizer.html',
+      specs: 'Photo: 20KB–50KB JPEG • Signature: 10KB–20KB • Age: 18–33/36 yrs • Typing: 30 WPM',
+      desc: 'Indian Railways recruitment criteria. Photo and document conversion without quality loss.',
+      cardHref: 'govt-photo-resizer.html'
+    },
+    police: {
+      name: 'State Police Bharti (Constable & Sub-Inspector)',
+      toolHref: 'tools/govt-photo-resizer.html',
+      specs: 'Photo: 20KB–100KB • Signature: 10KB–50KB • Age: 18–25/28 yrs',
+      desc: 'Police recruitment standard document specifications. Clear frontal photo.',
+      cardHref: 'govt-photo-resizer.html'
+    },
+    banking: {
+      name: 'Banking Exams (IBPS PO, Clerk, SBI & RBI)',
+      toolHref: 'tools/govt-photo-resizer.html',
+      specs: 'Photo: 20KB–50KB (200×230 px) • Signature: 10KB–20KB (140×60 px) • Age: 20–30 yrs',
+      desc: 'Institute of Banking Personnel Selection criteria. Strictly black ink signature.',
+      cardHref: 'govt-photo-resizer.html'
+    },
+    court: {
+      name: 'High Court & District Court (Clerk, Steno)',
+      toolHref: 'tools/typing-test.html',
+      specs: 'Typing Speed: 30 WPM (Hindi) / 35 WPM (English) • 90%+ Accuracy • Age: 18–35 yrs',
+      desc: 'Judicial clerical typing speed test benchmarks and certification practice.',
+      cardHref: 'typing-test.html'
+    },
+    teaching: {
+      name: 'Teaching Exams (CTET, State TET, KVS, DSSSB, PRT)',
+      toolHref: 'tools/govt-photo-resizer.html',
+      specs: 'Photo: 10KB–100KB • Signature: 4KB–30KB • Age Eligibility Check',
+      desc: 'Central and State Teacher Eligibility exam requirements.',
+      cardHref: 'govt-photo-resizer.html'
+    }
+  };
+
+  const intentRules = [
+    {
+      regex: /photo|resiz|compress|20kb|50kb|100kb|sign|signature|crop|passport|image\s*size|pic/i,
+      toolHref: 'tools/govt-photo-resizer.html',
+      toolTitle: 'Govt Photo & Signature Resizer (20KB - 50KB)',
+      cardHref: 'govt-photo-resizer.html',
+      specs: 'Preset: 20 KB & 50 KB • Format: JPEG • Dimensions: 350×450 px • 100% Client-Side',
+      desc: 'Resize passport photographs and signatures to exact 20KB or 50KB with zero quality loss.'
+    },
+    {
+      regex: /age|dob|birth|cut.?off|eligib|how\s*old|birthday|sal|umra/i,
+      toolHref: 'tools/age-calculator.html',
+      toolTitle: 'Exact Age & Cut-Off Date Calculator',
+      cardHref: 'age-calculator.html',
+      specs: 'Accuracy: Exact Years, Months & Days • Leap Year Handled • Official Cut-Off Standards',
+      desc: 'Calculate your exact age as on official exam cut-off date to verify job eligibility.'
+    },
+    {
+      regex: /typ|speed|wpm|cpm|keyboard|clerk|court|steno|fast\s*typing/i,
+      toolHref: 'tools/typing-test.html',
+      toolTitle: 'Live Typing Speed Test (WPM & Accuracy)',
+      cardHref: 'typing-test.html',
+      specs: 'Session: 1, 2, 3 & 5 Mins • Live WPM & Accuracy • Recruitment Benchmarking',
+      desc: 'Test your keyboard speed and accuracy for SSC, Railway, and High Court exams.'
+    },
+    {
+      regex: /resume|cv|biodata|fresher|curriculum|portfolio|job\s*app/i,
+      toolHref: 'tools/resume-builder.html',
+      toolTitle: '1-Page ATS Resume & CV Builder',
+      cardHref: 'resume-builder.html',
+      specs: 'Format: 1-Page Modern ATS • Output: High-Res A4 PDF • 100% Free & No Sign-up',
+      desc: 'Create an ATS-friendly single-page resume tailored for government and corporate jobs.'
+    },
+    {
+      regex: /translat|hindi|english|bhasha|anuvad|language|marathi|bengali|tamil|speech/i,
+      toolHref: 'tools/dynamic-translator.html',
+      toolTitle: 'Dynamic AI Language Translator (100+ Languages)',
+      cardHref: 'dynamic-translator.html',
+      specs: 'Languages: 100+ Supported • Real-Time AI • Audio Text-to-Speech • Zero Limit',
+      desc: 'Translate job notices, exam instructions, and study material with neural accuracy.'
+    },
+    {
+      regex: /pdf|jpg\s*to\s*pdf|image\s*to\s*pdf|scan|combine\s*doc/i,
+      toolHref: 'tools/image-to-pdf.html',
+      toolTitle: 'JPG / PNG to PDF Converter',
+      cardHref: 'image-to-pdf.html',
+      specs: 'Multi-Image Batch • Custom Margins • A4 Print Ready • Zero Server Upload',
+      desc: 'Combine identity proofs, marksheets, and certificates into a single uploadable PDF.'
+    },
+    {
+      regex: /cgpa|sgpa|percent|marks|cbse|grade|division|university/i,
+      toolHref: 'tools/cgpa-calculator.html',
+      toolTitle: 'CGPA to Percentage & Marks Calculator',
+      cardHref: 'cgpa-calculator.html',
+      specs: 'Formulas: CBSE (× 9.5), AICTE, SGPA Credit-Weighted • Instant Grade & Division',
+      desc: 'Convert 10-point CGPA into percentage recognized by recruitment boards and universities.'
+    },
+    {
+      regex: /emi|loan|interest|car\s*loan|home\s*loan|installment|bank/i,
+      toolHref: 'tools/emi-calculator.html',
+      toolTitle: 'Home, Car & Personal Loan EMI Calculator',
+      cardHref: 'emi-calculator.html',
+      specs: 'Detailed Monthly EMI • Reducing Interest Amortization • Visual Donut Chart',
+      desc: 'Plan education, home, or personal loan monthly repayments and interest breakdown.'
+    },
+    {
+      regex: /sip|mutual|lump|invest|wealth|return|fund|compounding/i,
+      toolHref: 'tools/sip-calculator.html',
+      toolTitle: 'SIP & Lumpsum Return Calculator',
+      cardHref: 'sip-calculator.html',
+      specs: 'Modes: Monthly SIP & Lumpsum • Compounding Projection • Interactive Graphs',
+      desc: 'Forecast long-term compounding returns and future wealth growth in mutual funds.'
+    },
+    {
+      regex: /qr|upi|phonepe|gpay|paytm|wifi|barcode/i,
+      toolHref: 'tools/qr-generator.html',
+      toolTitle: 'Custom QR Code Generator (UPI, WiFi & URL)',
+      cardHref: 'qr-generator.html',
+      specs: 'UPI Payment URI • High-Res PNG • Custom Color Palette • Works Offline',
+      desc: 'Generate custom QR codes for direct UPI merchant payments, WiFi, and links.'
+    }
+  ];
+
+  function showIntentResult(query, matchInfo) {
+    if (!banner || !bannerTitle || !bannerDesc) return;
+    
+    banner.style.display = 'flex';
+    bannerTitle.textContent = `🎯 Matching Rozgar Result for: "${query}"`;
+    bannerDesc.textContent = matchInfo.desc;
+    
+    if (bannerSpecs && matchInfo.specs) {
+      bannerSpecs.innerHTML = `<span class="intent-spec-pill">📋 ${matchInfo.specs}</span>`;
+    }
+
+    if (bannerBtn) {
+      bannerBtn.style.display = 'block';
+      bannerBtn.onclick = () => {
+        window.location.href = matchInfo.toolHref;
+      };
+    }
+
+    // Highlight matching tool card
+    document.querySelectorAll('.tool-card').forEach(card => card.classList.remove('intent-matched'));
+    const matchedLink = document.querySelector(`a[href*="${matchInfo.cardHref}"]`);
+    if (matchedLink) {
+      const matchedCard = matchedLink.closest('.tool-card');
+      if (matchedCard) {
+        matchedCard.classList.add('intent-matched');
+        setTimeout(() => {
+          matchedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    }
+  }
+
+  function handleQuery(q) {
+    if (!q) return;
+    const cleanQ = q.trim().toLowerCase();
+
+    // 1. Check if matches any exam
+    for (const [key, examData] of Object.entries(examDb)) {
+      if (cleanQ.includes(key) || examData.name.toLowerCase().includes(cleanQ)) {
+        showIntentResult(examData.name, {
+          toolHref: examData.toolHref,
+          toolTitle: examData.name,
+          cardHref: examData.cardHref,
+          specs: examData.specs,
+          desc: examData.desc
+        });
+        return;
+      }
+    }
+
+    // 2. Check general intent rules
+    for (const rule of intentRules) {
+      if (rule.regex.test(cleanQ)) {
+        showIntentResult(q, rule);
+        return;
+      }
+    }
+
+    // 3. Fallback: filter tools by raw text
+    if (searchInput) {
+      searchInput.value = q;
+      searchInput.dispatchEvent(new Event('input'));
+      if (banner) {
+        banner.style.display = 'flex';
+        bannerTitle.textContent = `🔍 Search Results for: "${q}"`;
+        bannerDesc.textContent = 'Showing matching free utility tools and calculators.';
+        if (bannerSpecs) bannerSpecs.innerHTML = '';
+        if (bannerBtn) bannerBtn.style.display = 'none';
+      }
+    }
+  }
+
+  // Handle URL query on page load
+  if (rawQuery) {
+    handleQuery(decodeURIComponent(rawQuery).replace(/\+/g, ' '));
+  }
+
+  // Handle exam pill clicks
+  examTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      examTags.forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+      const examKey = tag.dataset.exam;
+      if (examDb[examKey]) {
+        handleQuery(examKey);
+      }
+    });
+  });
+
+  // Also hook into live search input on homepage
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const val = e.target.value.trim();
+      if (val.length >= 3) {
+        clearTimeout(window._intentTimeout);
+        window._intentTimeout = setTimeout(() => {
+          handleQuery(val);
+        }, 400);
+      } else if (val.length === 0 && banner) {
+        banner.style.display = 'none';
+        document.querySelectorAll('.tool-card').forEach(card => card.classList.remove('intent-matched'));
+      }
+    });
+  }
+}
