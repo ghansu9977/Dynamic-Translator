@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 
-// Template generator for Desktop Nav + Mobile Drawer
+// Template generator for Desktop Nav + Mobile Drawer with new Logo
 function getHeaderHtml(prefix, activePage) {
+  const logoSrc = prefix ? `${prefix}assets/logo.png` : 'assets/logo.png';
   const tools = [
     { file: 'dynamic-translator.html', title: 'AI Translator', desc: '100+ languages real-time AI', icon: '🌐', color: 'cyan', badge: 'Dynamic AI' },
     { file: 'govt-photo-resizer.html', title: 'Govt Photo Resizer', desc: 'Compress to 20KB / 50KB', icon: '📸', color: 'green', badge: '20KB / 50KB' },
@@ -48,7 +49,7 @@ function getHeaderHtml(prefix, activePage) {
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="${homeHref}" class="brand-logo" id="home-logo-link">
-        <div class="brand-icon">⚡</div>
+        <img src="${logoSrc}" alt="RozgarTools Logo" class="brand-icon-img">
         <div class="brand-text">Rozgar<span>Tools</span></div>
       </a>
 
@@ -94,7 +95,7 @@ function getHeaderHtml(prefix, activePage) {
   <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
     <div class="mobile-drawer-header">
       <a href="${homeHref}" class="brand-logo">
-        <div class="brand-icon">⚡</div>
+        <img src="${logoSrc}" alt="RozgarTools Logo" class="brand-icon-img">
         <div class="brand-text">Rozgar<span>Tools</span></div>
       </a>
       <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">✕</button>
@@ -154,6 +155,15 @@ function getHeaderHtml(prefix, activePage) {
 // Regex to replace <header class="site-header">...</header> and any existing mobile drawer
 const headerRegex = /<header class="site-header">[\s\S]*?<\/header>(?:\s*<!-- Mobile Navigation Overlay & Drawer -->\s*<div class="mobile-drawer-overlay"[\s\S]*?<\/aside>)?/;
 
+// Helper to inject favicon if missing
+function ensureFavicon(content, prefix) {
+  const logoPath = prefix ? `${prefix}assets/logo.png` : 'assets/logo.png';
+  if (!content.includes('rel="icon"')) {
+    content = content.replace('</head>', `  <link rel="icon" type="image/png" href="${logoPath}">\n</head>`);
+  }
+  return content;
+}
+
 // 1. Process tools directory
 const toolsDir = path.resolve('tools');
 const toolFiles = fs.readdirSync(toolsDir).filter(f => f.endsWith('.html'));
@@ -164,28 +174,45 @@ for (const file of toolFiles) {
   const newHeader = getHeaderHtml('../', file);
   if (headerRegex.test(content)) {
     content = content.replace(headerRegex, newHeader);
+    content = ensureFavicon(content, '../');
     fs.writeFileSync(filePath, content, 'utf-8');
-    console.log(`Updated header in tools/${file}`);
+    console.log(`Updated logo & header in tools/${file}`);
   } else {
     console.warn(`Could not match header in tools/${file}`);
   }
 }
 
-// 2. Process root informational files
-const rootFiles = ['about-us.html', 'contact-us.html', 'privacy-policy.html', 'terms.html'];
-for (const file of rootFiles) {
-  const filePath = path.resolve(file);
+// 2. Process root informational files and index.html
+const rootFiles = [
+  { file: 'index.html', active: 'home' },
+  { file: 'about-us.html', active: 'about-us.html' },
+  { file: 'contact-us.html', active: 'contact-us.html' },
+  { file: 'privacy-policy.html', active: 'privacy-policy.html' },
+  { file: 'terms.html', active: 'terms.html' }
+];
+
+for (const item of rootFiles) {
+  const filePath = path.resolve(item.file);
   if (fs.existsSync(filePath)) {
     let content = fs.readFileSync(filePath, 'utf-8');
-    const newHeader = getHeaderHtml('', file);
+    const newHeader = getHeaderHtml('', item.active);
     if (headerRegex.test(content)) {
       content = content.replace(headerRegex, newHeader);
+      content = ensureFavicon(content, '');
       fs.writeFileSync(filePath, content, 'utf-8');
-      console.log(`Updated header in ${file}`);
+      console.log(`Updated logo & header in ${item.file}`);
     } else {
-      console.warn(`Could not match header in ${file}`);
+      console.warn(`Could not match header in ${item.file}`);
     }
   }
 }
 
-console.log('All headers updated successfully!');
+// Copy logo as favicon.ico and favicon.png
+fs.copyFileSync('assets/logo.png', 'favicon.ico');
+fs.copyFileSync('assets/logo.png', 'favicon.png');
+if (fs.existsSync('public')) {
+  fs.copyFileSync('assets/logo.png', 'public/favicon.ico');
+  fs.copyFileSync('assets/logo.png', 'public/favicon.png');
+}
+
+console.log('All files updated with new user logo!');

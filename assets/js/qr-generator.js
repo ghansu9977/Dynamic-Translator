@@ -111,7 +111,7 @@ function getPayloadString(type) {
   } 
   else if (type === 'url') {
     let url = (document.getElementById('url-input')?.value || '').trim();
-    if (!url) url = 'https://rozgartools.vercel.app';
+    if (!url) url = 'https://dynamic-translatx.vercel.app';
     if (!url.startsWith('http://') && !url.startsWith('https://')) {
       url = 'https://' + url;
     }
@@ -134,7 +134,7 @@ function getPayloadString(type) {
     const txt = (document.getElementById('text-input')?.value || '').trim();
     return txt || 'RozgarTools - 100% Free Utility Tools';
   }
-  return 'https://rozgartools.vercel.app';
+  return 'https://dynamic-translatx.vercel.app';
 }
 
 function generateQRCode() {
