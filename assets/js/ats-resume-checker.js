@@ -18,6 +18,7 @@ function initAtsResumeChecker() {
 
   // Results Section
   const resultsCard = document.getElementById('ats-results-section');
+  const resultsPlaceholder = document.getElementById('ats-results-placeholder');
   const scoreNumElem = document.getElementById('ats-score-num');
   const scoreGaugeVal = document.getElementById('ats-gauge-val');
   const scoreStatusPill = document.getElementById('ats-status-pill');
@@ -305,6 +306,7 @@ TECHNICAL SKILLS
 
     // 4. Skills & Keyword Density (20 pts)
     let skillsScore = 0;
+    const detectedSkills = [];
     function escapeRegExp(str) {
       return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
@@ -380,6 +382,7 @@ TECHNICAL SKILLS
   }
 
   function displayResults(data) {
+    if (resultsPlaceholder) resultsPlaceholder.style.display = 'none';
     if (resultsCard) resultsCard.style.display = 'block';
 
     // 1. Score Number & Gauge
