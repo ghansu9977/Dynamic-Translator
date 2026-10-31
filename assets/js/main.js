@@ -3,6 +3,113 @@
  * Handles Theme Toggling, Mobile Menu, Live Tool Search, Category Filters, Back to Top, FAQ Accordion, and Toasts.
  */
 
+/* ==========================================================================
+   PERFORMANCE & LOADER ENGINE (PageSpeed & Instant Feedback)
+   Top Progress Bar, Preloader Dismissal, Instant Page Navigation
+   ========================================================================== */
+const RozgarLoader = {
+  bar: null,
+  progress: 0,
+  timer: null,
+
+  init() {
+    // 1. Create top progress bar if not present
+    const existingBar = document.getElementById('top-progress-bar');
+    if (!existingBar) {
+      const bar = document.createElement('div');
+      bar.id = 'top-progress-bar';
+      if (document.body) {
+        document.body.prepend(bar);
+      } else {
+        document.addEventListener('DOMContentLoaded', () => document.body.prepend(bar));
+      }
+      this.bar = bar;
+    } else {
+      this.bar = existingBar;
+    }
+
+    // Start initial loading bar simulation
+    this.start();
+
+    // Finish when page is fully ready
+    if (document.readyState === 'complete') {
+      this.finish();
+    } else {
+      window.addEventListener('load', () => this.finish(), { once: true });
+    }
+
+    // Safety fallback: Never leave progress bar or preloader hanging (max 900ms)
+    setTimeout(() => this.finish(), 900);
+
+    // Add progress bar effect to internal link clicks for instant feel
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (link && link.href && !link.target && !link.hasAttribute('download')) {
+        try {
+          const url = new URL(link.href, window.location.href);
+          if (url.origin === window.location.origin && !url.hash.startsWith('#') && url.pathname !== window.location.pathname) {
+            this.start();
+          }
+        } catch (_) {}
+      }
+    });
+  },
+
+  start() {
+    if (!this.bar) {
+      this.bar = document.getElementById('top-progress-bar');
+    }
+    if (!this.bar) return;
+    clearInterval(this.timer);
+    this.progress = 20;
+    this.bar.style.opacity = '1';
+    this.bar.style.width = '20%';
+
+    this.timer = setInterval(() => {
+      if (this.progress < 85) {
+        this.progress += Math.random() * 15;
+        this.bar.style.width = `${Math.min(this.progress, 85)}%`;
+      }
+    }, 120);
+  },
+
+  set(percent) {
+    if (!this.bar) {
+      this.bar = document.getElementById('top-progress-bar');
+    }
+    if (!this.bar) return;
+    this.progress = percent;
+    this.bar.style.width = `${percent}%`;
+  },
+
+  finish() {
+    if (this.bar) {
+      clearInterval(this.timer);
+      this.bar.style.width = '100%';
+      setTimeout(() => {
+        if (this.bar) {
+          this.bar.style.opacity = '0';
+          setTimeout(() => {
+            if (this.bar) this.bar.style.width = '0%';
+          }, 300);
+        }
+      }, 200);
+    }
+
+    // Also dismiss preloader
+    const preloader = document.getElementById('page-preloader');
+    if (preloader) {
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        if (preloader.parentNode) preloader.remove();
+      }, 400);
+    }
+  }
+};
+
+window.RozgarLoader = RozgarLoader;
+RozgarLoader.init();
+
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initMobileMenu();

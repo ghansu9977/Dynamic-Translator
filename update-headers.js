@@ -1,8 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 
-// Complete List of 18 Tools (including all new iLovePDF Suite tools)
+// Complete List of Tools (including PDF Suite, Rozgar Special, AI & Calculators)
 const allTools = [
+  // Sarkari Rozgar Special
+  { file: 'sarkari-rozgar-tools.html', title: 'Sarkari Rozgar Hub', desc: 'All exam guidelines & utilities', icon: '⚡', color: 'cyan', badge: 'All-in-1', category: 'rozgar' },
+  { file: 'rozgar-photo-resizer.html', title: 'Rozgar Photo Resizer', desc: 'SSC, UPSC 20KB & 50KB tool', icon: '📸', color: 'green', badge: 'Rozgar', category: 'rozgar' },
+  { file: 'rozgar-age-calculator.html', title: 'Rozgar Age Calculator', desc: 'Cut-off eligibility checker', icon: '🎂', color: 'yellow', badge: 'Rozgar', category: 'rozgar' },
+  { file: 'rozgar-typing-test.html', title: 'Rozgar Typing Test', desc: '30 & 35 WPM clerical exam test', icon: '⌨️', color: 'blue', badge: 'Rozgar', category: 'rozgar' },
+
   // PDF Suite
   { file: 'merge-pdf.html', title: 'Merge PDF', desc: 'Combine multiple PDFs into one', icon: '📑', color: 'purple', badge: 'Popular', category: 'pdf' },
   { file: 'split-pdf.html', title: 'Split PDF', desc: 'Extract pages & split ranges', icon: '✂️', color: 'rose', badge: 'Fast', category: 'pdf' },
@@ -47,6 +53,17 @@ function getHeaderHtml(prefix, activePage) {
                   </div>
                 </a>`).join('');
 
+  const rozgarDrawerItems = allTools.filter(t => t.category === 'rozgar').map(t => `
+        <li>
+          <a href="${toolHref(t.file)}" class="drawer-item ${activePage === t.file ? 'active' : ''}">
+            <span class="drawer-item-icon">${t.icon}</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">${t.title}</span>
+              <span class="drawer-item-badge">${t.badge}</span>
+            </div>
+          </a>
+        </li>`).join('');
+
   const pdfDrawerItems = allTools.filter(t => t.category === 'pdf').map(t => `
         <li>
           <a href="${toolHref(t.file)}" class="drawer-item ${activePage === t.file ? 'active' : ''}">
@@ -58,7 +75,7 @@ function getHeaderHtml(prefix, activePage) {
           </a>
         </li>`).join('');
 
-  const otherDrawerItems = allTools.filter(t => t.category !== 'pdf').map(t => `
+  const otherDrawerItems = allTools.filter(t => t.category !== 'pdf' && t.category !== 'rozgar').map(t => `
         <li>
           <a href="${toolHref(t.file)}" class="drawer-item ${activePage === t.file ? 'active' : ''}">
             <span class="drawer-item-icon">${t.icon}</span>
@@ -81,17 +98,17 @@ function getHeaderHtml(prefix, activePage) {
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="${homeHref}" class="${activePage === 'home' ? 'active' : ''}"><span>🏠</span> Home</a></li>
-          <li><a href="${toolHref('merge-pdf.html')}" class="${activePage === 'merge-pdf.html' ? 'active' : ''}"><span>📑</span> Merge PDF</a></li>
+          <li class="nav-item-hide-laptop"><a href="${toolHref('merge-pdf.html')}" class="${activePage === 'merge-pdf.html' ? 'active' : ''}"><span>📑</span> Merge PDF</a></li>
           <li><a href="${toolHref('dynamic-translator.html')}" class="${activePage === 'dynamic-translator.html' ? 'active' : ''}"><span>🌐</span> AI Translator</a></li>
           <li><a href="${toolHref('govt-photo-resizer.html')}" class="${activePage === 'govt-photo-resizer.html' ? 'active' : ''}"><span>📸</span> Photo Resizer</a></li>
-          <li><a href="${toolHref('resume-builder.html')}" class="${activePage === 'resume-builder.html' ? 'active' : ''}"><span>📄</span> Resume Builder</a></li>
+          <li class="nav-item-hide-laptop"><a href="${toolHref('resume-builder.html')}" class="${activePage === 'resume-builder.html' ? 'active' : ''}"><span>📄</span> Resume</a></li>
           <li class="nav-dropdown">
             <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
-              <span>🧰</span> All Tools (18) <span class="dropdown-arrow">▾</span>
+              <span>🧰</span> All Tools (${allTools.length}) <span class="dropdown-arrow">▾</span>
             </button>
             <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
               <div class="dropdown-header">
-                <span class="dropdown-title">Explore All 18 Online Tools (iLovePDF Suite + Utilities)</span>
+                <span class="dropdown-title">Explore All ${allTools.length} Online Tools</span>
                 <span class="dropdown-badge">⚡ 100% Free & Private</span>
               </div>
               <div class="dropdown-grid">${dropdownItems}
@@ -103,9 +120,9 @@ function getHeaderHtml(prefix, activePage) {
       </nav>
 
       <div class="nav-actions">
-        <button class="nav-search-trigger" id="nav-search-trigger" aria-label="Search tools" title="Search Tools">
+        <button class="nav-search-trigger" id="nav-search-trigger" aria-label="Search tools" title="Search Tools (Press /)">
           <span>🔍</span>
-          <span class="search-kbd-hint">Search</span>
+          <span class="search-trigger-text">Search</span>
         </button>
         <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
           <span id="theme-icon">🌙</span>
@@ -128,11 +145,15 @@ function getHeaderHtml(prefix, activePage) {
 
     <div class="mobile-drawer-search">
       <span class="drawer-search-icon">🔍</span>
-      <input type="text" id="drawer-search-input" placeholder="Search 18 tools..." aria-label="Search in menu">
+      <input type="text" id="drawer-search-input" placeholder="Search ${allTools.length} tools..." aria-label="Search in menu">
     </div>
 
     <div class="mobile-drawer-body">
-      <div class="drawer-section-title">📑 PDF Tools Suite</div>
+      <div class="drawer-section-title">⚡ Sarkari Rozgar Special</div>
+      <ul class="drawer-nav-list" id="drawer-rozgar-list">${rozgarDrawerItems}
+      </ul>
+
+      <div class="drawer-section-title" style="margin-top: 1rem;">📑 PDF Tools Suite</div>
       <ul class="drawer-nav-list" id="drawer-tools-list">${pdfDrawerItems}
       </ul>
 
@@ -182,7 +203,7 @@ function getHeaderHtml(prefix, activePage) {
 }
 
 // Regex to replace <header class="site-header">...</header> and any existing mobile drawer
-const headerRegex = /<header class="site-header">[\s\S]*?<\/header>(?:\s*<!-- Mobile Navigation Overlay & Drawer -->\s*<div class="mobile-drawer-overlay"[\s\S]*?<\/aside>)?/;
+const headerRegex = /(?:<!--\s*Site Header\s*-->\s*)*<header class="site-header">[\s\S]*?<\/header>(?:\s*<!-- Mobile Navigation Overlay & Drawer -->\s*<div class="mobile-drawer-overlay"[\s\S]*?<\/aside>)?/;
 
 // Helper to inject favicon if missing
 function ensureFavicon(content, prefix) {
@@ -205,7 +226,7 @@ for (const file of toolFiles) {
     content = content.replace(headerRegex, newHeader);
     content = ensureFavicon(content, '../');
     fs.writeFileSync(filePath, content, 'utf-8');
-    console.log(`Updated logo & header in tools/${file}`);
+    console.log(`Updated responsive header in tools/${file}`);
   } else {
     console.warn(`Could not match header in tools/${file}`);
   }
@@ -229,11 +250,11 @@ for (const item of rootFiles) {
       content = content.replace(headerRegex, newHeader);
       content = ensureFavicon(content, '');
       fs.writeFileSync(filePath, content, 'utf-8');
-      console.log(`Updated logo & header in ${item.file}`);
+      console.log(`Updated responsive header in ${item.file}`);
     } else {
       console.warn(`Could not match header in ${item.file}`);
     }
   }
 }
 
-console.log('All 23 files updated with 18 tools in header and drawer!');
+console.log('🎉 All files updated with fully responsive header and zero cut-off!');

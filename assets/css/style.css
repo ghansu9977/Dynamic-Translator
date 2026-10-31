@@ -3,7 +3,7 @@
    Supports: Dark/Light Mode, Glassmorphism, Micro-interactions, Responsive UI
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+/* Note: Google Fonts loaded via preconnect in HTML <head> for maximum PageSpeed */
 
 :root {
   /* Core Brand Colors */
@@ -163,17 +163,21 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4.5rem;
+  height: 4.25rem;
+  width: 100%;
+  gap: 0.75rem;
+  min-width: 0;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   font-family: 'Outfit', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.02em;
+  flex-shrink: 0;
 }
 
 .brand-icon {
@@ -190,8 +194,8 @@ img {
 }
 
 .brand-icon-img {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-md);
   object-fit: cover;
   box-shadow: 0 4px 14px var(--primary-glow);
@@ -216,13 +220,16 @@ img {
   align-items: center;
   flex: 1;
   justify-content: center;
+  min-width: 0;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.25rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
@@ -233,11 +240,11 @@ img {
 .nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  font-size: 0.92rem;
+  gap: 0.35rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-muted);
-  padding: 0.5rem 0.85rem;
+  padding: 0.42rem 0.65rem;
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
   white-space: nowrap;
@@ -395,24 +402,25 @@ img {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  flex-shrink: 0;
+  gap: 0.5rem;
+  flex-shrink: 0; /* CRITICAL: Never allow nav-actions to be pushed off-screen */
 }
 
 .nav-search-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   color: var(--text-muted);
-  padding: 0.45rem 0.85rem;
+  padding: 0.42rem 0.75rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 500;
   cursor: pointer;
   transition: all var(--transition-fast);
   font-family: inherit;
+  white-space: nowrap;
 }
 
 .nav-search-trigger:hover {
@@ -421,13 +429,10 @@ img {
   background: var(--bg-glass);
 }
 
-.search-kbd-hint {
+.search-kbd-hint,
+.search-trigger-text {
   font-size: 0.75rem;
   color: var(--text-dim);
-  background: var(--bg-glass);
-  padding: 0.1rem 0.4rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
 }
 
 /* Theme Toggle Button */
@@ -435,15 +440,16 @@ img {
   background: var(--bg-glass);
   border: 1px solid var(--border);
   color: var(--text-main);
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition-fast);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  flex-shrink: 0;
 }
 
 .theme-toggle-btn:hover {
@@ -2161,26 +2167,58 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 /* ==========================================================================
-   BREAKPOINTS: Large Tablets & Laptops (<= 1024px)
+   BREAKPOINTS: Medium Desktops & Laptops (<= 1260px)
+   Prevents navbar crowding and ensures zero header cut-off
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1260px) {
+  .nav-item-hide-laptop {
+    display: none !important;
+  }
+
+  .nav-links {
+    gap: 0.15rem;
+  }
+
+  .nav-links a,
+  .nav-dropdown-trigger {
+    padding: 0.38rem 0.52rem;
+    font-size: 0.84rem;
+    gap: 0.25rem;
+  }
+
+  .search-kbd-hint,
+  .search-trigger-text {
+    display: none !important;
+  }
+
+  .nav-search-trigger {
+    padding: 0.42rem 0.6rem;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINTS: Large Tablets & Laptops (<= 1080px)
+   Switches cleanly to mobile drawer navigation
+   ========================================================================== */
+@media (max-width: 1080px) {
   .nav-wrap {
-    height: 4.25rem;
+    height: 3.85rem;
   }
 
   .mobile-menu-btn {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
     border-radius: var(--radius-md);
     background: var(--bg-surface);
     border: 1px solid var(--border);
     color: var(--text-main);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     cursor: pointer;
     transition: all var(--transition-fast);
+    flex-shrink: 0;
   }
 
   .mobile-menu-btn:hover {
@@ -2193,8 +2231,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
     display: none !important;
   }
 
-  .nav-search-trigger .search-kbd-hint {
-    display: none;
+  .nav-search-trigger .search-kbd-hint,
+  .nav-search-trigger .search-trigger-text {
+    display: none !important;
   }
 
   .tools-grid {
@@ -2665,3 +2704,124 @@ input[type="range"]::-webkit-slider-thumb:hover {
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   z-index: 2;
 }
+
+/* ==========================================================================
+   PERFORMANCE & LOADER SYSTEM (Google PageSpeed Optimization)
+   Top Progress Bar, Page Preloader, Skeleton Loaders, Content Visibility
+   ========================================================================== */
+
+/* 1. Global Top Loading Bar (NProgress-style) */
+#top-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #06b6d4, #10b981);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.7), 0 0 5px rgba(6, 182, 212, 0.5);
+  z-index: 99999;
+  transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* 2. Page Preloader Overlay */
+#page-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0e17;
+  z-index: 99998;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s ease;
+  pointer-events: all;
+}
+
+[data-theme="light"] #page-preloader {
+  background: #f8fafc;
+}
+
+#page-preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+  text-align: center;
+}
+
+.preloader-spinner-wrap {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-spinner-ring {
+  position: absolute;
+  inset: 0;
+  border: 3px solid rgba(99, 102, 241, 0.15);
+  border-top-color: #6366f1;
+  border-right-color: #06b6d4;
+  border-radius: 50%;
+  animation: preloader-spin 0.85s linear infinite;
+}
+
+.preloader-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: contain;
+  animation: preloader-pulse 1.4s ease-in-out infinite;
+}
+
+.preloader-brand {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f9fafb;
+}
+
+[data-theme="light"] .preloader-brand {
+  color: #0f172a;
+}
+
+.preloader-brand span {
+  color: #6366f1;
+}
+
+.preloader-subtext {
+  font-size: 0.82rem;
+  color: #9ca3af;
+  letter-spacing: 0.02em;
+}
+
+@keyframes preloader-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes preloader-pulse {
+  0%, 100% { transform: scale(0.92); opacity: 0.8; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+/* 3. Performance: Offscreen content visibility */
+.seo-master-content,
+.features-grid,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 350px;
+}
+
