@@ -3133,21 +3133,60 @@ input[type="range"]::-webkit-slider-thumb:hover {
   transition: width 0.8s ease;
 }
 
-.ats-checklist-grid {
+/* ATS Checker Specific Layout & Containment */
+.ats-checker-layout {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.ats-checker-layout > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ats-results-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+
+.ats-checklist-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+.ats-checklist-grid::-webkit-scrollbar {
+  width: 5px;
+}
+
+.ats-checklist-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 9999px;
+}
+
+.ats-checklist-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
 }
 
 .ats-check-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
+  gap: 0.65rem;
+  padding: 0.65rem 0.85rem;
   border-radius: var(--radius-md);
-  font-size: 0.88rem;
-  line-height: 1.4;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .ats-check-item.pass {
@@ -3173,15 +3212,17 @@ input[type="range"]::-webkit-slider-thumb:hover {
   flex-wrap: wrap;
   gap: 0.45rem;
   margin-top: 0.75rem;
+  max-width: 100%;
 }
 
 .ats-skill-tag {
-  font-size: 0.78rem;
-  padding: 0.25rem 0.65rem;
+  font-size: 0.76rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 9999px;
   background: rgba(99, 102, 241, 0.12);
   color: var(--primary);
   border: 1px solid rgba(99, 102, 241, 0.25);
+  white-space: nowrap;
 }
 
 .ats-skill-tag.missing {
@@ -3190,6 +3231,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
   border-color: rgba(245, 158, 11, 0.25);
   border-style: dashed;
 }
+
+@media (max-width: 992px) {
+  .ats-checker-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 
 
 

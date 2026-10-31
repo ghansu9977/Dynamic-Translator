@@ -282,10 +282,10 @@
     </div>
 
     <!-- Tool Workspace Layout -->
-    <div class="tool-split-layout">
+    <div class="tool-split-layout ats-checker-layout">
       
       <!-- Left Column: Input & Upload -->
-      <div class="glass-card">
+      <div class="glass-card" style="min-width: 0;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
           <h3 style="font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
             <span>📄</span> Upload or Paste Resume
@@ -341,115 +341,118 @@
         </button>
       </div>
 
-      <!-- Right Column: Interactive ATS Results Section -->
-      <div class="glass-card" id="ats-results-placeholder" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 420px; padding: 2.5rem 1.5rem;">
-        <div style="font-size: 3.5rem; margin-bottom: 1rem; animation: pulse 2s infinite;">🎯</div>
-        <h3 style="font-size: 1.3rem; margin-bottom: 0.6rem; color: var(--text-main);">Live ATS Resume Auditor</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 360px; line-height: 1.6; margin-bottom: 1.5rem;">
-          Upload your resume PDF or click <strong style="color: var(--primary);">"Load Sample"</strong> on the left to see your instant 0-100 ATS score, section breakdown, and keyword suggestions.
-        </p>
-        <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 1.1rem; border-radius: var(--radius-full); background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald); font-size: 0.82rem; font-weight: 600;">
-          <span>🔒</span> 100% In-Browser Private • Instant Scan
-        </div>
-      </div>
-
-      <!-- Results Section (Populated on Analysis) -->
-      <div class="glass-card" id="ats-results-section" style="display: none;">
-        
-        <!-- Score Hero -->
-        <div class="ats-score-hero">
-          <div class="ats-circle-gauge">
-            <svg viewBox="0 0 100 100">
-              <circle class="ats-gauge-bg" cx="50" cy="50" r="45"></circle>
-              <circle class="ats-gauge-val" id="ats-gauge-val" cx="50" cy="50" r="45" stroke-dasharray="282.74" stroke-dashoffset="282.74"></circle>
-            </svg>
-            <div class="ats-score-number">
-              <span class="num" id="ats-score-num">0</span>
-              <span class="label">ATS Score</span>
-            </div>
-          </div>
-          <span id="ats-status-pill" style="font-size: 0.85rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: var(--radius-full); margin-bottom: 0.5rem;">
-            Ready
-          </span>
-          <p id="ats-score-summary" style="font-size: 0.88rem; color: var(--text-muted); max-width: 420px; margin: 0 auto;">
-            Review your personalized breakdown and improvements below.
+      <!-- Right Column Wrapper: Interactive ATS Results -->
+      <div class="ats-results-wrapper">
+        <!-- Placeholder (Before Analysis) -->
+        <div class="glass-card" id="ats-results-placeholder" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 480px; padding: 2.5rem 1.5rem;">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem; animation: pulse 2s infinite;">🎯</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.6rem; color: var(--text-main);">Live ATS Resume Auditor</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 360px; line-height: 1.6; margin-bottom: 1.5rem;">
+            Upload your resume PDF or click <strong style="color: var(--primary);">"Load Sample"</strong> on the left to see your instant 0-100 ATS score, section breakdown, and keyword suggestions.
           </p>
-        </div>
-
-        <!-- Optional Job Match Box -->
-        <div id="ats-job-match-box" style="display: none; margin-top: 1.25rem; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: var(--radius-md); padding: 0.85rem 1rem; text-align: center;">
-          <span style="font-size: 0.85rem; color: var(--text-muted);">Target Job Keyword Match:</span>
-          <strong id="ats-job-match-percent" style="font-size: 1.4rem; color: var(--primary); margin-left: 0.5rem;">0%</strong>
-        </div>
-
-        <!-- Category Breakdown Bars -->
-        <div class="ats-breakdown-list">
-          <div class="ats-bar-item">
-            <div class="ats-bar-header">
-              <span>📇 Contact Info & Online Presence</span>
-              <strong id="val-contact">0%</strong>
-            </div>
-            <div class="ats-bar-track"><div class="ats-bar-fill" id="bar-contact" style="width: 0%;"></div></div>
-          </div>
-
-          <div class="ats-bar-item">
-            <div class="ats-bar-header">
-              <span>📑 Essential Standard Sections</span>
-              <strong id="val-sections">0%</strong>
-            </div>
-            <div class="ats-bar-track"><div class="ats-bar-fill" id="bar-sections" style="width: 0%;"></div></div>
-          </div>
-
-          <div class="ats-bar-item">
-            <div class="ats-bar-header">
-              <span>🚀 Action Verbs & Measurable Metrics</span>
-              <strong id="val-action">0%</strong>
-            </div>
-            <div class="ats-bar-track"><div class="ats-bar-fill" id="bar-action" style="width: 0%;"></div></div>
-          </div>
-
-          <div class="ats-bar-item">
-            <div class="ats-bar-header">
-              <span>💡 Technical & Core Skills Density</span>
-              <strong id="val-skills">0%</strong>
-            </div>
-            <div class="ats-bar-track"><div class="ats-bar-fill" id="bar-skills" style="width: 0%;"></div></div>
-          </div>
-
-          <div class="ats-bar-item">
-            <div class="ats-bar-header">
-              <span>📏 ATS Readability & Word Length</span>
-              <strong id="val-format">0%</strong>
-            </div>
-            <div class="ats-bar-track"><div class="ats-bar-fill" id="bar-format" style="width: 0%;"></div></div>
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 1.1rem; border-radius: var(--radius-full); background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald); font-size: 0.82rem; font-weight: 600;">
+            <span>🔒</span> 100% In-Browser Private • Instant Scan
           </div>
         </div>
 
-        <!-- Detected Skills -->
-        <div style="margin-top: 1.5rem;">
-          <h4 style="font-size: 0.95rem; margin-bottom: 0.25rem;">Detected Competencies & Keywords:</h4>
-          <div class="ats-skills-cloud" id="ats-skills-cloud"></div>
-        </div>
+        <!-- Results Section (Populated on Analysis) -->
+        <div class="glass-card" id="ats-results-section" style="display: none; overflow: hidden; word-break: break-word;">
+          
+          <!-- Score Hero -->
+          <div class="ats-score-hero">
+            <div class="ats-circle-gauge">
+              <svg viewBox="0 0 100 100">
+                <circle class="ats-gauge-bg" cx="50" cy="50" r="45"></circle>
+                <circle class="ats-gauge-val" id="ats-gauge-val" cx="50" cy="50" r="45" stroke-dasharray="282.74" stroke-dashoffset="282.74"></circle>
+              </svg>
+              <div class="ats-score-number">
+                <span class="num" id="ats-score-num">0</span>
+                <span class="label">ATS Score</span>
+              </div>
+            </div>
+            <span id="ats-status-pill" style="font-size: 0.85rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: var(--radius-full); margin-bottom: 0.5rem;">
+              Ready
+            </span>
+            <p id="ats-score-summary" style="font-size: 0.88rem; color: var(--text-muted); max-width: 420px; margin: 0 auto;">
+              Review your personalized breakdown and improvements below.
+            </p>
+          </div>
 
-        <!-- Findings & Recommendations -->
-        <div style="margin-top: 1.5rem;">
-          <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem;">Detailed ATS Audit Checklist:</h4>
-          <div class="ats-checklist-grid" id="ats-findings-container"></div>
-        </div>
+          <!-- Optional Job Match Box -->
+          <div id="ats-job-match-box" style="display: none; margin-top: 1.25rem; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: var(--radius-md); padding: 0.85rem 1rem; text-align: center;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Target Job Keyword Match:</span>
+            <strong id="ats-job-match-percent" style="font-size: 1.4rem; color: var(--primary); margin-left: 0.5rem;">0%</strong>
+          </div>
 
-        <!-- Direct CTA to Resume Builder -->
-        <div style="margin-top: 1.75rem; padding: 1.25rem; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); text-align: center;">
-          <strong style="color: var(--accent-emerald); font-size: 1rem; display: block; margin-bottom: 0.35rem;">
-            Want a Guaranteed 95+ Score ATS Resume?
-          </strong>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
-            Use our free 1-Page ATS Resume Builder with pre-tested recruiter templates.
-          </p>
-          <a href="resume-builder.html" class="btn btn-accent btn-md" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-            🛠️ Build 95+ ATS Resume Now (Free)
-          </a>
-        </div>
+          <!-- Category Breakdown Bars -->
+          <div class="ats-breakdown-list">
+            <div class="ats-bar-item">
+              <div class="ats-bar-header">
+                <span>📇 Contact Info & Online Presence</span>
+                <strong id="val-contact">0%</strong>
+              </div>
+              <div class="ats-bar-track"><div class="ats-bar-fill" id="bar-contact" style="width: 0%;"></div></div>
+            </div>
 
+            <div class="ats-bar-item">
+              <div class="ats-bar-header">
+                <span>📑 Essential Standard Sections</span>
+                <strong id="val-sections">0%</strong>
+              </div>
+              <div class="ats-bar-track"><div class="ats-bar-fill" id="bar-sections" style="width: 0%;"></div></div>
+            </div>
+
+            <div class="ats-bar-item">
+              <div class="ats-bar-header">
+                <span>🚀 Action Verbs & Measurable Metrics</span>
+                <strong id="val-action">0%</strong>
+              </div>
+              <div class="ats-bar-track"><div class="ats-bar-fill" id="bar-action" style="width: 0%;"></div></div>
+            </div>
+
+            <div class="ats-bar-item">
+              <div class="ats-bar-header">
+                <span>💡 Technical & Core Skills Density</span>
+                <strong id="val-skills">0%</strong>
+              </div>
+              <div class="ats-bar-track"><div class="ats-bar-fill" id="bar-skills" style="width: 0%;"></div></div>
+            </div>
+
+            <div class="ats-bar-item">
+              <div class="ats-bar-header">
+                <span>📏 ATS Readability & Word Length</span>
+                <strong id="val-format">0%</strong>
+              </div>
+              <div class="ats-bar-track"><div class="ats-bar-fill" id="bar-format" style="width: 0%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Detected Skills -->
+          <div style="margin-top: 1.5rem;">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.25rem;">Detected Competencies & Keywords:</h4>
+            <div class="ats-skills-cloud" id="ats-skills-cloud"></div>
+          </div>
+
+          <!-- Findings & Recommendations -->
+          <div style="margin-top: 1.5rem;">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem;">Detailed ATS Audit Checklist:</h4>
+            <div class="ats-checklist-grid" id="ats-findings-container"></div>
+          </div>
+
+          <!-- Direct CTA to Resume Builder -->
+          <div style="margin-top: 1.75rem; padding: 1.25rem; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); text-align: center;">
+            <strong style="color: var(--accent-emerald); font-size: 1rem; display: block; margin-bottom: 0.35rem;">
+              Want a Guaranteed 95+ Score ATS Resume?
+            </strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Use our free 1-Page ATS Resume Builder with pre-tested recruiter templates.
+            </p>
+            <a href="resume-builder.html" class="btn btn-accent btn-md" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+              🛠️ Build 95+ ATS Resume Now (Free)
+            </a>
+          </div>
+
+        </div>
       </div>
 
     </div>

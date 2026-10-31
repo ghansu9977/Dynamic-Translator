@@ -474,8 +474,16 @@ TECHNICAL SKILLS
       }
     }
 
-    // Smooth scroll to results
-    resultsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Only scroll vertically on small screens (mobile/tablet <= 992px) where results are stacked below.
+    // On desktop (> 992px), columns are side-by-side; NEVER scroll horizontally to prevent disorienting screen shift/zoom.
+    if (window.innerWidth <= 992 && resultsCard) {
+      const targetTop = resultsCard.getBoundingClientRect().top + window.pageYOffset - 75;
+      window.scrollTo({
+        top: targetTop,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
 
     if (window.showToast) {
       window.showToast(`Analysis Complete: ATS Score ${data.totalScore}/100`);
