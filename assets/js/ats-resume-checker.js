@@ -305,9 +305,13 @@ TECHNICAL SKILLS
 
     // 4. Skills & Keyword Density (20 pts)
     let skillsScore = 0;
-    const detectedSkills = [];
+    function escapeRegExp(str) {
+      return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
     COMMON_SKILLS.forEach(skill => {
-      const reg = new RegExp('\\b' + skill.replace('.', '\\.') + '\\b', 'i');
+      const escaped = escapeRegExp(skill);
+      const reg = new RegExp('(^|[^a-zA-Z0-9+#])' + escaped + '([^a-zA-Z0-9+#]|$)', 'i');
       if (reg.test(textLower)) {
         detectedSkills.push(skill);
       }
