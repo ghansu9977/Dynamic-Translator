@@ -34,20 +34,10 @@ if (fs.existsSync('assets')) {
   copyDirSync('assets', path.join(distDir, 'assets'));
 }
 
-// Copy all static HTML and verification files
-const rootFiles = [
-  'index.html',
-  'about-us.html',
-  'contact-us.html',
-  'privacy-policy.html',
-  'terms.html',
-  'sitemap.xml',
-  'robots.txt',
-  'google9ef6134b423728c7.html'
-];
-
-for (const file of rootFiles) {
-  if (fs.existsSync(file)) {
+// Copy all root HTML, TXT, XML, and favicon files
+const files = fs.readdirSync('.');
+for (const file of files) {
+  if (file.endsWith('.html') || file.endsWith('.txt') || file.endsWith('.xml') || file.endsWith('.ico') || file.endsWith('.png')) {
     fs.copyFileSync(file, path.join(distDir, file));
   }
 }
