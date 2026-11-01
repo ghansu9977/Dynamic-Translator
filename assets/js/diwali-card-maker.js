@@ -36,6 +36,26 @@ function initDiwaliCardMaker() {
   let festivalTitle = 'शुभ दीपावली';
   let customMessage = 'दीयों की रोशनी से झिलमिलाता रहे आपका घर-आंगन, सुख, समृद्धि और खुशियों से भरा हो आपका हर क्षण। दीपावली की हार्दिक शुभकामनाएँ!';
 
+  // Read URL query parameters for direct integration with Shayari and WhatsApp
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramName = urlParams.get('n') || urlParams.get('name');
+    const paramWish = urlParams.get('wish');
+    const paramTheme = urlParams.get('theme');
+
+    if (paramName && paramName.trim() !== '') {
+      userName = decodeURIComponent(paramName.trim());
+      if (nameInput) nameInput.value = userName;
+    }
+    if (paramWish && paramWish.trim() !== '') {
+      customMessage = decodeURIComponent(paramWish.trim());
+      if (customMessageInput) customMessageInput.value = customMessage;
+    }
+    if (paramTheme && paramTheme.trim() !== '') {
+      currentTheme = paramTheme.trim();
+    }
+  } catch(e) {}
+
   // Preset Messages dictionary
   const PRESET_MESSAGES = {
     'wish-1': 'दीयों की रोशनी से झिलमिलाता रहे आपका घर-आंगन, सुख, समृद्धि और खुशियों से भरा हो आपका हर क्षण। दीपावली की हार्दिक शुभकामनाएँ!',

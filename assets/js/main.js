@@ -319,7 +319,7 @@ function initToolSearchAndFilters() {
       const desc = card.querySelector('.tool-desc')?.textContent.toLowerCase() || '';
       const tags = Array.from(card.querySelectorAll('.tag-badge')).map(t => t.textContent.toLowerCase()).join(' ');
 
-      const matchesCategory = (activeCategory === 'all') || (cardCategory === activeCategory);
+      const matchesCategory = (activeCategory === 'all') || cardCategory.split(' ').includes(activeCategory);
       const matchesSearch = !activeSearchQuery || 
         title.includes(activeSearchQuery) || 
         desc.includes(activeSearchQuery) || 
