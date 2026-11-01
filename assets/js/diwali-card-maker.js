@@ -166,6 +166,12 @@ function initDiwaliCardMaker() {
     drawCard();
   }, 150);
 
+  if (document.fonts) {
+    document.fonts.ready.then(() => {
+      drawCard();
+    });
+  }
+
   // Core Drawing Function (1080 x 1080 HD Square)
   function drawCard() {
     const W = canvas.width;  // 1080
@@ -184,7 +190,7 @@ function initDiwaliCardMaker() {
     drawTopToranLanterns(ctx, W, H, currentTheme);
 
     // 4. Draw Festival Main Header (e.g., शुभ दीपावली / HAPPY DIWALI)
-    drawFestivalHeader(ctx, W, 230, festivalTitle, currentTheme);
+    drawFestivalHeader(ctx, W / 2, 230, festivalTitle, currentTheme);
 
     // 5. Draw Photo or Center Diya Art
     const photoY = 460;
@@ -432,11 +438,19 @@ function initDiwaliCardMaker() {
     ctx.letterSpacing = '3px';
     ctx.fillText('✨ || ॐ श्री गणेशाय नमः || ✨', x, y - 55);
 
-    // Main Festival Title
-    ctx.font = '800 64px "Rozha One", "Yatra One", "Outfit", serif';
+    // Main Festival Title with dynamic font scale to prevent any clipping
+    let fontSize = 66;
+    ctx.font = `800 ${fontSize}px "Rozha One", "Yatra One", "Outfit", serif`;
+    let measuredWidth = ctx.measureText(title).width;
+    const maxTitleWidth = 840;
+    while (measuredWidth > maxTitleWidth && fontSize > 36) {
+      fontSize -= 3;
+      ctx.font = `800 ${fontSize}px "Rozha One", "Yatra One", "Outfit", serif`;
+      measuredWidth = ctx.measureText(title).width;
+    }
     
-    // Golden Gradient Text
-    const goldGrad = ctx.createLinearGradient(x - 200, y, x + 200, y);
+    // Golden Gradient Text centered at x
+    const goldGrad = ctx.createLinearGradient(x - 250, y, x + 250, y);
     goldGrad.addColorStop(0, '#fff4cc');
     goldGrad.addColorStop(0.3, '#fcd34d');
     goldGrad.addColorStop(0.7, '#f59e0b');
@@ -671,10 +685,18 @@ function initDiwaliCardMaker() {
     ctx.letterSpacing = '1px';
     ctx.fillText('✨ सस्नेह शुभकामनाएँ प्रेषक: ✨', x, y);
 
-    // Name in Large Golden Typography
-    ctx.font = '800 44px "Rozha One", "Yatra One", "Outfit", sans-serif';
+    // Name in Large Golden Typography with auto-scale
+    let nameFontSize = 44;
+    ctx.font = `800 ${nameFontSize}px "Rozha One", "Yatra One", "Outfit", sans-serif`;
+    let nameWidth = ctx.measureText(name).width;
+    const maxNameWidth = 840;
+    while (nameWidth > maxNameWidth && nameFontSize > 22) {
+      nameFontSize -= 2;
+      ctx.font = `800 ${nameFontSize}px "Rozha One", "Yatra One", "Outfit", sans-serif`;
+      nameWidth = ctx.measureText(name).width;
+    }
     
-    const nameGrad = ctx.createLinearGradient(x - 200, y + 45, x + 200, y + 45);
+    const nameGrad = ctx.createLinearGradient(x - 250, y + 45, x + 250, y + 45);
     nameGrad.addColorStop(0, '#ffffff');
     nameGrad.addColorStop(0.4, '#fef08a');
     nameGrad.addColorStop(0.7, '#facc15');

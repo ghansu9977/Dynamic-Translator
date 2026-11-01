@@ -1587,7 +1587,27 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 /* Media Queries for Responsive Design */
+@media (max-width: 1250px) {
+  .nav-item-hide-laptop {
+    display: none !important;
+  }
+  .nav-wrap {
+    gap: 0.5rem;
+  }
+  .nav-links a,
+  .nav-dropdown-trigger {
+    padding: 0.38rem 0.5rem;
+    font-size: 0.84rem;
+  }
+}
+
 @media (max-width: 992px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: flex !important;
+  }
   .tool-split-layout {
     grid-template-columns: 1fr;
   }
