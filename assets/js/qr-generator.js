@@ -139,12 +139,37 @@ function getPayloadString(type) {
 
 function generateQRCode() {
   const container = document.getElementById('qrcode-canvas-wrap');
-  if (!container || typeof QRCode === 'undefined') return;
+  if (!container) return;
 
   const payload = getPayloadString(document.querySelector('.qr-type-btn.active')?.dataset.type || 'upi');
   const size = parseInt(document.getElementById('qr-size-slider')?.value || '240', 10);
   const colorDark = document.getElementById('qr-color-dark')?.value || '#000000';
   const colorLight = document.getElementById('qr-color-light')?.value || '#ffffff';
+
+  // Display raw payload text for clarity
+  const payloadDisplay = document.getElementById('qr-payload-display');
+  if (payloadDisplay) {
+    payloadDisplay.textContent = payload;
+  }
+
+  if (typeof QRCode === 'undefined') {
+    if (!window._qrCodeLoading) {
+      window._qrCodeLoading = true;
+      container.innerHTML = '<div style="font-size:0.85rem;color:var(--text-muted);padding:1rem;">⏳ Loading QR Engine...</div>';
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+      script.onload = () => {
+        window._qrCodeLoading = false;
+        generateQRCode();
+      };
+      script.onerror = () => {
+        window._qrCodeLoading = false;
+        container.innerHTML = '<div style="font-size:0.85rem;color:var(--accent-rose);padding:1rem;">⚠️ Failed to load QR engine.</div>';
+      };
+      document.head.appendChild(script);
+    }
+    return;
+  }
 
   container.innerHTML = '';
 
@@ -156,10 +181,4 @@ function generateQRCode() {
     colorLight: colorLight,
     correctLevel: QRCode.CorrectLevel.H
   });
-
-  // Display raw payload text for clarity
-  const payloadDisplay = document.getElementById('qr-payload-display');
-  if (payloadDisplay) {
-    payloadDisplay.textContent = payload;
-  }
 }

@@ -121,13 +121,16 @@ function initResumeBuilder() {
   });
 
   // Theme Accent
+  function applyThemeColor() {
+    if (!themeColorSelect) return;
+    const color = themeColorSelect.value;
+    document.querySelectorAll('.resume-sec-title').forEach(t => t.style.borderBottomColor = color);
+    const sub = document.getElementById('prev-title');
+    if (sub) sub.style.color = color;
+  }
+
   if (themeColorSelect) {
-    themeColorSelect.addEventListener('change', () => {
-      const color = themeColorSelect.value;
-      document.querySelectorAll('.resume-sec-title').forEach(t => t.style.borderBottomColor = color);
-      const sub = document.getElementById('prev-title');
-      if (sub) sub.style.color = color;
-    });
+    themeColorSelect.addEventListener('change', applyThemeColor);
   }
 
   // Load Sample Data
@@ -181,4 +184,5 @@ function initResumeBuilder() {
 
   // Initial load with default sample
   if (loadSampleBtn) loadSampleBtn.click();
+  applyThemeColor();
 }

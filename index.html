@@ -41,8 +41,9 @@
     <!-- Performance: Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.6">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=3.6">
 
   <!-- Structured Data: WebSite, Organization, ItemList, FAQPage -->
   <script type="application/ld+json">
@@ -104,7 +105,8 @@
           { "@type": "ListItem", "position": 26, "name": "Diwali Lakshmi Puja Shubh Muhurat & Checklist", "url": "https://www.rozgartools.store/tools/diwali-puja-muhurat.html" },
           { "@type": "ListItem", "position": 27, "name": "Diwali Wishes, Shayari & Instagram Captions", "url": "https://www.rozgartools.store/tools/diwali-shayari-status.html" },
           { "@type": "ListItem", "position": 28, "name": "Virtual Green Cracker Simulator Game", "url": "https://www.rozgartools.store/tools/diwali-cracker-simulator.html" },
-          { "@type": "ListItem", "position": 29, "name": "Chhath Puja Poster & Wishing Card Maker", "url": "https://www.rozgartools.store/tools/chhath-puja-card-maker.html" }
+          { "@type": "ListItem", "position": 29, "name": "Chhath Puja Poster & Wishing Card Maker", "url": "https://www.rozgartools.store/tools/chhath-puja-card-maker.html" },
+          { "@type": "ListItem", "position": 30, "name": "AI Diwali Rangoli Design Generator & Studio", "url": "https://www.rozgartools.store/tools/diwali-rangoli-generator.html" }
         ]
       },
       {
@@ -166,13 +168,7 @@
 </head>
 <body>
 
-  <!-- Festive Viral Top Announcement Bar -->
-  <aside class="festive-top-bar" aria-label="Festive Announcement">
-    <span>🪔 <strong>दीपावली 2026 स्पेशल:</strong> अपने नाम और फोटो वाला फ्री दिवाली बधाई पोस्टर 10 सेकंड में बनाएं!</span>
-    <a href="tools/diwali-card-maker.html" class="festive-top-bar-btn" title="Create Free Diwali Card Online">
-      फ्री कार्ड बनाएं ➔
-    </a>
-  </aside>
+  
 
   <!-- Site Header -->
   <header class="site-header">
@@ -185,19 +181,19 @@
       <!-- Desktop Navigation Links -->
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-links">
-          <li><a href="index.html" class="active"><span>🏠</span> Home</a></li>
-          <li class="nav-item-hide-laptop"><a href="tools/merge-pdf.html" class=""><span>📑</span> Merge PDF</a></li>
-          <li><a href="tools/dynamic-translator.html" class=""><span>🌐</span> AI Translator</a></li>
-          <li><a href="tools/govt-photo-resizer.html" class=""><span>📸</span> Photo Resizer</a></li>
-          <li class="nav-item-hide-laptop"><a href="tools/resume-builder.html" class=""><span>📄</span> Resume</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li class="nav-item-hide-laptop"><a href="tools/merge-pdf.html">PDF Tools</a></li>
+          <li><a href="tools/dynamic-translator.html">AI Translator</a></li>
+          <li><a href="tools/govt-photo-resizer.html">Photo Resizer</a></li>
+          <li class="nav-item-hide-laptop"><a href="tools/resume-builder.html">Resume Builder</a></li>
           <li class="nav-dropdown">
             <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
-              <span>🧰</span> All Tools (24) <span class="dropdown-arrow">▾</span>
+              All Tools <span class="cat-count" style="margin-left: 2px;">30</span> <span class="dropdown-arrow">▾</span>
             </button>
             <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
               <div class="dropdown-header">
-                <span class="dropdown-title">Explore All 24 Online Tools</span>
-                <span class="dropdown-badge">⚡ 100% Free & Private</span>
+                <span class="dropdown-title">Explore All 30 Online Tools</span>
+                <span class="dropdown-badge">100% Free & Private</span>
               </div>
               <div class="dropdown-grid">
                 <a href="tools/diwali-card-maker.html" class="dropdown-item">
@@ -205,6 +201,13 @@
                   <div class="item-text">
                     <span class="item-title">Diwali Wishing Card Maker</span>
                     <span class="item-desc">Custom photo & name festive cards</span>
+                  </div>
+                </a>
+                <a href="tools/diwali-rangoli-generator.html" class="dropdown-item">
+                  <div class="item-icon-box orange">🎨</div>
+                  <div class="item-text">
+                    <span class="item-title">AI Rangoli Generator</span>
+                    <span class="item-desc">Create custom rangoli in 1-click</span>
                   </div>
                 </a>
                 <a href="tools/ats-resume-checker.html" class="dropdown-item">
@@ -377,15 +380,15 @@
                 </a>
               </div>
             </div>
-          </li>
-          <li><a href="about-us.html" class=""><span>ℹ️</span> About</a></li>
+          <li><a href="about-us.html">About</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
         <button class="nav-search-trigger" id="nav-search-trigger" aria-label="Search tools" title="Search Tools (Press /)">
-          <span>🔍</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.8;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           <span class="search-trigger-text">Search</span>
+          <kbd class="search-kbd-nav">/</kbd>
         </button>
         <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
           <span id="theme-icon">🌙</span>
@@ -408,7 +411,7 @@
 
     <div class="mobile-drawer-search">
       <span class="drawer-search-icon">🔍</span>
-      <input type="text" id="drawer-search-input" placeholder="Search 22 tools..." aria-label="Search in menu">
+      <input type="text" id="drawer-search-input" placeholder="Search 31 tools..." aria-label="Search in menu">
     </div>
 
     <div class="mobile-drawer-body">
@@ -537,8 +540,17 @@
         </li>
       </ul>
 
-      <div class="drawer-section-title" style="margin-top: 1rem;">🤖 AI, Career & Calculators</div>
+      <div class="drawer-section-title" style="margin-top: 1rem;">🤖 AI, Career & Entertainment</div>
       <ul class="drawer-nav-list">
+        <li>
+          <a href="tools/diwali-rangoli-generator.html" class="drawer-item ">
+            <span class="drawer-item-icon">🎨</span>
+            <div class="drawer-item-content">
+              <span class="drawer-item-title">AI Rangoli Generator</span>
+              <span class="drawer-item-badge">Diwali AI</span>
+            </div>
+          </a>
+        </li>
         <li>
           <a href="tools/dynamic-translator.html" class="drawer-item ">
             <span class="drawer-item-icon">🌐</span>
@@ -667,57 +679,65 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-      <div class="badge-privacy">
-        <span>🔒</span> 100% Client-Side Privacy • Zero Server Uploads • 100% Free
+      <div class="hero-status-pill">
+        <span class="pulse-beacon"></span>
+        <span class="status-strong">31 Free Utilities</span>
+        <span class="status-sep">•</span>
+        <span>100% In-Browser Privacy</span>
+        <span class="status-sep">•</span>
+        <span>Zero Server Uploads</span>
       </div>
       <h1 class="hero-title">
-        All-in-One Online <span class="highlight">Utility Tools & AI Translator</span>
+        High-Speed Online <span class="hero-title-accent">Utility Suite</span> & Rozgar Tools
       </h1>
       <p class="hero-subtitle">
-        Translate 100+ languages in real-time with Dynamic AI, compress photos to 20KB/50KB for job applications, evaluate loan EMIs, test typing speed, build ATS resumes, and create UPI QR codes.
+        A fast, private suite of 31 client-side browser tools for competitive exams, PDF workflow, AI translation, and career document building. 100% free with zero file uploads.
       </p>
 
       <!-- Live Search Bar -->
       <div class="search-wrapper">
-        <span class="search-icon-pos">🔍</span>
+        <span class="search-icon-pos">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <input 
           type="text" 
           id="tool-search-input" 
           class="search-input-box" 
-          placeholder="Search 18 tools... (e.g. Merge PDF, Split PDF, Translator, Photo 20KB, EMI, Typing, Resume, QR)" 
+          placeholder="Search 31 tools... (Press '/' to search, e.g. Merge PDF, Photo 20KB, Translator, EMI, Resume)" 
           aria-label="Search tools"
         />
+        <span class="search-kbd-hint">/</span>
         <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear search" title="Clear search" style="display: none;">✕</button>
       </div>
 
       <!-- Category Filter Pills -->
       <div class="category-filters" id="category-filters" role="tablist" aria-label="Filter Tools by Category">
         <button class="cat-pill active" data-category="all" role="tab" aria-selected="true">
-          <span>🔥</span> All Tools <span class="cat-count">24</span>
+          All Tools <span class="cat-count">31</span>
         </button>
-        <button class="cat-pill" data-category="festive" role="tab" aria-selected="false" style="border-color: #f59e0b; color: #fde047; font-weight: 700;">
-          <span>🪔</span> दिवाली & छठ स्पेशल (2026)
+        <button class="cat-pill" data-category="rozgar" role="tab" aria-selected="false">
+          Govt & Rozgar <span class="cat-count">6</span>
         </button>
         <button class="cat-pill" data-category="pdf" role="tab" aria-selected="false">
-          <span>📑</span> PDF Tools (iLovePDF)
+          PDF Suite <span class="cat-count">9</span>
         </button>
         <button class="cat-pill" data-category="ai" role="tab" aria-selected="false">
-          <span>🌐</span> AI & Translation
+          AI & Translation <span class="cat-count">3</span>
         </button>
         <button class="cat-pill" data-category="photos" role="tab" aria-selected="false">
-          <span>📸</span> Photos & Documents
+          Photos & Docs <span class="cat-count">4</span>
         </button>
         <button class="cat-pill" data-category="finance" role="tab" aria-selected="false">
-          <span>💰</span> Loan & Investments
+          Finance & EMI <span class="cat-count">2</span>
         </button>
-        <button class="cat-pill" data-category="utilities" role="tab" aria-selected="false">
-          <span>⚡</span> Speed & Calculators
+        <button class="cat-pill" data-category="festive" role="tab" aria-selected="false">
+          Festive & Fun <span class="cat-count">7</span>
         </button>
       </div>
 
       <!-- Quick Rozgar Exam Selector for Instant Intent Matching -->
       <div class="rozgar-quick-pills" id="rozgar-quick-pills">
-        <span class="rozgar-pills-label">⚡ Rozgar Quick Exams:</span>
+        <span class="rozgar-pills-label">Quick Exams:</span>
         <button class="rozgar-exam-tag" data-exam="ssc" title="Staff Selection Commission (CGL, CHSL, MTS)">SSC Exams</button>
         <button class="rozgar-exam-tag" data-exam="upsc" title="Union Public Service Commission">UPSC Civil Services</button>
         <button class="rozgar-exam-tag" data-exam="railway" title="Railway Recruitment Board (NTPC, Group D)">Railway RRB</button>
@@ -728,89 +748,91 @@
       </div>
     </section>
 
-    <!-- Top Advertisement Slot -->
-    <div class="ad-container" id="ad-slot-header">
-      <span class="ad-label">Sponsored • Career & Job Suite</span>
-      <div class="ad-slot-leaderboard">
-        <a href="tools/resume-builder.html" class="ad-banner-link" title="Rozgar Career Suite - ATS Resume & Exam Photo Resizer">
-          <img src="assets/images/ads/banner-rozgar-suite.jpg" alt="Rozgar Career Suite - Ultimate Career Toolkit" class="ad-banner-img" width="860" height="484" loading="lazy">
-        </a>
-      </div>
-    </div>
+    
 
     <!-- Festive Special 2026 Viral Hub Banner & Grid -->
-    <section class="festive-showcase-section" style="margin-bottom: 2.5rem; background: radial-gradient(circle at 50% 20%, #2e1026 0%, #0d0614 100%); border: 2px solid #f59e0b; border-radius: 24px; padding: 24px 20px; box-shadow: 0 10px 40px rgba(245, 158, 11, 0.2);">
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 1.25rem;">
+    <section class="festive-showcase-section">
+      <div class="festive-showcase-header">
         <div>
-          <span style="background: linear-gradient(135deg, #ea580c, #b45309); color: #fff; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 50px; text-transform: uppercase;">✨ Festival of Lights & Chhath Special</span>
-          <h2 style="font-family: 'Rozha One', 'Cinzel', serif; font-size: 1.8rem; color: #fef08a; margin-top: 6px; text-shadow: 0 0 15px rgba(245, 158, 11, 0.4);">
-            🪔 दीपावली व छठ महापर्व 2026 वायरल टूल्स हब
+          <span class="festive-badge">✨ Festival of Lights & Chhath Special</span>
+          <h2 class="festive-title">
+            🪔 दीपावली व छठ महापर्व 2026 टूल्स हब
           </h2>
         </div>
-        <a href="tools/diwali-card-maker.html" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-weight: 700; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-size: 0.9rem;">
+        <a href="tools/diwali-card-maker.html" class="festive-header-btn">
           Explore All Festive Tools ➔
         </a>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+      <div class="festive-grid">
         <!-- Card 1: Card Maker -->
-        <a href="tools/diwali-card-maker.html" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(245,158,11,0.3); border-radius: 16px; padding: 16px; text-decoration: none; color: #fff; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s;">
+        <a href="tools/diwali-card-maker.html" class="festive-card">
           <div>
-            <div style="font-size: 2rem; margin-bottom: 8px;">🖼️</div>
-            <h3 style="font-size: 1.05rem; color: #fef08a; font-weight: 700; margin-bottom: 6px;">दिवाली फोटो कार्ड मेकर</h3>
-            <p style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;">अपनी फोटो व नाम के साथ 1080x1080 HD व्हाट्सएप स्टेटस पोस्टर बनाएं।</p>
+            <div class="festive-card-icon">🖼️</div>
+            <h3 class="festive-card-title">दिवाली फोटो कार्ड मेकर</h3>
+            <p class="festive-card-desc">अपनी फोटो व नाम के साथ 1080x1080 HD व्हाट्सएप स्टेटस पोस्टर बनाएं।</p>
           </div>
-          <span style="color: #fde047; font-size: 0.8rem; font-weight: 700; margin-top: 12px;">फ्री पोस्टर बनाएं ➔</span>
+          <span class="festive-card-action">फ्री पोस्टर बनाएं ➔</span>
         </a>
 
         <!-- Card 2: Magic Wish -->
-        <a href="tools/diwali-magic-wish.html" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(245,158,11,0.3); border-radius: 16px; padding: 16px; text-decoration: none; color: #fff; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s;">
+        <a href="tools/diwali-magic-wish.html" class="festive-card">
           <div>
-            <div style="font-size: 2rem; margin-bottom: 8px;">✨</div>
-            <h3 style="font-size: 1.05rem; color: #fef08a; font-weight: 700; margin-bottom: 6px;">जादुई विशिंग लिंक (Magic Wish)</h3>
-            <p style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;">दीया छूते ही 3D आतिशबाजी व रियल साउंड। WhatsApp पर वायरल लिंक भेजें।</p>
+            <div class="festive-card-icon">✨</div>
+            <h3 class="festive-card-title">जादुई विशिंग लिंक (Magic Wish)</h3>
+            <p class="festive-card-desc">दीया छूते ही 3D आतिशबाजी व रियल साउंड। WhatsApp पर वायरल लिंक भेजें।</p>
           </div>
-          <span style="color: #fde047; font-size: 0.8rem; font-weight: 700; margin-top: 12px;">जादुई लिंक बनाएं ➔</span>
+          <span class="festive-card-action">जादुई लिंक बनाएं ➔</span>
         </a>
 
         <!-- Card 3: Puja Muhurat -->
-        <a href="tools/diwali-puja-muhurat.html" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(245,158,11,0.3); border-radius: 16px; padding: 16px; text-decoration: none; color: #fff; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s;">
+        <a href="tools/diwali-puja-muhurat.html" class="festive-card">
           <div>
-            <div style="font-size: 2rem; margin-bottom: 8px;">🪔</div>
-            <h3 style="font-size: 1.05rem; color: #fef08a; font-weight: 700; margin-bottom: 6px;">लक्ष्मी पूजा मुहूर्त & 50+ चेकलिस्ट</h3>
-            <p style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;">शहर-वार प्रदोष काल, चौघड़िया मुहूर्त और फ्री डाउनलोड पूजा सामग्री PDF।</p>
+            <div class="festive-card-icon">🪔</div>
+            <h3 class="festive-card-title">लक्ष्मी पूजा मुहूर्त & 50+ चेकलिस्ट</h3>
+            <p class="festive-card-desc">शहर-वार प्रदोष काल, चौघड़िया मुहूर्त और फ्री डाउनलोड पूजा सामग्री PDF।</p>
           </div>
-          <span style="color: #fde047; font-size: 0.8rem; font-weight: 700; margin-top: 12px;">मुहूर्त व लिस्ट देखें ➔</span>
+          <span class="festive-card-action">मुहूर्त व लिस्ट देखें ➔</span>
         </a>
 
         <!-- Card 4: Shayari & Status -->
-        <a href="tools/diwali-shayari-status.html" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(245,158,11,0.3); border-radius: 16px; padding: 16px; text-decoration: none; color: #fff; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s;">
+        <a href="tools/diwali-shayari-status.html" class="festive-card">
           <div>
-            <div style="font-size: 2rem; margin-bottom: 8px;">✍️</div>
-            <h3 style="font-size: 1.05rem; color: #fef08a; font-weight: 700; margin-bottom: 6px;">दिवाली शायरी व स्टेटस (1-Click)</h3>
-            <p style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;">बॉस, ऑफिस, परिवार, दोस्तों के लिए 100+ बधाई संदेश व Instagram कैप्शन्स।</p>
+            <div class="festive-card-icon">✍️</div>
+            <h3 class="festive-card-title">दिवाली शायरी व स्टेटस (1-Click)</h3>
+            <p class="festive-card-desc">बॉस, ऑफिस, परिवार, दोस्तों के लिए 100+ बधाई संदेश व Instagram कैप्शन्स।</p>
           </div>
-          <span style="color: #fde047; font-size: 0.8rem; font-weight: 700; margin-top: 12px;">शायरी कॉपी करें ➔</span>
+          <span class="festive-card-action">शायरी कॉपी करें ➔</span>
         </a>
 
         <!-- Card 5: Cracker Simulator -->
-        <a href="tools/diwali-cracker-simulator.html" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(245,158,11,0.3); border-radius: 16px; padding: 16px; text-decoration: none; color: #fff; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s;">
+        <a href="tools/diwali-cracker-simulator.html" class="festive-card">
           <div>
-            <div style="font-size: 2rem; margin-bottom: 8px;">🎆</div>
-            <h3 style="font-size: 1.05rem; color: #fef08a; font-weight: 700; margin-bottom: 6px;">वर्चुअल ग्रीन पटाखा गेम</h3>
-            <p style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;">बिना प्रदूषण के ऑनलाइन अनार, चकरी, रॉकेट व लड़ी फोड़ें असली आवाज़ के साथ।</p>
+            <div class="festive-card-icon">🎆</div>
+            <h3 class="festive-card-title">वर्चुअल ग्रीन पटाखा गेम</h3>
+            <p class="festive-card-desc">बिना प्रदूषण के ऑनलाइन अनार, चकरी, रॉकेट व लड़ी फोड़ें असली आवाज़ के साथ।</p>
           </div>
-          <span style="color: #fde047; font-size: 0.8rem; font-weight: 700; margin-top: 12px;">पटाखे फोड़ें ➔</span>
+          <span class="festive-card-action">पटाखे फोड़ें ➔</span>
         </a>
 
         <!-- Card 6: Chhath Puja Card Maker -->
-        <a href="tools/chhath-puja-card-maker.html" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(234,88,12,0.3); border-radius: 16px; padding: 16px; text-decoration: none; color: #fff; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s;">
+        <a href="tools/chhath-puja-card-maker.html" class="festive-card">
           <div>
-            <div style="font-size: 2rem; margin-bottom: 8px;">☀️</div>
-            <h3 style="font-size: 1.05rem; color: #fed7aa; font-weight: 700; margin-bottom: 6px;">छठ पूजा पोस्टर मेकर 2026</h3>
-            <p style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;">सूर्यदेव व छठी मईया का फोटो वाला पावन पोस्टर व संध्या-उषा अर्घ्य मुहूर्त।</p>
+            <div class="festive-card-icon">☀️</div>
+            <h3 class="festive-card-title">छठ पूजा पोस्टर मेकर 2026</h3>
+            <p class="festive-card-desc">सूर्यदेव व छठी मईया का फोटो वाला पावन पोस्टर व संध्या-उषा अर्घ्य मुहूर्त।</p>
           </div>
-          <span style="color: #fed7aa; font-size: 0.8rem; font-weight: 700; margin-top: 12px;">छठ पोस्टर बनाएं ➔</span>
+          <span class="festive-card-action">छठ पोस्टर बनाएं ➔</span>
+        </a>
+
+        <!-- Card 7: AI Rangoli Generator -->
+        <a href="tools/diwali-rangoli-generator.html" class="festive-card">
+          <div>
+            <div class="festive-card-icon">🎨</div>
+            <h3 class="festive-card-title">AI रंगोली डिज़ाइन जनरेटर</h3>
+            <p class="festive-card-desc">किसी भी नाम या थीम की रंगोली AI से बनाएं। 1080p HD डाउनलोड व ट्रेस गाइड।</p>
+          </div>
+          <span class="festive-card-action">रंगोली बनाएं ➔</span>
         </a>
       </div>
     </section>
@@ -829,60 +851,571 @@
     <section>
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
         <h2>Featured Tools</h2>
-        <span id="tools-count-badge" style="font-size: 0.9rem; color: var(--text-dim); background: var(--bg-surface); border: 1px solid var(--border); padding: 4px 12px; border-radius: 9999px;">24 Free Tools Available</span>
+        <span id="tools-count-badge" style="font-size: 0.9rem; color: var(--text-dim); background: var(--bg-surface); border: 1px solid var(--border); padding: 4px 12px; border-radius: 9999px;">31 Free Tools Available</span>
       </div>
 
       <div class="tools-grid" id="tools-container">
 
-        <!-- Festive Tool 1: Diwali Wishing Card Maker -->
-        <article class="tool-card" data-category="festive photos" style="border-color: rgba(245, 158, 11, 0.5); box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);">
-          <div style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 700; background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%); color: #fff; padding: 3px 10px; border-radius: 9999px;">
-            🪔 Diwali Trending
+        <!-- Tool 1: Dynamic AI Language Translator (Flagship) -->
+        <article class="tool-card" data-category="ai" id="card-dynamic-translator">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">AI Engine</span>
+            <span class="tool-status-badge">100% Free</span>
           </div>
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #78350f 0%, #d97706 100%);">🖼️</div>
-          <h3 class="tool-title">Diwali Wishing Card Maker (Name & Photo)</h3>
+          <div class="tool-icon-wrap">🌐</div>
+          <h3 class="tool-title">Dynamic AI Language Translator</h3>
           <p class="tool-desc">
-            Create custom Happy Diwali WhatsApp status cards & posters with your name and photo in 10 seconds. 5 royal themes, Hindi shayari, 1080x1080 HD download.
+            Real-time neural translation across 100+ languages including Hindi, English, Spanish, Marathi, Bengali, Tamil, and Telugu with voice audio pronunciation and Developer API.
           </p>
           <div class="tool-tags">
-            <span class="tag-badge">Photo in Frame</span>
-            <span class="tag-badge">1080x1080 HD</span>
-            <span class="tag-badge">WhatsApp Status</span>
-            <span class="tag-badge">Zero Watermark</span>
+            <span class="tag-badge">100+ Languages</span>
+            <span class="tag-badge">Voice Audio</span>
+            <span class="tag-badge">Developer API</span>
+            <span class="tag-badge">Zero Lag</span>
           </div>
-          <a href="tools/diwali-card-maker.html" class="btn btn-primary">
-            Open Card Maker ➔
+          <a href="tools/dynamic-translator.html" class="tool-card-btn" id="open-translator-tool">
+            Open AI Translator <span class="btn-arrow">➔</span>
           </a>
         </article>
 
-        <!-- Festive Tool 2: Magic Wishing Link -->
-        <article class="tool-card" data-category="festive utilities" style="border-color: rgba(245, 158, 11, 0.5); box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);">
-          <div style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 700; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: #fff; padding: 3px 10px; border-radius: 9999px;">
-            🚀 Viral WhatsApp
+        <!-- Tool 2: Govt Photo Resizer -->
+        <article class="tool-card" data-category="rozgar photos" id="card-govt-photo-resizer">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Rozgar Portal</span>
+            <span class="tool-status-badge">SSC / UPSC</span>
           </div>
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #1f102e 0%, #d97706 100%);">✨</div>
+          <div class="tool-icon-wrap green">📸</div>
+          <h3 class="tool-title">Govt Photo & Signature Resizer (20KB - 50KB)</h3>
+          <p class="tool-desc">
+            Instant binary compression for competitive examination portals. Compress passport photos and signature files to exact 20KB, 50KB, or 100KB dimensions client-side.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">20KB Preset</span>
+            <span class="tag-badge">50KB Passport</span>
+            <span class="tag-badge">Binary Precision</span>
+            <span class="tag-badge">Zero Uploads</span>
+          </div>
+          <a href="tools/govt-photo-resizer.html" class="tool-card-btn" id="open-resizer-tool">
+            Resize Photo Now <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 3: Merge PDF Online -->
+        <article class="tool-card" data-category="pdf" id="card-merge-pdf">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">PDF Suite</span>
+            <span class="tool-status-badge">High-Speed</span>
+          </div>
+          <div class="tool-icon-wrap cyan">📑</div>
+          <h3 class="tool-title">Merge PDF Online Free</h3>
+          <p class="tool-desc">
+            Combine multiple PDF documents into a single organized file in seconds. Drag-and-drop reordering, instant preview, and unlimited merges without watermarks.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Multi-File Merge</span>
+            <span class="tag-badge">Drag & Drop</span>
+            <span class="tag-badge">Zero Server Wait</span>
+            <span class="tag-badge">Lossless Quality</span>
+          </div>
+          <a href="tools/merge-pdf.html" class="tool-card-btn" id="open-merge-pdf-tool">
+            Merge PDFs <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 4: 1-Page ATS Resume Builder -->
+        <article class="tool-card" data-category="rozgar photos" id="card-resume-builder">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Career Suite</span>
+            <span class="tool-status-badge">ATS Tested</span>
+          </div>
+          <div class="tool-icon-wrap green">📄</div>
+          <h3 class="tool-title">1-Page ATS Resume & CV Builder</h3>
+          <p class="tool-desc">
+            Craft a polished, recruiter-approved single-page resume formatted specifically to score 95+ on automated Applicant Tracking Systems. Export high-res A4 PDF.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">1-Page A4 PDF</span>
+            <span class="tag-badge">ATS Formatted</span>
+            <span class="tag-badge">Live Preview</span>
+            <span class="tag-badge">No Sign-Up</span>
+          </div>
+          <a href="tools/resume-builder.html" class="tool-card-btn" id="open-resume-tool">
+            Build My Resume <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 5: ATS Resume Checker -->
+        <article class="tool-card" data-category="rozgar ai photos" id="card-ats-checker">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">AI Career</span>
+            <span class="tool-status-badge">Score 0-100</span>
+          </div>
+          <div class="tool-icon-wrap">🎯</div>
+          <h3 class="tool-title">ATS Resume Checker & Audit Score</h3>
+          <p class="tool-desc">
+            Audit your resume against Fortune 500 applicant screening bots. Get an instant 0-100 score, keyword density report, formatting flaws, and actionable improvements.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Instant Audit</span>
+            <span class="tag-badge">Keyword Match</span>
+            <span class="tag-badge">Format Scanner</span>
+            <span class="tag-badge">100% Private</span>
+          </div>
+          <a href="tools/ats-resume-checker.html" class="tool-card-btn" id="open-ats-checker-tool">
+            Check Resume Score <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 7: AI Rangoli Generator -->
+        <article class="tool-card" data-category="festive ai" id="card-rangoli">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Festive AI</span>
+            <span class="tool-status-badge">Diwali Trend</span>
+          </div>
+          <div class="tool-icon-wrap amber">🎨</div>
+          <h3 class="tool-title">AI Rangoli Design Generator & Studio</h3>
+          <p class="tool-desc">
+            Generate customized festive Indian Rangoli designs for any family name, peacock, Ganesha, diya, or 5-dots Kolam using AI in 2 seconds. Trace guide & 1080p HD.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Floor Trace Guide</span>
+            <span class="tag-badge">Name Stamping</span>
+            <span class="tag-badge">1080p HD Download</span>
+            <span class="tag-badge">5-Dots Kolam</span>
+          </div>
+          <a href="tools/diwali-rangoli-generator.html" class="tool-card-btn">
+            Create Rangoli <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 8: Split PDF & Extract Pages -->
+        <article class="tool-card" data-category="pdf" id="card-split-pdf">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">PDF Suite</span>
+            <span class="tool-status-badge">Lossless</span>
+          </div>
+          <div class="tool-icon-wrap cyan">✂️</div>
+          <h3 class="tool-title">Split PDF & Extract Pages</h3>
+          <p class="tool-desc">
+            Extract selected page ranges or split large documents into individual PDF files. Client-side memory engine ensures sensitive records never leave your device.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Page Range Split</span>
+            <span class="tag-badge">Extract Specific Pages</span>
+            <span class="tag-badge">High Privacy</span>
+          </div>
+          <a href="tools/split-pdf.html" class="tool-card-btn">
+            Split PDF Now <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 9: PDF to JPG Converter -->
+        <article class="tool-card" data-category="pdf" id="card-pdf-to-jpg">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">PDF Suite</span>
+            <span class="tool-status-badge">High-Res</span>
+          </div>
+          <div class="tool-icon-wrap cyan">🖼️</div>
+          <h3 class="tool-title">PDF to JPG High-Res Converter</h3>
+          <p class="tool-desc">
+            Convert every page of your PDF into crisp, high-resolution JPEG images. Download individual image files or batch download all pages as a compressed ZIP.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">300 DPI Rendering</span>
+            <span class="tag-badge">ZIP Batch Download</span>
+            <span class="tag-badge">Zero Compression Loss</span>
+          </div>
+          <a href="tools/pdf-to-jpg.html" class="tool-card-btn">
+            Convert PDF to JPG <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 10: Rotate PDF -->
+        <article class="tool-card" data-category="pdf" id="card-rotate-pdf">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">PDF Suite</span>
+            <span class="tool-status-badge">Instant</span>
+          </div>
+          <div class="tool-icon-wrap cyan">🔄</div>
+          <h3 class="tool-title">Rotate PDF Pages Permanently</h3>
+          <p class="tool-desc">
+            Permanently rotate upside down or sideways PDF pages 90°, 180°, or 270° clockwise. Save the adjusted orientation permanently into a fresh file.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">90° / 180° / 270°</span>
+            <span class="tag-badge">Selective Page Rotation</span>
+            <span class="tag-badge">Permanent Fix</span>
+          </div>
+          <a href="tools/rotate-pdf.html" class="tool-card-btn">
+            Rotate PDF <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 11: Watermark PDF -->
+        <article class="tool-card" data-category="pdf" id="card-watermark-pdf">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">PDF Suite</span>
+            <span class="tool-status-badge">Security</span>
+          </div>
+          <div class="tool-icon-wrap cyan">🌊</div>
+          <h3 class="tool-title">Watermark PDF Text & Stamp</h3>
+          <p class="tool-desc">
+            Add confidential stamps, official company names, or copyright marks across your document pages with custom rotation angle, opacity, and typography.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Custom Stamp Text</span>
+            <span class="tag-badge">Opacity Slider</span>
+            <span class="tag-badge">Diagonal Angle</span>
+          </div>
+          <a href="tools/pdf-watermark.html" class="tool-card-btn">
+            Add Watermark <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 12: Protect PDF -->
+        <article class="tool-card" data-category="pdf" id="card-protect-pdf">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">PDF Suite</span>
+            <span class="tool-status-badge">128-Bit</span>
+          </div>
+          <div class="tool-icon-wrap cyan">🔒</div>
+          <h3 class="tool-title">Password Protect & Encrypt PDF</h3>
+          <p class="tool-desc">
+            Encrypt your sensitive contracts, bank statements, and tax forms with 128-bit password encryption right in your browser. Complete document security.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">128-Bit Encryption</span>
+            <span class="tag-badge">Strong Password Hash</span>
+            <span class="tag-badge">Bank Grade</span>
+          </div>
+          <a href="tools/protect-pdf.html" class="tool-card-btn">
+            Protect PDF <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 13: Unlock PDF -->
+        <article class="tool-card" data-category="pdf" id="card-unlock-pdf">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">PDF Suite</span>
+            <span class="tool-status-badge">Decrypt</span>
+          </div>
+          <div class="tool-icon-wrap cyan">🔓</div>
+          <h3 class="tool-title">Unlock PDF & Remove Password</h3>
+          <p class="tool-desc">
+            Remove read and print password restrictions from protected documents. Save an unlocked, restriction-free version for easy printing and sharing.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Remove Lock</span>
+            <span class="tag-badge">Enable Printing</span>
+            <span class="tag-badge">Clean PDF Output</span>
+          </div>
+          <a href="tools/unlock-pdf.html" class="tool-card-btn">
+            Unlock PDF <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 14: PDF Page Numbers -->
+        <article class="tool-card" data-category="pdf" id="card-page-numbers">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">PDF Suite</span>
+            <span class="tool-status-badge">Format</span>
+          </div>
+          <div class="tool-icon-wrap cyan">🔢</div>
+          <h3 class="tool-title">Add Page Numbers to PDF</h3>
+          <p class="tool-desc">
+            Stamp clean page numbers into headers or footers with customizable font size, format (Page X of Y), margins, and alignment (left, center, right).
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Header & Footer</span>
+            <span class="tag-badge">Page X of Y</span>
+            <span class="tag-badge">Custom Margins</span>
+          </div>
+          <a href="tools/pdf-page-numbers.html" class="tool-card-btn">
+            Number Pages <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 15: Image to PDF Converter -->
+        <article class="tool-card" data-category="pdf photos" id="card-image-to-pdf">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">PDF Suite</span>
+            <span class="tool-status-badge">Multi-Format</span>
+          </div>
+          <div class="tool-icon-wrap cyan">📑</div>
+          <h3 class="tool-title">JPG / PNG to PDF Converter</h3>
+          <p class="tool-desc">
+            Convert photos, scanned receipts, and ID cards into a single clean PDF document. Reorder images, adjust margins, and select portrait or landscape orientation.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Batch JPG/PNG</span>
+            <span class="tag-badge">A4 Fit</span>
+            <span class="tag-badge">Margin Adjust</span>
+          </div>
+          <a href="tools/image-to-pdf.html" class="tool-card-btn" id="open-pdf-tool">
+            Convert Images <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 16: Sarkari Rozgar Hub -->
+        <article class="tool-card" data-category="rozgar" id="card-rozgar-hub">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Govt Portal</span>
+            <span class="tool-status-badge">All-in-1</span>
+          </div>
+          <div class="tool-icon-wrap green">⚡</div>
+          <h3 class="tool-title">Sarkari Rozgar All-in-One Exam Hub</h3>
+          <p class="tool-desc">
+            The central portal for official exam requirements: SSC, UPSC, RRB, Banking, Police Bharti photo dimensions, typing rules, and cut-off age criteria.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">SSC Guidelines</span>
+            <span class="tag-badge">UPSC Specs</span>
+            <span class="tag-badge">Banking Format</span>
+          </div>
+          <a href="tools/sarkari-rozgar-tools.html" class="tool-card-btn">
+            Open Rozgar Hub <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 17: Rozgar Photo Resizer -->
+        <article class="tool-card" data-category="rozgar photos" id="card-rozgar-photo">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Govt Tools</span>
+            <span class="tool-status-badge">Govt Ready</span>
+          </div>
+          <div class="tool-icon-wrap green">📸</div>
+          <h3 class="tool-title">Rozgar Photo & Signature Resizer</h3>
+          <p class="tool-desc">
+            Dedicated photo compressor built specifically for Sarkari Result and government recruitment forms. 20KB signature, 50KB photo, and 100KB document presets.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">20KB Signature</span>
+            <span class="tag-badge">50KB Photo</span>
+            <span class="tag-badge">Exact Dimensions</span>
+          </div>
+          <a href="tools/rozgar-photo-resizer.html" class="tool-card-btn">
+            Resize for Rozgar <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 18: Typing Speed Test -->
+        <article class="tool-card" data-category="rozgar" id="card-typing-test">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Skills Test</span>
+            <span class="tool-status-badge">Live WPM</span>
+          </div>
+          <div class="tool-icon-wrap green">⌨️</div>
+          <h3 class="tool-title">Live Typing Speed Test (WPM & Accuracy)</h3>
+          <p class="tool-desc">
+            Evaluate your real-time typing speed in Words Per Minute (WPM) and accuracy percentage with live word highlighting, countdown timers, and accuracy grading.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Live WPM</span>
+            <span class="tag-badge">Accuracy %</span>
+            <span class="tag-badge">1-Minute Test</span>
+          </div>
+          <a href="tools/typing-test.html" class="tool-card-btn" id="open-typing-tool">
+            Start Typing Test <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 19: Rozgar Typing Test -->
+        <article class="tool-card" data-category="rozgar" id="card-rozgar-typing">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Govt Exam</span>
+            <span class="tool-status-badge">Court & SSC</span>
+          </div>
+          <div class="tool-icon-wrap green">⌨️</div>
+          <h3 class="tool-title">Rozgar Hindi & English Typing Test</h3>
+          <p class="tool-desc">
+            Exam-standard typing simulator for High Court Clerk, SSC Steno, and State Police exams. Test at official 30 WPM and 35 WPM qualification thresholds.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">30 & 35 WPM</span>
+            <span class="tag-badge">Clerical Ready</span>
+            <span class="tag-badge">Official Pass/Fail</span>
+          </div>
+          <a href="tools/rozgar-typing-test.html" class="tool-card-btn">
+            Take Rozgar Test <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 20: Loan EMI Calculator -->
+        <article class="tool-card" data-category="finance" id="card-emi">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Finance</span>
+            <span class="tool-status-badge">Visual Chart</span>
+          </div>
+          <div class="tool-icon-wrap green">🏦</div>
+          <h3 class="tool-title">Home, Car & Personal Loan EMI Calculator</h3>
+          <p class="tool-desc">
+            Calculate exact monthly installment (EMI), interest payable, visual donut chart breakdown, and detailed year-by-year amortization repayment schedules.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Monthly EMI</span>
+            <span class="tag-badge">Amortization Table</span>
+            <span class="tag-badge">Visual Chart</span>
+          </div>
+          <a href="tools/emi-calculator.html" class="tool-card-btn" id="open-emi-tool">
+            Calculate EMI <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 21: SIP Calculator -->
+        <article class="tool-card" data-category="finance" id="card-sip">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Wealth</span>
+            <span class="tool-status-badge">Compounding</span>
+          </div>
+          <div class="tool-icon-wrap green">📈</div>
+          <h3 class="tool-title">SIP & Mutual Fund Wealth Calculator</h3>
+          <p class="tool-desc">
+            Forecast mutual fund compounding wealth with interactive monthly investment sliders, total invested vs estimated return breakdown, and Chart.js graphics.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Monthly SIP</span>
+            <span class="tag-badge">Lumpsum Option</span>
+            <span class="tag-badge">Compounding Growth</span>
+          </div>
+          <a href="tools/sip-calculator.html" class="tool-card-btn" id="open-sip-tool">
+            Calculate Wealth <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 22: Exact Age Calculator -->
+        <article class="tool-card" data-category="rozgar" id="card-age">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Utility</span>
+            <span class="tool-status-badge">Exact DOB</span>
+          </div>
+          <div class="tool-icon-wrap green">🎂</div>
+          <h3 class="tool-title">Exact Age & Cut-Off Date Calculator</h3>
+          <p class="tool-desc">
+            Determine your precise chronological age in years, months, and days as of any recruitment cut-off date, complete with live next birthday countdowns.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Cut-Off Age</span>
+            <span class="tag-badge">Days & Hours</span>
+            <span class="tag-badge">Next Birthday</span>
+          </div>
+          <a href="tools/age-calculator.html" class="tool-card-btn" id="open-age-tool">
+            Calculate Age <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 23: Rozgar Age Calculator -->
+        <article class="tool-card" data-category="rozgar" id="card-rozgar-age">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Govt Eligibility</span>
+            <span class="tool-status-badge">Relaxation</span>
+          </div>
+          <div class="tool-icon-wrap green">🎂</div>
+          <h3 class="tool-title">Sarkari Rozgar Age Limit Calculator</h3>
+          <p class="tool-desc">
+            Verify official age eligibility with category-wise relaxation (General, OBC, SC/ST, EWS, Ex-Servicemen) for SSC, Railway, Police, and State PSC jobs.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Category Relaxation</span>
+            <span class="tag-badge">Official Cut-Offs</span>
+            <span class="tag-badge">Instant Eligibility</span>
+          </div>
+          <a href="tools/rozgar-age-calculator.html" class="tool-card-btn">
+            Check Eligibility <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 24: CGPA Calculator -->
+        <article class="tool-card" data-category="rozgar" id="card-cgpa">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Academic</span>
+            <span class="tool-status-badge">CBSE / AICTE</span>
+          </div>
+          <div class="tool-icon-wrap green">🎓</div>
+          <h3 class="tool-title">CGPA to Percentage & Marks Calculator</h3>
+          <p class="tool-desc">
+            Convert CGPA to percentage using standard CBSE formula (CGPA × 9.5), AICTE 10-point college scale, marks percentage, and semester-wise SGPA.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">CBSE × 9.5</span>
+            <span class="tag-badge">AICTE 10-Point</span>
+            <span class="tag-badge">Division & Grade</span>
+          </div>
+          <a href="tools/cgpa-calculator.html" class="tool-card-btn" id="open-cgpa-tool">
+            Convert CGPA <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 25: QR Generator -->
+        <article class="tool-card" data-category="rozgar" id="card-qr">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Utilities</span>
+            <span class="tool-status-badge">High-Res</span>
+          </div>
+          <div class="tool-icon-wrap green">📱</div>
+          <h3 class="tool-title">Custom QR Code Generator (UPI, WiFi & URL)</h3>
+          <p class="tool-desc">
+            Generate customized QR codes for UPI merchant payments (PhonePe, GPay, Paytm), WiFi network credentials, website URLs, and WhatsApp messages.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">UPI Payments</span>
+            <span class="tag-badge">WiFi Password</span>
+            <span class="tag-badge">PNG Download</span>
+          </div>
+          <a href="tools/qr-generator.html" class="tool-card-btn" id="open-qr-tool">
+            Generate QR Code <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 26: Diwali Wishing Card Maker -->
+        <article class="tool-card" data-category="festive photos" id="card-diwali-card">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Festive Suite</span>
+            <span class="tool-status-badge">Trending</span>
+          </div>
+          <div class="tool-icon-wrap amber">🪔</div>
+          <h3 class="tool-title">Diwali Wishing Card & WhatsApp Poster Maker</h3>
+          <p class="tool-desc">
+            Create customized Happy Diwali greetings with your name and photo in 10 seconds. 5+ royal festive themes, heartfelt Hindi shayari, 1080x1080 HD download.
+          </p>
+          <div class="tool-tags">
+            <span class="tag-badge">Photo in Frame</span>
+            <span class="tag-badge">WhatsApp Share</span>
+            <span class="tag-badge">Zero Watermark</span>
+          </div>
+          <a href="tools/diwali-card-maker.html" class="tool-card-btn">
+            Create Diwali Card <span class="btn-arrow">➔</span>
+          </a>
+        </article>
+
+        <!-- Tool 27: Magic Wishing Link -->
+        <article class="tool-card" data-category="festive" id="card-magic-wish">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Festive Suite</span>
+            <span class="tool-status-badge">Viral</span>
+          </div>
+          <div class="tool-icon-wrap amber">✨</div>
           <h3 class="tool-title">Diwali Magic Wishing Link Generator</h3>
           <p class="tool-desc">
             Make your personalized magic greeting link. When friends tap the diya, 3D fireworks, sound, and your custom Diwali wishes burst on screen.
           </p>
           <div class="tool-tags">
-            <span class="tag-badge">Viral Link</span>
             <span class="tag-badge">3D Fireworks</span>
             <span class="tag-badge">Real Audio</span>
-            <span class="tag-badge">Live Countdown</span>
+            <span class="tag-badge">WhatsApp Viral</span>
           </div>
-          <a href="tools/diwali-magic-wish.html" class="btn btn-primary">
-            Generate Magic Link ➔
+          <a href="tools/diwali-magic-wish.html" class="tool-card-btn">
+            Make Magic Link <span class="btn-arrow">➔</span>
           </a>
         </article>
 
-        <!-- Festive Tool 3: Puja Muhurat & Checklist -->
-        <article class="tool-card" data-category="festive utilities" style="border-color: rgba(245, 158, 11, 0.5); box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);">
-          <div style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 700; background: linear-gradient(135deg, #b45309 0%, #d97706 100%); color: #fff; padding: 3px 10px; border-radius: 9999px;">
-            🪔 Shubh Muhurat
+        <!-- Tool 28: Lakshmi Puja Muhurat -->
+        <article class="tool-card" data-category="festive" id="card-puja-muhurat">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Festive Suite</span>
+            <span class="tool-status-badge">Muhurat</span>
           </div>
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #78350f 0%, #b45309 100%);">🪔</div>
-          <h3 class="tool-title">Lakshmi Puja Muhurat & 50+ Samagri Checklist</h3>
+          <div class="tool-icon-wrap amber">🪔</div>
+          <h3 class="tool-title">Lakshmi Puja Muhurat & 50+ Checklist</h3>
           <p class="tool-desc">
             City-wise Shubh Muhurat, Pradosh Kaal, Vrishabha Lagna, and interactive 50+ item Puja Samagri checklist. Free PDF download for market shopping.
           </p>
@@ -890,285 +1423,72 @@
             <span class="tag-badge">City Wise</span>
             <span class="tag-badge">Choghadiya</span>
             <span class="tag-badge">50+ Checklist</span>
-            <span class="tag-badge">Download PDF</span>
           </div>
-          <a href="tools/diwali-puja-muhurat.html" class="btn btn-primary">
-            View Muhurat & List ➔
+          <a href="tools/diwali-puja-muhurat.html" class="tool-card-btn">
+            View Muhurat <span class="btn-arrow">➔</span>
           </a>
         </article>
 
-        <!-- Festive Tool 4: Diwali Shayari & Wishes -->
-        <article class="tool-card" data-category="festive utilities" style="border-color: rgba(245, 158, 11, 0.5); box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);">
-          <div style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 700; background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%); color: #fff; padding: 3px 10px; border-radius: 9999px;">
-            ✍️ 100+ Wishes
+        <!-- Tool 29: Diwali Shayari & Status -->
+        <article class="tool-card" data-category="festive" id="card-diwali-shayari">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Festive Suite</span>
+            <span class="tool-status-badge">100+ Wishes</span>
           </div>
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #291036 0%, #d97706 100%);">✍️</div>
+          <div class="tool-icon-wrap amber">✍️</div>
           <h3 class="tool-title">Diwali Wishes, Shayari & Status Copier</h3>
           <p class="tool-desc">
             Curated Diwali shayari for family, boss, office colleagues, friends, and Instagram captions. 1-click copy & instant WhatsApp share.
           </p>
           <div class="tool-tags">
             <span class="tag-badge">1-Click Copy</span>
-            <span class="tag-badge">Formal for Boss</span>
             <span class="tag-badge">Hindi & English</span>
             <span class="tag-badge">Instagram Tags</span>
           </div>
-          <a href="tools/diwali-shayari-status.html" class="btn btn-primary">
-            Browse Wishes ➔
+          <a href="tools/diwali-shayari-status.html" class="tool-card-btn">
+            Browse Wishes <span class="btn-arrow">➔</span>
           </a>
         </article>
 
-        <!-- Festive Tool 5: Cracker Simulator -->
-        <article class="tool-card" data-category="festive utilities" style="border-color: rgba(239, 68, 68, 0.5); box-shadow: 0 4px 20px rgba(239, 68, 68, 0.15);">
-          <div style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 700; background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%); color: #fff; padding: 3px 10px; border-radius: 9999px;">
-            🎆 Green Diwali
+        <!-- Tool 30: Cracker Simulator -->
+        <article class="tool-card" data-category="festive" id="card-cracker-sim">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Festive Fun</span>
+            <span class="tool-status-badge">Eco Friendly</span>
           </div>
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #1f0b2e 0%, #ef4444 100%);">🎆</div>
+          <div class="tool-icon-wrap amber">🎆</div>
           <h3 class="tool-title">Virtual Green Cracker Simulator Game</h3>
           <p class="tool-desc">
             Burst online Anar, Chakri, Rockets, and 10,000 Cracker Ladi with realistic sound effects and 3D sparkles. 0% pollution, 100% fun.
           </p>
           <div class="tool-tags">
-            <span class="tag-badge">0% Pollution</span>
+            <span class="tag-badge">3D Fireworks</span>
             <span class="tag-badge">Realistic Sound</span>
-            <span class="tag-badge">Rocket & Anar</span>
-            <span class="tag-badge">Green Challenge</span>
+            <span class="tag-badge">0% Pollution</span>
           </div>
-          <a href="tools/diwali-cracker-simulator.html" class="btn btn-primary">
-            Play Cracker Game ➔
+          <a href="tools/diwali-cracker-simulator.html" class="tool-card-btn">
+            Play Cracker Game <span class="btn-arrow">➔</span>
           </a>
         </article>
 
-        <!-- Festive Tool 6: Chhath Puja Card Maker -->
-        <article class="tool-card" data-category="festive photos" style="border-color: rgba(234, 88, 12, 0.5); box-shadow: 0 4px 20px rgba(234, 88, 12, 0.15);">
-          <div style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 700; background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%); color: #fff; padding: 3px 10px; border-radius: 9999px;">
-            ☀️ Chhath Mahaparv
+        <!-- Tool 31: Chhath Puja Card Maker -->
+        <article class="tool-card" data-category="festive photos" id="card-chhath-card">
+          <div class="tool-card-top">
+            <span class="tool-cat-badge">Festive Suite</span>
+            <span class="tool-status-badge">Chhath 2026</span>
           </div>
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #431407 0%, #ea580c 100%);">☀️</div>
+          <div class="tool-icon-wrap amber">☀️</div>
           <h3 class="tool-title">Chhath Puja Poster Maker & Arghya Muhurat</h3>
           <p class="tool-desc">
             Generate holy Chhath Puja wishing posters with your name & photo. Includes Sandhya and Usha Arghya sunrise/sunset timings.
           </p>
           <div class="tool-tags">
             <span class="tag-badge">Chhathi Maiya</span>
-            <span class="tag-badge">Arghya Timing</span>
+            <span class="tag-badge">Arghya Timings</span>
             <span class="tag-badge">1080x1080 HD</span>
-            <span class="tag-badge">Photo in Frame</span>
           </div>
-          <a href="tools/chhath-puja-card-maker.html" class="btn btn-primary">
-            Make Chhath Poster ➔
-          </a>
-        </article>
-
-        <!-- Tool 0: Dynamic AI Language Translator (Flagship) -->
-        <article class="tool-card" data-category="ai" style="border-color: rgba(99, 102, 241, 0.4); box-shadow: 0 4px 20px rgba(99, 102, 241, 0.15);">
-          <div style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 700; background: linear-gradient(135deg, var(--primary) 0%, var(--accent-cyan) 100%); color: #fff; padding: 3px 10px; border-radius: 9999px;">
-            ⚡ AI Powered
-          </div>
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);">🌐</div>
-          <h3 class="tool-title">Dynamic AI Language Translator (100+ Languages)</h3>
-          <p class="tool-desc">
-            Translate text in real-time across 100+ languages including Hindi, English, Spanish, Marathi, Bengali, Tamil, Telugu, and more with voice pronunciation, instant copy, and Developer API.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">Real-Time AI</span>
-            <span class="tag-badge">100+ Languages</span>
-            <span class="tag-badge">Voice Speech</span>
-            <span class="tag-badge">Developer API</span>
-          </div>
-          <a href="tools/dynamic-translator.html" class="btn btn-primary" id="open-translator-tool">
-            Open Tool ➔
-          </a>
-        </article>
-
-        <!-- Tool: Diwali Wishing Card & WhatsApp Poster Maker (Festive Viral) -->
-        <article class="tool-card" data-category="utilities" style="border-color: rgba(245, 158, 11, 0.45); box-shadow: 0 4px 25px rgba(245, 158, 11, 0.18);">
-          <div style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 700; background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%); color: #fff; padding: 3px 10px; border-radius: 9999px;">
-            🪔 Festival Viral
-          </div>
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%);">🪔</div>
-          <h3 class="tool-title">Diwali Wishing Card & WhatsApp Poster Maker</h3>
-          <p class="tool-desc">
-            Create customized Happy Diwali greetings with your name and photo in 10 seconds. 5+ royal festive themes, heartfelt Hindi/English shayari, 1080x1080 HD download & direct WhatsApp share.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">Custom Photo & Name</span>
-            <span class="tag-badge">5 Royal Themes</span>
-            <span class="tag-badge">WhatsApp Share</span>
-            <span class="tag-badge">HD 1080x1080</span>
-          </div>
-          <a href="tools/diwali-card-maker.html" class="btn btn-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);">
-            Create Diwali Card ➔
-          </a>
-        </article>
-
-        <!-- Tool 1: Govt Form Photo Resizer -->
-        <article class="tool-card" data-category="photos">
-          <div class="tool-icon-wrap">📸</div>
-          <h3 class="tool-title">Photo & Signature Resizer (20KB - 50KB)</h3>
-          <p class="tool-desc">
-            Resize and compress passport photos and signatures to exact 20KB, 50KB, or 100KB with standard dimensions for job and exam applications.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">20 KB Preset</span>
-            <span class="tag-badge">50 KB Passport</span>
-            <span class="tag-badge">Binary Compression</span>
-          </div>
-          <a href="tools/govt-photo-resizer.html" class="btn btn-primary" id="open-resizer-tool">
-            Open Tool ➔
-          </a>
-        </article>
-
-        <!-- Tool 2: EMI & Loan Calculator -->
-        <article class="tool-card" data-category="finance">
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);">🏦</div>
-          <h3 class="tool-title">Home, Car & Personal Loan EMI Calculator</h3>
-          <p class="tool-desc">
-            Calculate monthly EMI, total interest payable, visual donut chart breakdown, and detailed year-by-year amortization repayment schedules.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">Monthly EMI</span>
-            <span class="tag-badge">Home & Car Loan</span>
-            <span class="tag-badge">Amortization Table</span>
-          </div>
-          <a href="tools/emi-calculator.html" class="btn btn-primary" id="open-emi-tool">
-            Open Tool ➔
-          </a>
-        </article>
-
-        <!-- Tool 3: Typing Speed Test -->
-        <article class="tool-card" data-category="utilities">
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);">⌨️</div>
-          <h3 class="tool-title">Live Typing Speed Test (WPM & Accuracy)</h3>
-          <p class="tool-desc">
-            Evaluate your keyboard typing speed and accuracy percentage with real-time word highlighting, timer countdowns, and performance grade badges.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">Live WPM</span>
-            <span class="tag-badge">Accuracy %</span>
-            <span class="tag-badge">Clerical Ready</span>
-          </div>
-          <a href="tools/typing-test.html" class="btn btn-primary" id="open-typing-tool">
-            Open Tool ➔
-          </a>
-        </article>
-
-        <!-- Tool 4: 1-Page Resume Builder -->
-        <article class="tool-card" data-category="photos">
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);">📄</div>
-          <h3 class="tool-title">1-Page ATS Resume & CV Builder</h3>
-          <p class="tool-desc">
-            Build a clean, modern, single-page ATS-friendly resume or job CV with real-time preview, pre-filled sample templates, and instant A4 PDF printing.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">ATS Friendly</span>
-            <span class="tag-badge">A4 Print / PDF</span>
-            <span class="tag-badge">No Sign-up</span>
-          </div>
-          <a href="tools/resume-builder.html" class="btn btn-primary" id="open-resume-tool">
-            Open Tool ➔
-          </a>
-        </article>
-
-        <!-- Tool: Free ATS Resume Checker -->
-        <article class="tool-card" data-category="photos">
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);">🎯</div>
-          <h3 class="tool-title">Free ATS Resume Checker & Score Calculator</h3>
-          <p class="tool-desc">
-            Scan your resume against automated ATS hiring systems. Get an instant 0-100 score, keyword density audit, formatting check, and actionable fixes.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">Score 0-100</span>
-            <span class="tag-badge">Keyword Match</span>
-            <span class="tag-badge">100% Free & Private</span>
-          </div>
-          <a href="tools/ats-resume-checker.html" class="btn btn-primary" id="open-ats-checker-tool">
-            Open Tool ➔
-          </a>
-        </article>
-
-        <!-- Tool 5: Custom QR Code Generator -->
-        <article class="tool-card" data-category="utilities">
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">📱</div>
-          <h3 class="tool-title">Custom QR Code Generator (UPI, WiFi & URL)</h3>
-          <p class="tool-desc">
-            Generate customized QR codes for UPI merchant payments (PhonePe, GPay, Paytm), WiFi network credentials, website URLs, and WhatsApp messages.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">UPI Payment</span>
-            <span class="tag-badge">WiFi Password</span>
-            <span class="tag-badge">PNG Download</span>
-          </div>
-          <a href="tools/qr-generator.html" class="btn btn-primary" id="open-qr-tool">
-            Open Tool ➔
-          </a>
-        </article>
-
-        <!-- Tool 6: CGPA to Percentage Calculator -->
-        <article class="tool-card" data-category="utilities">
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);">🎓</div>
-          <h3 class="tool-title">CGPA to Percentage & Marks Calculator</h3>
-          <p class="tool-desc">
-            Convert CGPA to percentage using standard CBSE formula (CGPA × 9.5), AICTE 10-point college scale, marks percentage, and semester-wise SGPA.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">CBSE × 9.5</span>
-            <span class="tag-badge">AICTE Scale</span>
-            <span class="tag-badge">Grade & Division</span>
-          </div>
-          <a href="tools/cgpa-calculator.html" class="btn btn-primary" id="open-cgpa-tool">
-            Open Tool ➔
-          </a>
-        </article>
-
-        <!-- Tool 7: SIP & Lumpsum Calculator -->
-        <article class="tool-card" data-category="finance">
-          <div class="tool-icon-wrap green">📈</div>
-          <h3 class="tool-title">SIP & Lumpsum Return Calculator</h3>
-          <p class="tool-desc">
-            Forecast mutual fund compounding wealth with interactive monthly investment sliders, total invested vs estimated return breakdown, and Chart.js graphics.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">Mutual Funds</span>
-            <span class="tag-badge">Chart.js Graph</span>
-            <span class="tag-badge">Compound Wealth</span>
-          </div>
-          <a href="tools/sip-calculator.html" class="btn btn-primary" id="open-sip-tool">
-            Open Tool ➔
-          </a>
-        </article>
-
-        <!-- Tool 8: Exact Age Calculator -->
-        <article class="tool-card" data-category="utilities">
-          <div class="tool-icon-wrap amber">🎂</div>
-          <h3 class="tool-title">Exact Age & Cut-Off Date Calculator</h3>
-          <p class="tool-desc">
-            Determine your precise chronological age in years, months, and days as of any recruitment cut-off date, complete with live next birthday countdowns.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">Cut-Off Dates</span>
-            <span class="tag-badge">Next Birthday</span>
-            <span class="tag-badge">Eligibility Check</span>
-          </div>
-          <a href="tools/age-calculator.html" class="btn btn-primary" id="open-age-tool">
-            Open Tool ➔
-          </a>
-        </article>
-
-        <!-- Tool 9: Image to PDF Converter -->
-        <article class="tool-card" data-category="photos">
-          <div class="tool-icon-wrap" style="background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);">📑</div>
-          <h3 class="tool-title">JPG / PNG to PDF Converter</h3>
-          <p class="tool-desc">
-            Convert multiple images into a single formatted PDF document with customizable page orientation, margins, and compression levels.
-          </p>
-          <div class="tool-tags">
-            <span class="tag-badge">Multi-Image</span>
-            <span class="tag-badge">A4 Output</span>
-            <span class="tag-badge">100% Client-Side</span>
-          </div>
-          <a href="tools/image-to-pdf.html" class="btn btn-primary" id="open-pdf-tool">
-            Open Tool ➔
+          <a href="tools/chhath-puja-card-maker.html" class="tool-card-btn">
+            Make Chhath Poster <span class="btn-arrow">➔</span>
           </a>
         </article>
 
@@ -1176,14 +1496,7 @@
     </section>
 
     <!-- Mid-Page Advertisement Slot -->
-    <div class="ad-container" id="ad-slot-mid">
-      <span class="ad-label">Sponsored • RozgarTools AI Partner</span>
-      <div class="ad-slot-leaderboard">
-        <a href="tools/dynamic-translator.html" class="ad-banner-link" title="Dynamic AI Translator - 100+ Languages Real-time Translation Cloud API">
-          <img src="assets/images/ads/banner-ai-translator.jpg" alt="Dynamic AI Translator & Language Cloud API" class="ad-banner-img" width="860" height="484" loading="lazy">
-        </a>
-      </div>
-    </div>
+    
 
     <!-- SEO Content Section -->
         <!-- SEO Content Section -->
@@ -1337,6 +1650,7 @@
         <div>
           <h4 class="footer-col-title">Popular Tools</h4>
           <ul class="footer-links">
+            <li><a href="tools/diwali-rangoli-generator.html" style="color: #fbbf24; font-weight: 600;">🎨 AI Rangoli Generator (Diwali Special)</a></li>
             <li><a href="tools/diwali-card-maker.html" style="color: #fbbf24; font-weight: 600;">🪔 Diwali Wishing Card Maker</a></li>
             <li><a href="tools/dynamic-translator.html">Dynamic AI Language Translator</a></li>
             <li><a href="tools/govt-photo-resizer.html">Photo & Signature Resizer</a></li>
@@ -1358,6 +1672,7 @@
             <li><a href="contact-us.html">Contact Us</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
           </ul>
         </div>
 
@@ -1373,9 +1688,10 @@
         <div>
           &copy; 2026 RozgarTools & Dynamic AI. All rights reserved.
         </div>
-        <div style="display: flex; gap: 1rem;">
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
           <a href="privacy-policy.html">Privacy</a>
           <a href="terms.html">Terms</a>
+          <a href="disclaimer.html">Disclaimer</a>
           <a href="contact-us.html">Support</a>
         </div>
       </div>
@@ -1383,6 +1699,6 @@
   </footer>
 
   <!-- Core JavaScript -->
-  <script src="assets/js/main.js?v=2.2" defer></script>
+  <script src="assets/js/main.js?v=3.6" defer></script>
 </body>
 </html>

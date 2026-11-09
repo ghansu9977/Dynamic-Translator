@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /dashboard
+Disallow: /tools/desi-radio.html
 
 Sitemap: https://www.rozgartools.store/sitemap.xml

@@ -10,16 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
 function initCgpaCalculator() {
   const tabs = document.querySelectorAll('.cgpa-tab-btn');
   const sections = document.querySelectorAll('.cgpa-calc-sec');
+  const resultCards = document.querySelectorAll('.cgpa-res-card');
 
   // Mode switching
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
       sections.forEach(s => s.style.display = 'none');
+      resultCards.forEach(rc => rc.style.display = 'none');
 
       tab.classList.add('active');
-      const targetSec = document.getElementById(tab.dataset.target);
+      const targetId = tab.dataset.target;
+      const targetSec = document.getElementById(targetId);
       if (targetSec) targetSec.style.display = 'block';
+
+      const targetResCard = document.getElementById('card-' + targetId);
+      if (targetResCard) {
+        targetResCard.style.display = 'block';
+      }
     });
   });
 
@@ -30,11 +38,13 @@ function initCgpaCalculator() {
     function calcCbse() {
       const cgpa = parseFloat(cbseInput.value) || 0;
       const pct = (cgpa * 9.5).toFixed(2);
-      document.getElementById('res-cbse-pct').textContent = pct + '%';
-      document.getElementById('res-cbse-grade').textContent = getGrade(parseFloat(pct));
+      const pctEl = document.getElementById('res-cbse-pct');
+      const gradeEl = document.getElementById('res-cbse-grade');
+      if (pctEl) pctEl.textContent = pct + '%';
+      if (gradeEl) gradeEl.textContent = getGrade(parseFloat(pct));
     }
     cbseSlider.addEventListener('input', () => { cbseInput.value = cbseSlider.value; calcCbse(); });
-    cbseInput.addEventListener('input', () => { cbseSlider.value = cbseInput.value; calcCbse(); });
+    cbseInput.addEventListener('input', () => { cbseSlider.value = cbseSlider.value; calcCbse(); });
     calcCbse();
   }
 
@@ -57,12 +67,14 @@ function initCgpaCalculator() {
         // CGPA * 9.5
         pct = cgpa * 9.5;
       } else if (formula === 'mumbai') {
-        // (CGPA * 7.1) + 11 or (CGPA * 7.25) + 11
+        // (CGPA * 7.1) + 11
         pct = (cgpa * 7.1) + 11;
       }
 
-      document.getElementById('res-col-pct').textContent = pct.toFixed(2) + '%';
-      document.getElementById('res-col-grade').textContent = getGrade(pct);
+      const colPctEl = document.getElementById('res-col-pct');
+      const colGradeEl = document.getElementById('res-col-grade');
+      if (colPctEl) colPctEl.textContent = pct.toFixed(2) + '%';
+      if (colGradeEl) colGradeEl.textContent = getGrade(pct);
     }
     colCgpaInput.addEventListener('input', calcCollege);
     colScaleFormula.addEventListener('change', calcCollege);
@@ -78,24 +90,27 @@ function initCgpaCalculator() {
       const tot = parseFloat(marksTotal.value) || 1;
       if (tot > 0) {
         const pct = (obt / tot) * 100;
-        document.getElementById('res-marks-pct').textContent = pct.toFixed(2) + '%';
+        const marksPctEl = document.getElementById('res-marks-pct');
         const divEl = document.getElementById('res-marks-div');
+        if (marksPctEl) marksPctEl.textContent = pct.toFixed(2) + '%';
 
-        if (pct >= 75) {
-          divEl.textContent = '🌟 First Division with Distinction';
-          divEl.style.color = 'var(--accent-emerald)';
-        } else if (pct >= 60) {
-          divEl.textContent = '🥇 First Division';
-          divEl.style.color = 'var(--primary)';
-        } else if (pct >= 45) {
-          divEl.textContent = '🥈 Second Division';
-          divEl.style.color = 'var(--accent-amber)';
-        } else if (pct >= 33) {
-          divEl.textContent = '🥉 Third Division';
-          divEl.style.color = 'var(--text-muted)';
-        } else {
-          divEl.textContent = '❌ Failed';
-          divEl.style.color = 'var(--accent-rose)';
+        if (divEl) {
+          if (pct >= 75) {
+            divEl.textContent = '🌟 First Division with Distinction';
+            divEl.style.color = 'var(--accent-emerald)';
+          } else if (pct >= 60) {
+            divEl.textContent = '🥇 First Division';
+            divEl.style.color = 'var(--primary)';
+          } else if (pct >= 45) {
+            divEl.textContent = '🥈 Second Division';
+            divEl.style.color = 'var(--accent-amber)';
+          } else if (pct >= 33) {
+            divEl.textContent = '🥉 Third Division';
+            divEl.style.color = 'var(--text-muted)';
+          } else {
+            divEl.textContent = '❌ Failed';
+            divEl.style.color = 'var(--accent-rose)';
+          }
         }
       }
     }
@@ -120,9 +135,12 @@ function initCgpaCalculator() {
 
       const avgCgpa = count > 0 ? (sum / count) : 0;
       const eqPct = (avgCgpa * 9.5);
-      document.getElementById('res-sem-cgpa').textContent = avgCgpa.toFixed(2);
-      document.getElementById('res-sem-pct').textContent = eqPct.toFixed(2) + '%';
-      document.getElementById('res-sem-count').textContent = `${count} Semesters Included`;
+      const semCgpaEl = document.getElementById('res-sem-cgpa');
+      const semPctEl = document.getElementById('res-sem-pct');
+      const semCountEl = document.getElementById('res-sem-count');
+      if (semCgpaEl) semCgpaEl.textContent = avgCgpa.toFixed(2);
+      if (semPctEl) semPctEl.textContent = eqPct.toFixed(2) + '%';
+      if (semCountEl) semCountEl.textContent = `${count} Semesters Included`;
     }
     semInputs.forEach(input => input.addEventListener('input', calcSgpa));
     calcSgpa();

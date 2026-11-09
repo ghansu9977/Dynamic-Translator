@@ -42,7 +42,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/style.css?v=3.6">
+  <link rel="stylesheet" href="../assets/css/responsive.css?v=3.6">
 
   <!-- Schema Markup: WebApplication, BreadcrumbList, HowTo, FAQPage -->
   <script type="application/ld+json">
@@ -170,10 +171,7 @@
   </script>
 </head>
 <body>
-</div>
-
-
-  <!-- Header -->
+<!-- Header -->
       <!-- Site Header -->
   <header class="site-header">
     <div class="container nav-wrap">
@@ -192,7 +190,7 @@
           <li class="nav-item-hide-laptop"><a href="resume-builder.html" class=""><span>📄</span> Resume</a></li>
           <li class="nav-dropdown">
             <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
-              <span>🧰</span> All Tools (22) <span class="dropdown-arrow">▾</span>
+              <span>🧰</span> All Tools (31) <span class="dropdown-arrow">▾</span>
             </button>
             <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
               <div class="dropdown-header">
@@ -387,7 +385,7 @@
 
     <div class="mobile-drawer-search">
       <span class="drawer-search-icon">🔍</span>
-      <input type="text" id="drawer-search-input" placeholder="Search 22 tools..." aria-label="Search in menu">
+      <input type="text" id="drawer-search-input" placeholder="Search 31 tools..." aria-label="Search in menu">
     </div>
 
     <div class="mobile-drawer-body">
@@ -661,17 +659,7 @@
       </p>
     </div>
 
-    <!-- Top Advertisement Slot -->
-        <!-- Top Advertisement Banner -->
-    <div class="ad-container" id="ad-slot-tool-top">
-      <span class="ad-label">Sponsored • RozgarTools AI Partner</span>
-      <div class="ad-slot-leaderboard">
-        <span class="ad-sponsored-badge">⚡ Featured Partner</span>
-        <a href="../tools/dynamic-translator.html" class="ad-banner-link" title="Dynamic AI Translator - 100+ Languages Real-time Translation Cloud API">
-          <img src="../assets/images/ads/banner-ai-translator.jpg" alt="Dynamic AI Translator & Language Cloud API" class="ad-banner-img" width="860" height="220" loading="lazy">
-        </a>
-      </div>
-    </div>
+    
 
     <!-- Category Tabs -->
     <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
@@ -804,7 +792,7 @@
         </div>
 
         <!-- Data Preview String -->
-        <div style="background: var(--bg-surface); border: 1px solid var(--border); padding: 0.5rem 0.85rem; border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--text-dim); max-width: 90%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-bottom: 1.5rem;" id="qr-payload-display">
+        <div class="qr-payload-display" id="qr-payload-display">
           upi://pay?pa=shopkeeper@upi&pn=Rozgar%20Store&cu=INR
         </div>
 
@@ -826,17 +814,7 @@
 
     </div>
 
-    <!-- Mid Advertisement Slot -->
-        <!-- Mid Advertisement Banner -->
-    <div class="ad-container" id="ad-slot-tool-mid">
-      <span class="ad-label">Sponsored • Career & Job Suite</span>
-      <div class="ad-slot-leaderboard">
-        <span class="ad-sponsored-badge">💼 Career Toolkit</span>
-        <a href="../tools/resume-builder.html" class="ad-banner-link" title="Rozgar Career Suite - ATS Resume & Exam Photo Resizer">
-          <img src="../assets/images/ads/banner-rozgar-suite.jpg" alt="Rozgar Career Suite - Ultimate Career Toolkit" class="ad-banner-img" width="860" height="220" loading="lazy">
-        </a>
-      </div>
-    </div>
+    
 
     <!-- SEO Content Section -->
     <article class="seo-article">
@@ -1009,6 +987,7 @@
           <li><a href="../about-us.html">About Us</a></li>
           <li><a href="../privacy-policy.html">Privacy Policy</a></li>
           <li><a href="../terms.html">Terms & Conditions</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
           <li><a href="../contact-us.html">Contact Us</a></li>
         </ul>
       </div>
@@ -1022,7 +1001,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="../assets/js/main.js?v=2.2" defer></script>
-  <script src="../assets/js/qr-generator.js"></script>
+  <script src="../assets/js/main.js?v=3.6" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="../assets/js/qr-generator.js?v=3.6"></script>
 </body>
 </html>

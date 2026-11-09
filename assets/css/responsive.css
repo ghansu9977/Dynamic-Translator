@@ -1,0 +1,776 @@
+/* ==========================================================================
+   ROZGARTOOLS — HIGH-PERFORMANCE MOBILE-FIRST RESPONSIVE DESIGN SYSTEM
+   Production-Tuned for All Viewports: 1200px | 992px | 768px | 480px | 360px
+   Guarantees: Zero Horizontal Overflow, 44px Tap Targets, Native App Feel
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. BANNER ELIMINATION & OVERFLOW PROTECTION
+   -------------------------------------------------------------------------- */
+.ad-container,
+.ad-slot-leaderboard,
+.ad-banner-link,
+.festive-top-bar {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+}
+
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+pre, code {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Breadcrumbs System-Wide Guarantee */
+.tool-breadcrumb,
+.breadcrumb-nav,
+nav[aria-label="Breadcrumb"] {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.45rem !important;
+  font-size: 0.86rem !important;
+  color: var(--text-dim) !important;
+  margin-bottom: 1.5rem !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.tool-breadcrumb ol,
+.breadcrumb-nav ol {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.45rem !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.tool-breadcrumb li,
+.breadcrumb-nav li {
+  display: inline-flex !important;
+  align-items: center !important;
+  list-style: none !important;
+  gap: 0.45rem !important;
+  color: var(--text-muted) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tool-breadcrumb a,
+.breadcrumb-nav a {
+  color: var(--text-muted) !important;
+  text-decoration: none !important;
+}
+
+.tool-breadcrumb a:hover,
+.breadcrumb-nav a:hover {
+  color: var(--primary) !important;
+  text-decoration: underline !important;
+}
+
+.tool-breadcrumb span,
+.breadcrumb-nav span,
+.breadcrumb-nav .separator {
+  color: var(--text-dim) !important;
+  font-size: 0.8rem !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. LAPTOPS & SMALL DESKTOPS (<= 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .nav-dropdown-menu {
+    width: 660px;
+  }
+  .tools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.25rem;
+  }
+  .festive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET LANDSCAPE & HYBRID DEVICES (<= 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  /* Header & Navigation */
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+  .nav-wrap {
+    height: 3.5rem;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+  .nav-actions {
+    gap: 0.45rem;
+  }
+  .nav-actions .search-trigger-text,
+  .nav-actions .search-kbd-nav {
+    display: none !important;
+  }
+  .nav-actions .nav-search-trigger {
+    gap: 0;
+    padding: 0.45rem 0.65rem;
+    min-width: 38px;
+    height: 38px;
+    justify-content: center;
+  }
+  .theme-toggle-btn,
+  .mobile-menu-btn {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 1.15rem;
+  }
+
+  /* Tool Split Layouts (Left Settings, Right Preview) */
+  .tool-split-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Translator Dual Box */
+  .translator-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .translator-textarea {
+    height: 180px !important;
+  }
+
+  /* Grids & Filters */
+  .category-filters {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0.45rem 0.5rem;
+    border-radius: var(--radius-lg);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .category-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .cat-pill {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .rozgar-quick-pills {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.35rem;
+  }
+  .rozgar-quick-pills::-webkit-scrollbar {
+    display: none;
+  }
+  .rozgar-exam-tag {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.15rem;
+  }
+  .festive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLETS PORTRAIT & LARGE PHONES (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 2.25rem 0 1.25rem;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: clamp(1.65rem, 5.5vw, 2.35rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0.75rem 0;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-status-pill {
+    font-size: 0.74rem;
+    padding: 0.3rem 0.75rem;
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  /* Search */
+  .search-wrapper {
+    max-width: 100%;
+  }
+  .search-input-box {
+    font-size: 0.92rem;
+    padding: 0.85rem 3.5rem 0.85rem 2.75rem;
+    height: 48px;
+  }
+  .search-kbd-hint {
+    display: none !important;
+  }
+
+  /* Cards */
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .tool-card {
+    padding: 1.25rem;
+  }
+  .tool-title {
+    font-size: 1.1rem;
+  }
+  .tool-card-btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  /* Festive Section */
+  .festive-showcase-section {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .festive-showcase-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .festive-title {
+    font-size: 1.35rem;
+  }
+  .festive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* Mobile Drawer */
+  .mobile-drawer {
+    width: 310px;
+    max-width: 86vw;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  /* Articles & FAQ */
+  .seo-article {
+    padding: 1.5rem 1.15rem;
+  }
+  .seo-article h2 {
+    font-size: 1.45rem;
+  }
+  .seo-article h3 {
+    font-size: 1.15rem;
+  }
+  .faq-question {
+    font-size: 0.96rem;
+    padding: 1rem 1.15rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. STANDARD MOBILE PHONES (<= 480px) — NATIVE APP TOUCH FEEL
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  /* Compact Sticky Header */
+  .nav-wrap {
+    height: 3.35rem;
+    padding: 0 0.75rem;
+  }
+  .brand-icon-img {
+    width: 32px;
+    height: 32px;
+  }
+  .brand-text {
+    font-size: 1.12rem;
+  }
+  .theme-toggle-btn,
+  .mobile-menu-btn,
+  .nav-actions .nav-search-trigger {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 1.05rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 1.6rem 0 1rem;
+  }
+  .hero-status-pill {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.65rem;
+    gap: 0.35rem;
+  }
+  .hero-title {
+    font-size: clamp(1.45rem, 7.2vw, 1.95rem);
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+  .hero-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 1.35rem;
+    padding: 0;
+  }
+
+  /* Search Box */
+  .search-wrapper {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .search-input-box {
+    padding: 0.75rem 2.5rem 0.75rem 2.4rem;
+    font-size: 0.88rem;
+    height: 44px;
+    border-radius: var(--radius-full);
+  }
+  .search-icon-pos {
+    left: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  /* Category Filter Pills — Smooth Horizontal Swipe */
+  .category-filters {
+    gap: 0.35rem;
+    padding: 0.35rem 0.2rem;
+    margin: 1.15rem 0 0.85rem;
+    border-radius: var(--radius-full);
+  }
+  .cat-pill {
+    padding: 0.38rem 0.75rem;
+    font-size: 0.78rem;
+    border-radius: var(--radius-full);
+  }
+  .cat-pill .cat-count {
+    font-size: 0.68rem;
+    padding: 0.08rem 0.35rem;
+  }
+
+  /* Quick Sarkari Pills */
+  .rozgar-quick-pills {
+    gap: 0.35rem;
+    margin-bottom: 1.25rem;
+  }
+  .rozgar-exam-tag {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-full);
+  }
+
+  /* Festive Cards */
+  .festive-showcase-section {
+    padding: 1.15rem 0.85rem;
+    margin: 1rem 0 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+  .festive-badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+  }
+  .festive-title {
+    font-size: 1.15rem;
+    line-height: 1.35;
+    margin-top: 4px;
+  }
+  .festive-header-btn {
+    font-size: 0.78rem;
+    padding: 0.38rem 0.8rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .festive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+  .festive-card {
+    padding: 0.85rem 0.75rem;
+    border-radius: var(--radius-md);
+  }
+  .festive-card-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.35rem;
+  }
+  .festive-card-title {
+    font-size: 0.86rem;
+    line-height: 1.3;
+  }
+  .festive-card-desc {
+    display: none;
+  }
+  .festive-card-action {
+    font-size: 0.72rem;
+    margin-top: 0.45rem;
+  }
+
+  /* Main Tools Grid */
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .tool-card {
+    padding: 1.1rem;
+    border-radius: var(--radius-lg);
+  }
+  .tool-icon-wrap {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+  .tool-title {
+    font-size: 1.05rem;
+  }
+  .tool-desc {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin-bottom: 0.85rem;
+  }
+  .tool-tags {
+    gap: 0.3rem;
+    margin-bottom: 0.85rem;
+  }
+  .tag-badge {
+    font-size: 0.68rem;
+    padding: 0.15rem 0.45rem;
+  }
+  .tool-card-btn {
+    padding: 0.65rem 1rem;
+    font-size: 0.86rem;
+    border-radius: var(--radius-md);
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  /* Forms, Inputs & Selects — CRITICAL 16px Font Prevents iOS Auto-Zoom */
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="password"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .form-input,
+  .calc-num-input,
+  .lang-select,
+  .translator-textarea {
+    font-size: 16px !important;
+  }
+
+  /* Buttons on Mobile */
+  .btn {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.92rem;
+    min-height: 44px;
+  }
+  .btn-lg {
+    padding: 0.75rem 1.35rem;
+    font-size: 0.95rem;
+    min-height: 46px;
+  }
+
+  /* Mobile Drawer Bottom Sheet */
+  .mobile-drawer {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    top: auto;
+    bottom: 0;
+    height: 82vh;
+    border-radius: 20px 20px 0 0;
+    transform: translateY(100%);
+  }
+  .mobile-drawer.open {
+    transform: translateY(0);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .site-footer {
+    padding: 2.25rem 0 1.5rem;
+  }
+
+  /* SEO Article & FAQs */
+  .seo-article {
+    padding: 1.15rem 0.9rem;
+    border-radius: var(--radius-lg);
+  }
+  .seo-article h2 {
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+  .seo-article h3 {
+    font-size: 1.05rem;
+  }
+  .faq-question {
+    font-size: 0.9rem;
+    padding: 0.85rem 0.95rem;
+  }
+  .faq-answer {
+    padding: 0 0.95rem;
+  }
+  .faq-item.active .faq-answer {
+    padding: 0 0.95rem 0.95rem;
+  }
+
+  /* Back to Top */
+  .back-to-top-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  /* Center Action Row */
+  .center-action-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .center-action-row .btn {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. VERY SMALL MOBILE SCREENS (<= 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .container {
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+  }
+  .brand-text {
+    font-size: 1.05rem;
+  }
+  .hero-title {
+    font-size: 1.35rem;
+  }
+  .hero-subtitle {
+    font-size: 0.82rem;
+  }
+  .cat-pill {
+    padding: 0.32rem 0.6rem;
+    font-size: 0.72rem;
+  }
+  .festive-grid {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+  .tool-title {
+    font-size: 0.98rem;
+  }
+  .search-input-box {
+    font-size: 0.84rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. SHOW / HIDE UTILITIES FOR DESKTOP VS MOBILE
+   -------------------------------------------------------------------------- */
+@media (min-width: 993px) {
+  .mobile-menu-btn {
+    display: none !important;
+  }
+  .mobile-drawer {
+    display: none !important;
+  }
+  .mobile-drawer-overlay {
+    display: none !important;
+  }
+  .desktop-nav {
+    display: flex !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. TOUCH DEVICE TAP TARGET COMPLIANCE (Minimum 44px)
+   -------------------------------------------------------------------------- */
+@media (hover: none) and (pointer: coarse) {
+  .cat-pill,
+  .rozgar-exam-tag,
+  .tool-card-btn,
+  .btn,
+  .festive-header-btn,
+  .drawer-item,
+  .mobile-drawer-close,
+  .mobile-menu-btn,
+  .theme-toggle-btn,
+  .nav-actions .nav-search-trigger {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .drawer-item {
+    min-height: 48px;
+  }
+  /* Remove hover jitter on touch screens */
+  .tool-card:hover,
+  .festive-card:hover {
+    transform: none;
+  }
+  .tool-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. PRINT MEDIA STYLES
+   -------------------------------------------------------------------------- */
+@media print {
+  .site-header,
+  .mobile-drawer,
+  .mobile-drawer-overlay,
+  .back-to-top-btn,
+  .category-filters,
+  .rozgar-quick-pills,
+  .nav-actions {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .tool-card {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+  .tools-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-title, .hero-subtitle {
+    color: #000000 !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. MODERN VANILLA UTILITY SHORTCUTS & HELPERS
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .show-mobile-only {
+    display: block !important;
+  }
+  .flex-col-mobile {
+    flex-direction: column !important;
+  }
+  .w-full-mobile {
+    width: 100% !important;
+  }
+  .text-center-mobile {
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .show-mobile-only {
+    display: none !important;
+  }
+}
+
+/* Fluid touch scroll snapping */
+.scroll-touch-snap {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-touch-snap > * {
+  scroll-snap-align: start;
+}

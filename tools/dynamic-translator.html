@@ -42,7 +42,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/style.css?v=3.6">
+  <link rel="stylesheet" href="../assets/css/responsive.css?v=3.6">
   <style>
     /* Translator-specific interactive styles */
     .translator-wrapper {
@@ -406,10 +407,7 @@
   </script>
 </head>
 <body>
-</div>
-
-
-  <!-- Header -->
+<!-- Header -->
       <!-- Site Header -->
   <header class="site-header">
     <div class="container nav-wrap">
@@ -428,7 +426,7 @@
           <li class="nav-item-hide-laptop"><a href="resume-builder.html" class=""><span>📄</span> Resume</a></li>
           <li class="nav-dropdown">
             <button class="nav-dropdown-trigger" id="all-tools-dropdown-btn" aria-expanded="false" aria-haspopup="true">
-              <span>🧰</span> All Tools (22) <span class="dropdown-arrow">▾</span>
+              <span>🧰</span> All Tools (31) <span class="dropdown-arrow">▾</span>
             </button>
             <div class="nav-dropdown-menu" id="all-tools-dropdown-menu">
               <div class="dropdown-header">
@@ -623,7 +621,7 @@
 
     <div class="mobile-drawer-search">
       <span class="drawer-search-icon">🔍</span>
-      <input type="text" id="drawer-search-input" placeholder="Search 22 tools..." aria-label="Search in menu">
+      <input type="text" id="drawer-search-input" placeholder="Search 31 tools..." aria-label="Search in menu">
     </div>
 
     <div class="mobile-drawer-body">
@@ -900,20 +898,241 @@
       </p>
     </div>
 
-    <!-- Top Advertisement Slot -->
-        <!-- Top Advertisement Banner -->
-        <!-- Top Advertisement Banner -->
-    <div class="ad-container" id="ad-slot-tool-top">
-      <span class="ad-label">Sponsored • RozgarTools AI Partner</span>
-      <div class="ad-slot-leaderboard">
-        <span class="ad-sponsored-badge">⚡ Featured Partner</span>
-        <a href="../tools/dynamic-translator.html" class="ad-banner-link" title="Dynamic AI Translator - 100+ Languages Real-time Translation Cloud API">
-          <img src="../assets/images/ads/banner-ai-translator.jpg" alt="Dynamic AI Translator & Language Cloud API" class="ad-banner-img" width="860" height="220" loading="lazy">
-        </a>
+    
+
+    <!-- Sample Chips -->
+    <div style="display: flex; gap: 0.65rem; margin-bottom: 1.25rem; overflow-x: auto; padding-bottom: 0.5rem; -webkit-overflow-scrolling: touch; scrollbar-width: none; align-items: center;">
+      <span style="font-size: 0.85rem; color: var(--text-dim); font-weight: 600; white-space: nowrap;">Try Samples:</span>
+      <button type="button" class="sample-chip" style="white-space: nowrap;" data-text="Hello! Welcome to our all-in-one utility portal. How can I help you today?">👋 Greeting</button>
+      <button type="button" class="sample-chip" style="white-space: nowrap;" data-text="Please find attached my official resume and documents for your review.">📄 Job Application</button>
+      <button type="button" class="sample-chip" style="white-space: nowrap;" data-text="Can you please guide me to the nearest railway station or metro?">🚆 Directions</button>
+      <button type="button" class="sample-chip" style="white-space: nowrap;" data-text="Congratulations on your outstanding achievement and success!">🎉 Wishes</button>
+    </div>
+
+    <!-- Main Dual-Panel Translator -->
+    <div class="translator-wrapper">
+
+      <!-- Left: Source Language Input Box -->
+      <div class="translator-box">
+        <div class="translator-top-bar">
+          <select id="source-lang" class="lang-select" aria-label="Select Source Language">
+            <option value="auto">🌐 Auto Detect</option>
+            <option value="en" selected>English (English)</option>
+            <option value="hi">Hindi (हिन्दी)</option>
+            <option value="es">Spanish (Español)</option>
+            <option value="fr">French (Français)</option>
+            <option value="de">German (Deutsch)</option>
+            <option value="mr">Marathi (मराठी)</option>
+            <option value="gu">Gujarati (ગુજરાતી)</option>
+            <option value="bn">Bengali (বাংলা)</option>
+            <option value="ta">Tamil (தமிழ்)</option>
+            <option value="te">Telugu (తెలుగు)</option>
+            <option value="ur">Urdu (اردو)</option>
+            <option value="pa">Punjabi (ਪੰਜਾਬੀ)</option>
+            <option value="ar">Arabic (العربية)</option>
+            <option value="ja">Japanese (日本語)</option>
+            <option value="ru">Russian (Русский)</option>
+            <option value="zh-CN">Chinese (中文)</option>
+          </select>
+
+          <button id="swap-lang-btn" class="swap-btn" title="Swap Languages (⇄)" aria-label="Swap Languages">⇄</button>
+        </div>
+
+        <textarea 
+          id="source-text" 
+          class="translator-textarea" 
+          placeholder="Type or paste your text here to translate... (e.g. Hello, how are you?)"
+          aria-label="Source text input"
+        ></textarea>
+
+        <div class="translator-bottom-bar">
+          <div class="translator-actions">
+            <button id="speak-source-btn" class="action-icon-btn" title="Listen / Read Aloud" aria-label="Listen source text">🔊</button>
+            <button id="clear-btn" class="action-icon-btn" title="Clear Text" aria-label="Clear source text">🗑️</button>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <span class="meta-badge" id="word-count">0 words</span>
+            <span class="meta-badge" id="char-count">0 chars</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Target Language Output Box -->
+      <div class="translator-box">
+        <div class="translator-top-bar">
+          <select id="target-lang" class="lang-select" aria-label="Select Target Language">
+            <option value="hi" selected>Hindi (हिन्दी)</option>
+            <option value="en">English (English)</option>
+            <option value="mr">Marathi (मराठी)</option>
+            <option value="gu">Gujarati (ગુજરાતી)</option>
+            <option value="bn">Bengali (বাংলা)</option>
+            <option value="ta">Tamil (தமிழ்)</option>
+            <option value="te">Telugu (తెలుగు)</option>
+            <option value="pa">Punjabi (ਪੰਜਾਬੀ)</option>
+            <option value="ur">Urdu (اردو)</option>
+            <option value="es">Spanish (Español)</option>
+            <option value="fr">French (Français)</option>
+            <option value="de">German (Deutsch)</option>
+            <option value="ar">Arabic (العربية)</option>
+            <option value="ja">Japanese (日本語)</option>
+            <option value="ru">Russian (Русский)</option>
+            <option value="zh-CN">Chinese (中文)</option>
+          </select>
+
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span class="speed-tag" id="speed-badge">⚡ Instant</span>
+            <span class="meta-badge" id="status-badge">Ready</span>
+          </div>
+        </div>
+
+        <textarea 
+          id="target-text" 
+          class="translator-textarea" 
+          placeholder="Translation will appear here in real-time..." 
+          readonly
+          aria-label="Translated output"
+        ></textarea>
+
+        <div class="translator-bottom-bar">
+          <div class="translator-actions">
+            <button id="copy-btn" class="action-icon-btn" title="Copy Translation" aria-label="Copy translated text">📋</button>
+            <button id="speak-target-btn" class="action-icon-btn" title="Listen Translated Audio" aria-label="Listen translated text">🔊</button>
+            <button id="download-btn" class="action-icon-btn" title="Download .txt" aria-label="Download text file">💾</button>
+          </div>
+          <span class="meta-badge">100% Free Translation</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Center Action Row -->
+    <div class="center-action-row" style="text-align: center; margin: 1.5rem 0;">
+      <button id="translate-btn" class="btn btn-primary btn-lg" style="min-width: 240px;">
+        ⚡ Translate Now
+      </button>
+      <div style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">Shortcut: <strong>Ctrl + Enter</strong></div>
+    </div>
+
+    <!-- Developer API & SDK Integration Section -->
+    <div class="dev-box" style="margin-top: 2.5rem; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 1.5rem;">
+      <div class="dev-code-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+        <div>
+          <span style="color: var(--accent-emerald); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Developer Hub</span>
+          <h2 style="font-size: 1.35rem; margin-top: 4px;">Integrate Dynamic Translator API in Your Application</h2>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">
+            Power your Flutter, React, Android, or Backend service with fast multi-language translation.
+          </p>
+        </div>
+        <div class="code-tabs" style="display: flex; gap: 0.5rem;">
+          <button class="code-tab-btn active btn btn-sm" data-lang="curl">cURL</button>
+          <button class="code-tab-btn btn btn-sm" data-lang="js">Node / JS</button>
+          <button class="code-tab-btn btn btn-sm" data-lang="flutter">Flutter / Dart</button>
+        </div>
+      </div>
+
+      <!-- cURL Code Block -->
+      <div id="code-curl" class="dev-code-block">
+        <pre class="code-snippet" style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: var(--radius-md); overflow-x: auto;"><code>curl -X POST https://translater-free-api.onrender.com/api/v1/translate \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "texts": ["Welcome to our mobile app!", "Start your journey today"],
+    "targetLanguage": "hi"
+  }'</code></pre>
+      </div>
+
+      <!-- JavaScript Code Block -->
+      <div id="code-js" class="dev-code-block" style="display: none;">
+        <pre class="code-snippet" style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: var(--radius-md); overflow-x: auto;"><code>const response = await fetch("https://translater-free-api.onrender.com/api/v1/translate", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "x-api-key": "YOUR_API_KEY"
+  },
+  body: JSON.stringify({
+    texts: ["Hello world", "Account Settings"],
+    targetLanguage: "hi"
+  })
+});
+const data = await response.json();
+console.log(data.translations);</code></pre>
+      </div>
+
+      <!-- Flutter Code Block -->
+      <div id="code-flutter" class="dev-code-block" style="display: none;">
+        <pre class="code-snippet" style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: var(--radius-md); overflow-x: auto;"><code>import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+Future&lt;void&gt; translateText() async {
+  final res = await http.post(
+    Uri.parse('https://translater-free-api.onrender.com/api/v1/translate'),
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': 'YOUR_API_KEY',
+    },
+    body: jsonEncode({
+      'texts': ['Good morning', 'Profile Page'],
+      'targetLanguage': 'hi',
+    }),
+  );
+  final data = jsonDecode(res.body);
+  print(data['translations']);
+}</code></pre>
       </div>
     </div>
 
-  
+    <!-- SEO Content Section -->
+    <article class="seo-article" style="margin-top: 2.5rem;">
+      <h2>Why Use Dynamic AI Language Translator?</h2>
+      <p>
+        In today's interconnected global landscape, communication across languages is vital. Whether you are translating official documents, government exam notices, job descriptions, or everyday chat messages, our <strong>Dynamic AI Translator</strong> delivers instantaneous, highly accurate results directly in your web browser.
+      </p>
+
+      <h3>Key Features:</h3>
+      <ul>
+        <li><strong>Real-Time Neural Translation:</strong> Instant conversions powered by the robust Dynamic Translator backend engine.</li>
+        <li><strong>Over 100 Languages:</strong> Native support for Hindi (हिन्दी), Marathi (मराठी), Bengali (বাংলা), Gujarati (ગુજરાતી), Tamil (தமிழ்), Telugu (తెలుగు), Punjabi, Urdu, Spanish, French, German, and more.</li>
+        <li><strong>Audio Pronunciation:</strong> Built-in text-to-speech speaker reads out source and translated text clearly.</li>
+        <li><strong>Zero Cost & No Registration:</strong> 100% free with unlimited translations and zero daily quotas.</li>
+        <li><strong>Developer API Integration:</strong> Easily embed this translation engine in Flutter, Android, iOS, and Node.js applications with REST endpoints.</li>
+      </ul>
+    </article>
+
+    <!-- FAQ Accordion -->
+    <section class="faq-wrap" style="margin-top: 2rem;">
+      <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; text-align: center;">Frequently Asked Questions (FAQ)</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is this online language translator completely free?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. You can translate unlimited paragraphs, phrases, and words across 100+ languages without paying any subscription fees or registering an account.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How can I copy or listen to the translated audio?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Simply click the speaker icon (🔊) beneath either box to hear the text spoken aloud in native accent. Click the clipboard icon (📋) to copy the translated text directly to your clipboard.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How can developers get an API key for Flutter or Web apps?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Developers can test the API using our playground key or contact us to receive dedicated high-throughput API keys with rate limits suited for commercial applications.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Related Tools Cross-Linking Section (SEO Internal Links) -->
     <section class="related-tools-section" style="margin: 3.5rem 0 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
       <div style="text-align: center; margin-bottom: 1.5rem;">
@@ -1023,6 +1242,7 @@
             <li><a href="../contact-us.html">Contact Us</a></li>
             <li><a href="../privacy-policy.html">Privacy Policy</a></li>
             <li><a href="../terms.html">Terms & Conditions</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
           </ul>
         </div>
       </div>
@@ -1035,7 +1255,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="../assets/js/main.js?v=2.2" defer></script>
-  <script src="../assets/js/translator.js"></script>
+  <script src="../assets/js/main.js?v=3.6" defer></script>
+  <script src="../assets/js/translator.js?v=3.6"></script>
 </body>
 </html>

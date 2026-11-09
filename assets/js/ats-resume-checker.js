@@ -386,7 +386,9 @@ TECHNICAL SKILLS
     if (resultsCard) resultsCard.style.display = 'block';
 
     // 1. Score Number & Gauge
-    if (scoreNumElem) scoreNumElem.textContent = data.totalScore;
+    if (scoreNumElem) {
+      animateCounter(scoreNumElem, data.totalScore, 750);
+    }
 
     const circumference = 2 * Math.PI * 45; // r=45 -> 282.74
     const offset = circumference - (data.totalScore / 100) * circumference;
@@ -409,19 +411,23 @@ TECHNICAL SKILLS
       if (data.totalScore >= 85) {
         scoreStatusPill.textContent = '🌟 Excellent - Highly ATS Compatible';
         scoreStatusPill.style.background = 'rgba(16, 185, 129, 0.15)';
-        scoreStatusPill.style.color = 'var(--accent-emerald)';
+        scoreStatusPill.style.color = '#34d399';
+        scoreStatusPill.style.border = '1px solid rgba(16, 185, 129, 0.3)';
       } else if (data.totalScore >= 70) {
         scoreStatusPill.textContent = '👍 Good - Competitive Resume';
-        scoreStatusPill.style.background = 'rgba(99, 102, 241, 0.15)';
-        scoreStatusPill.style.color = 'var(--primary)';
+        scoreStatusPill.style.background = 'rgba(59, 130, 246, 0.15)';
+        scoreStatusPill.style.color = '#60a5fa';
+        scoreStatusPill.style.border = '1px solid rgba(59, 130, 246, 0.3)';
       } else if (data.totalScore >= 50) {
         scoreStatusPill.textContent = '⚠️ Average - Needs Keyword Optimization';
         scoreStatusPill.style.background = 'rgba(245, 158, 11, 0.15)';
-        scoreStatusPill.style.color = '#f59e0b';
+        scoreStatusPill.style.color = '#fbbf24';
+        scoreStatusPill.style.border = '1px solid rgba(245, 158, 11, 0.3)';
       } else {
         scoreStatusPill.textContent = '❌ Critical - Likely Filtered by ATS';
         scoreStatusPill.style.background = 'rgba(239, 68, 68, 0.15)';
-        scoreStatusPill.style.color = '#ef4444';
+        scoreStatusPill.style.color = '#f87171';
+        scoreStatusPill.style.border = '1px solid rgba(239, 68, 68, 0.3)';
       }
     }
 
@@ -444,7 +450,12 @@ TECHNICAL SKILLS
       data.findings.forEach(f => {
         const item = document.createElement('div');
         item.className = `ats-check-item ${f.type}`;
-        item.textContent = f.text;
+        const icon = f.type === 'pass' ? '✓' : f.type === 'warn' ? '!' : '✕';
+        const cleanText = f.text.replace(/^[✅⚠️❌]\s*/, '');
+        item.innerHTML = `
+          <span class="ats-check-icon">${icon}</span>
+          <div class="ats-check-body">${cleanText}</div>
+        `;
         findingsContainer.appendChild(item);
       });
     }
@@ -498,5 +509,19 @@ TECHNICAL SKILLS
       else barElem.style.background = '#ef4444';
     }
     if (valElem) valElem.textContent = `${percent}%`;
+  }
+
+  function animateCounter(elem, target, duration = 750) {
+    if (!elem) return;
+    const start = 0;
+    const startTime = performance.now();
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      elem.textContent = Math.round(start + (target - start) * ease);
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
   }
 }
