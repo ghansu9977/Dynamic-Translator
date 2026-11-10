@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.rozgartools.store/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -213,6 +213,36 @@
   <url>
     <loc>https://www.rozgartools.store/tools/diwali-rangoli-generator.html</loc>
     <lastmod>2026-11-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.rozgartools.store/tools/passport-photo-sheet-maker.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.rozgartools.store/tools/salary-calculator.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.rozgartools.store/tools/gst-calculator.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.rozgartools.store/tools/whatsapp-direct-chat.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.rozgartools.store/tools/image-to-text.html</loc>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
