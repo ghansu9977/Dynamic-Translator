@@ -29,6 +29,11 @@ if (fs.existsSync('tools')) {
   copyDirSync('tools', path.join(distDir, 'tools'));
 }
 
+// Copy guides/
+if (fs.existsSync('guides')) {
+  copyDirSync('guides', path.join(distDir, 'guides'));
+}
+
 // Copy assets/
 if (fs.existsSync('assets')) {
   copyDirSync('assets', path.join(distDir, 'assets'));

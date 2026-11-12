@@ -2,6 +2,23 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/tools/rozgar-photo-resizer(.*)",
+      "destination": "/tools/govt-photo-resizer",
+      "permanent": true
+    },
+    {
+      "source": "/tools/rozgar-age-calculator(.*)",
+      "destination": "/tools/age-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/tools/rozgar-typing-test(.*)",
+      "destination": "/tools/typing-test",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

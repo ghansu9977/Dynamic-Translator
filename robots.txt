@@ -3,5 +3,7 @@ Allow: /
 Disallow: /admin
 Disallow: /dashboard
 Disallow: /tools/desi-radio.html
+Disallow: /tools/diwali-*.html
+Disallow: /tools/chhath-*.html
 
 Sitemap: https://www.rozgartools.store/sitemap.xml
