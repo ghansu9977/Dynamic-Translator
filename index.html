@@ -41,12 +41,19 @@
 
   <!-- Google AdSense Verification -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8683798796115175" crossorigin="anonymous"></script>
-    <!-- Performance: Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Preload Critical CSS -->
+  <link rel="preload" href="assets/css/style.css?v=3.6" as="style">
   <link rel="stylesheet" href="assets/css/style.css?v=3.6">
   <link rel="stylesheet" href="assets/css/responsive.css?v=3.6">
+
+  <!-- Optimized Non-Blocking Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
+  </noscript>
 
   <!-- Structured Data: WebSite, Organization, ItemList, FAQPage -->
   <script type="application/ld+json">
@@ -177,7 +184,7 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="brand-logo" id="home-logo-link">
-        <img src="assets/logo.png" alt="RozgarTools Logo" class="brand-icon-img">
+        <img src="assets/logo.png" alt="RozgarTools Logo" class="brand-icon-img" width="38" height="38" fetchpriority="high">
         <div class="brand-text">Rozgar<span>Tools</span></div>
       </a>
 
@@ -442,7 +449,7 @@
   <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
     <div class="mobile-drawer-header">
       <a href="index.html" class="brand-logo">
-        <img src="assets/logo.png" alt="RozgarTools Logo" class="brand-icon-img">
+        <img src="assets/logo.png" alt="RozgarTools Logo" class="brand-icon-img" width="38" height="38" fetchpriority="high">
         <div class="brand-text">Rozgar<span>Tools</span></div>
       </a>
       <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">✕</button>
